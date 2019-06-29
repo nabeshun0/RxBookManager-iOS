@@ -92,6 +92,10 @@
 			children = (
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5E649BCE22C3872700E562F1 /* ViewController.swift */,
+				5EFCE19122C637CE004B8D3C /* Data */,
+				5EFCE19422C638E4004B8D3C /* Domain */,
+				5EFCE19222C637EF004B8D3C /* Presentation */,
+				5EFCE19322C63808004B8D3C /* Utility */,
 				5E649BD022C3872700E562F1 /* Main.storyboard */,
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
@@ -118,6 +122,155 @@
 				5E885BDA22C5A72D00C9B547 /* APIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EFCE19122C637CE004B8D3C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5EFCE19822C6396F004B8D3C /* DataStore */,
+				5EFCE19922C63983004B8D3C /* Entity */,
+				5EFCE19A22C63998004B8D3C /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5EFCE19222C637EF004B8D3C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5EFCE19B22C7213B004B8D3C /* Login */,
+				5EFCE1A022C722BD004B8D3C /* SignUp */,
+				5EFCE19C22C721E3004B8D3C /* MainTab */,
+				5EFCE1A122C722DC004B8D3C /* BookList */,
+				5EFCE19D22C721F3004B8D3C /* RegisterBook */,
+				5EFCE19E22C7228E004B8D3C /* DetailBook */,
+				5EFCE19F22C722AF004B8D3C /* Logout */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5EFCE19322C63808004B8D3C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5EFCE1A322C72682004B8D3C /* Consts */,
+				5EFCE1A222C72595004B8D3C /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		5EFCE19422C638E4004B8D3C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5EFCE19522C63910004B8D3C /* Model */,
+				5EFCE19622C6391B004B8D3C /* Translator */,
+				5EFCE19722C63961004B8D3C /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5EFCE19522C63910004B8D3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EFCE19622C6391B004B8D3C /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		5EFCE19722C63961004B8D3C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		5EFCE19822C6396F004B8D3C /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		5EFCE19922C63983004B8D3C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5EFCE19A22C63998004B8D3C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5EFCE19B22C7213B004B8D3C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5EFCE19C22C721E3004B8D3C /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		5EFCE19D22C721F3004B8D3C /* RegisterBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterBook;
+			sourceTree = "<group>";
+		};
+		5EFCE19E22C7228E004B8D3C /* DetailBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailBook;
+			sourceTree = "<group>";
+		};
+		5EFCE19F22C722AF004B8D3C /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
+		5EFCE1A022C722BD004B8D3C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		5EFCE1A122C722DC004B8D3C /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		5EFCE1A222C72595004B8D3C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5EFCE1A322C72682004B8D3C /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Consts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
