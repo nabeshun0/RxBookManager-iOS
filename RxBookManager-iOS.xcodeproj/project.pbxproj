@@ -24,6 +24,10 @@
 		5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1AD22C72F2B004B8D3C /* SignUpViewModel.swift */; };
 		5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1AF22C72F3F004B8D3C /* SignUpRouting.swift */; };
 		5EFCE1B222C730DF004B8D3C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B122C730DF004B8D3C /* MainTabBarController.swift */; };
+		5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B322C73157004B8D3C /* BookListViewController.swift */; };
+		5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B522C73172004B8D3C /* BookListViewModel.swift */; };
+		5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B722C7318A004B8D3C /* BookListRouting.swift */; };
+		5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B922C73214004B8D3C /* BookListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		5EFCE1AD22C72F2B004B8D3C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5EFCE1AF22C72F3F004B8D3C /* SignUpRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouting.swift; sourceTree = "<group>"; };
 		5EFCE1B122C730DF004B8D3C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5EFCE1B322C73157004B8D3C /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		5EFCE1B522C73172004B8D3C /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		5EFCE1B722C7318A004B8D3C /* BookListRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListRouting.swift; sourceTree = "<group>"; };
+		5EFCE1B922C73214004B8D3C /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +283,10 @@
 		5EFCE1A122C722DC004B8D3C /* BookList */ = {
 			isa = PBXGroup;
 			children = (
+				5EFCE1B322C73157004B8D3C /* BookListViewController.swift */,
+				5EFCE1B522C73172004B8D3C /* BookListViewModel.swift */,
+				5EFCE1B722C7318A004B8D3C /* BookListRouting.swift */,
+				5EFCE1B922C73214004B8D3C /* BookListTableViewCell.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -421,14 +433,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EFCE1AC22C72F0A004B8D3C /* SignUpViewController.swift in Sources */,
+				5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */,
 				5EFCE1A722C72C4D004B8D3C /* LoginViewModel.swift in Sources */,
 				5EFCE1B222C730DF004B8D3C /* MainTabBarController.swift in Sources */,
+				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */,
+				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
+				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
