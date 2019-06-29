@@ -10,6 +10,9 @@
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
 		5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DB22C74961006E5475 /* DetailBookRouting.swift */; };
+		5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DD22C7497C006E5475 /* LogoutViewController.swift */; };
+		5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */; };
+		5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E122C7499D006E5475 /* LogoutRouting.swift */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCE22C3872700E562F1 /* ViewController.swift */; };
 		5E649BD222C3872700E562F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD022C3872700E562F1 /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
 		5E1367DB22C74961006E5475 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
+		5E1367DD22C7497C006E5475 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
+		5E1367E122C7499D006E5475 /* LogoutRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRouting.swift; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E649BCE22C3872700E562F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +290,9 @@
 		5EFCE19F22C722AF004B8D3C /* Logout */ = {
 			isa = PBXGroup;
 			children = (
+				5E1367DD22C7497C006E5475 /* LogoutViewController.swift */,
+				5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */,
+				5E1367E122C7499D006E5475 /* LogoutRouting.swift */,
 			);
 			path = Logout;
 			sourceTree = "<group>";
@@ -459,15 +468,18 @@
 				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
+				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
 				5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
+				5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */,
 				5EFCE1C022C73350004B8D3C /* RegisterBookRouting.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
+				5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */,
 				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
