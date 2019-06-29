@@ -18,6 +18,8 @@
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
 		5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */; };
+		5EFCE1A722C72C4D004B8D3C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */; };
+		5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */,
+				5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */,
+				5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -402,6 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFCE1A722C72C4D004B8D3C /* LoginViewModel.swift in Sources */,
+				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
 				5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
