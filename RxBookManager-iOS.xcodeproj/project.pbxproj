@@ -133,7 +133,6 @@
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5E649BCE22C3872700E562F1 /* ViewController.swift */,
 				5EFCE19122C637CE004B8D3C /* Data */,
-				5EFCE19422C638E4004B8D3C /* Domain */,
 				5EFCE19222C637EF004B8D3C /* Presentation */,
 				5EFCE19322C63808004B8D3C /* Utility */,
 				5E649BD022C3872700E562F1 /* Main.storyboard */,
@@ -167,7 +166,7 @@
 		5EFCE19122C637CE004B8D3C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5EFCE19822C6396F004B8D3C /* DataStore */,
+				5E1367E622C77BA3006E5475 /* Request */,
 				5EFCE19922C63983004B8D3C /* Entity */,
 				5EFCE19A22C63998004B8D3C /* Repository */,
 			);
@@ -195,44 +194,6 @@
 				5EFCE1A222C72595004B8D3C /* Extension */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		5EFCE19422C638E4004B8D3C /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				5EFCE19522C63910004B8D3C /* Model */,
-				5EFCE19622C6391B004B8D3C /* Translator */,
-				5EFCE19722C63961004B8D3C /* UseCase */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		5EFCE19522C63910004B8D3C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5EFCE19622C6391B004B8D3C /* Translator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Translator;
-			sourceTree = "<group>";
-		};
-		5EFCE19722C63961004B8D3C /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		5EFCE19822C6396F004B8D3C /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataStore;
 			sourceTree = "<group>";
 		};
 		5EFCE19922C63983004B8D3C /* Entity */ = {
