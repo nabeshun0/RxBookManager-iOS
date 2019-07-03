@@ -13,6 +13,7 @@
 		5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DD22C7497C006E5475 /* LogoutViewController.swift */; };
 		5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */; };
 		5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E122C7499D006E5475 /* LogoutRouting.swift */; };
+		5E1367E822C77C28006E5475 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E722C77C28006E5475 /* Repository.swift */; };
 		5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E922C77E39006E5475 /* Session+Extensions.swift */; };
 		5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		5E1367DD22C7497C006E5475 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		5E1367E122C7499D006E5475 /* LogoutRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRouting.swift; sourceTree = "<group>"; };
+		5E1367E722C77C28006E5475 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5E1367E922C77E39006E5475 /* Session+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Extensions.swift"; sourceTree = "<group>"; };
 		5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,7 @@
 		5EFCE19A22C63998004B8D3C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				5E1367E722C77C28006E5475 /* Repository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
+				5E1367E822C77C28006E5475 /* Repository.swift in Sources */,
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
