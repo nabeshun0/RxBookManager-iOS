@@ -17,8 +17,6 @@
 		5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E922C77E39006E5475 /* Session+Extensions.swift */; };
 		5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
-		5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCE22C3872700E562F1 /* ViewController.swift */; };
-		5E649BD222C3872700E562F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD022C3872700E562F1 /* Main.storyboard */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
 		5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */; };
@@ -64,8 +62,6 @@
 		5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E649BCE22C3872700E562F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5E649BD122C3872700E562F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E649BD622C3872800E562F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E649BD822C3872800E562F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,11 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
-				5E649BCE22C3872700E562F1 /* ViewController.swift */,
 				5EFCE19122C637CE004B8D3C /* Data */,
 				5EFCE19222C637EF004B8D3C /* Presentation */,
 				5EFCE19322C63808004B8D3C /* Utility */,
-				5E649BD022C3872700E562F1 /* Main.storyboard */,
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
 				5E649BD822C3872800E562F1 /* Info.plist */,
@@ -393,7 +387,6 @@
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
-				5E649BD222C3872700E562F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +443,6 @@
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
-				5E649BCF22C3872700E562F1 /* ViewController.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
 				5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */,
@@ -483,14 +475,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5E649BD022C3872700E562F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E649BD122C3872700E562F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
