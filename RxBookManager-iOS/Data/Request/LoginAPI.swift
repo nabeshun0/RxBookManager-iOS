@@ -7,6 +7,7 @@ import APIKit
 final class LoginAPI {
     struct Request: AppRequestType {
         typealias Response = LoginAPI.Response
+
         // パラメータモデル
         var loginModel: LoginModel
 
@@ -14,14 +15,12 @@ final class LoginAPI {
             return [:]
         }
 
-        var apiRoutes = APIRoutes.login.configurePath()
-
         var method: HTTPMethod {
-            return apiRoutes.method
+            return APIRoutes.login.configurePath().method
         }
 
         var path: String {
-            return apiRoutes.path
+            return APIRoutes.login.configurePath().path
         }
 
         var parameters: Any? {
