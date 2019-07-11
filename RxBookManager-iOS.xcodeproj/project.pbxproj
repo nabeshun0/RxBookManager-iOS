@@ -18,9 +18,11 @@
 		5E16368022D09D4100C26AD5 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16367F22D09D4100C26AD5 /* APIRoutes.swift */; };
 		5E20CCD522D23E920000DB4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCD422D23E920000DB4F /* Constants.swift */; };
 		5E20CCDD22D241150000DB4F /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDC22D241150000DB4F /* LoginAPI.swift */; };
+		5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* getUserData.swift */; };
 		5E20CCE122D2D10F0000DB4F /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE022D2D10F0000DB4F /* LoginEntity.swift */; };
 		5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE322D2D1990000DB4F /* LoginModel.swift */; };
 		5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE522D2D6230000DB4F /* AppRequestType.swift */; };
+		5E31992F22D6D3D200DA5072 /* getBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* getBookData.swift */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
@@ -68,9 +70,11 @@
 		5E16367F22D09D4100C26AD5 /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		5E20CCD422D23E920000DB4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E20CCDC22D241150000DB4F /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		5E20CCDE22D2D00E0000DB4F /* getUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserData.swift; sourceTree = "<group>"; };
 		5E20CCE022D2D10F0000DB4F /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		5E20CCE322D2D1990000DB4F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5E20CCE522D2D6230000DB4F /* AppRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestType.swift; sourceTree = "<group>"; };
+		5E31992E22D6D3D200DA5072 /* getBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getBookData.swift; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				5E20CCDE22D2D00E0000DB4F /* getUserData.swift */,
+				5E31992E22D6D3D200DA5072 /* getBookData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -479,7 +484,9 @@
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
+				5E31992F22D6D3D200DA5072 /* getBookData.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
+				5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
