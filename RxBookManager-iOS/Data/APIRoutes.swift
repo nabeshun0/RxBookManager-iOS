@@ -17,7 +17,6 @@ enum APIRoutes {
         case .fetchBookList: return (.get, "/books")
         case .registerBook: return (.post, "/books")
         case .editBook: return (.put, "/books")
-//        case .editBook(userId): return (.put, "/books/\(userId)")
         }
     }
 }
