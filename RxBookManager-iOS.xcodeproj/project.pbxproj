@@ -26,7 +26,6 @@
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
 		5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */; };
-		5E96202D22D0B5A60050F9A0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96202C22D0B5A60050F9A0 /* APIRequest.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9D22C5CD1D005B74E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
@@ -86,7 +85,6 @@
 		5E885BDC22C5A74200C9B547 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		5E96202C22D0B5A60050F9A0 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				5E20CCE222D2D1510000DB4F /* Parameter */,
-				5E96202C22D0B5A60050F9A0 /* APIRequest.swift */,
 				5E20CCDC22D241150000DB4F /* LoginAPI.swift */,
 				5E20CCE522D2D6230000DB4F /* AppRequestType.swift */,
 			);
@@ -471,7 +468,6 @@
 				5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */,
 				5E20CCDD22D241150000DB4F /* LoginAPI.swift in Sources */,
 				5EFCE1AC22C72F0A004B8D3C /* SignUpViewController.swift in Sources */,
-				5E96202D22D0B5A60050F9A0 /* APIRequest.swift in Sources */,
 				5E16368022D09D4100C26AD5 /* APIRoutes.swift in Sources */,
 				5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */,
 				5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */,
