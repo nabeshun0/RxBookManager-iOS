@@ -15,7 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        // 初回起動時はSignUpVCを表示
+//        if !AuthManager.isLoggedIn() {
+//            let firstScreen = SignUpViewController()
+//            window?.rootViewController = firstScreen
+//        } else {
+//            let firstScreen = LoginViewController()
+//            window?.rootViewController = UINavigationController(rootViewController: firstScreen)
+//        }
+
+        let firstScreen = LoginViewController()
+        window?.rootViewController = firstScreen
         return true
     }
 
