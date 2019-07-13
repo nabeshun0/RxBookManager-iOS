@@ -1,25 +1,23 @@
 import APIKit
 import RxSwift
+import Result
 
 extension Session {
-    func rx_sendRequest<T: Request>(request: T) -> Single<T.Response> {
+    func rx_sendRequest<T: Request>(request: T) -> Single<Result<T.Response, SessionTaskError>> {
         return Single.create { observer in
             let task = self.send(request) { result in
-                switch result {
-                case .success(let res):
-                    observer(.success(res))
-                case .failure(let err):
-                    observer(.error(err))
-                }
+                observer(.success(result))
             }
-            return Disposables.create { [weak task] in
+            return Disposables.create {
                 task?.cancel()
             }
         }
     }
 
-    class func rx_sendRequest<T: Request>(request: T) -> Single<T.Response> {
-        return shared.rx_sendRequest(request: request)
+    class func rx_sendRequest<T: Request>(request: T) -> Single<Result<T.Response, SessionTaskError>> {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        return Session.init(adapter: URLSessionAdapter(configuration: config)).rx_sendRequest(request: request)
     }
 }
-
