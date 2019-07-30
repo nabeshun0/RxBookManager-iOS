@@ -34,6 +34,7 @@
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
+		5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */; };
 		5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EF5F68022DC71F600140C73 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
@@ -97,6 +98,7 @@
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
+		5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLogoutDataStoreTests.swift; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				5E18E4CA22D9AEC600CFF52C /* getLoginDataStoreTests.swift */,
+				5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */,
 				5E18E4CB22D9AEC600CFF52C /* getLoginDataStoreTests.swift in Sources */,
 				5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */,
 			);
