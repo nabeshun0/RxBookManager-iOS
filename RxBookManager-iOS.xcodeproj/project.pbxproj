@@ -20,6 +20,7 @@
 		5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963B22F0320800CD332B /* SignUpEntity.swift */; };
 		5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963D22F0323100CD332B /* SignUpModel.swift */; };
 		5E1D964022F0324600CD332B /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963F22F0324600CD332B /* SignUpAPI.swift */; };
+		5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */; };
 		5E20CCD522D23E920000DB4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCD422D23E920000DB4F /* Constants.swift */; };
 		5E20CCDD22D241150000DB4F /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDC22D241150000DB4F /* LoginAPI.swift */; };
 		5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* getUserData.swift */; };
@@ -83,6 +84,7 @@
 		5E1D963B22F0320800CD332B /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
 		5E1D963D22F0323100CD332B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5E1D963F22F0324600CD332B /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
+		5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSignUpDataStoreTests.swift; sourceTree = "<group>"; };
 		5E20CCD422D23E920000DB4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E20CCDC22D241150000DB4F /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		5E20CCDE22D2D00E0000DB4F /* getUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserData.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				5E18E4CA22D9AEC600CFF52C /* getLoginDataStoreTests.swift */,
 				5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */,
+				5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */,
 				5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */,
 				5E18E4CB22D9AEC600CFF52C /* getLoginDataStoreTests.swift in Sources */,
 				5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */,
