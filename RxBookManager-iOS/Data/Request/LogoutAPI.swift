@@ -12,7 +12,7 @@ final class LogoutAPI {
             #warning("✅【実装予定】UserDefalutsに保存したtokenを取得する")
             guard let accessToken = Optional("token") else {
                 return [:] }
-            return ["X-Autentication-Token": accessToken]
+            return ["Authorization": accessToken]
         }
 
         var method: HTTPMethod {
