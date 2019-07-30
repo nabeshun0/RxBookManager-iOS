@@ -21,6 +21,9 @@
 		5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963D22F0323100CD332B /* SignUpModel.swift */; };
 		5E1D964022F0324600CD332B /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963F22F0324600CD332B /* SignUpAPI.swift */; };
 		5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */; };
+		5E1D964622F03F3700CD332B /* FetchBookListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */; };
+		5E1D964822F03F4A00CD332B /* FetchBookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964722F03F4A00CD332B /* FetchBookListModel.swift */; };
+		5E1D964A22F03F5900CD332B /* FetchBookListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */; };
 		5E20CCD522D23E920000DB4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCD422D23E920000DB4F /* Constants.swift */; };
 		5E20CCDD22D241150000DB4F /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDC22D241150000DB4F /* LoginAPI.swift */; };
 		5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* getUserData.swift */; };
@@ -85,6 +88,9 @@
 		5E1D963D22F0323100CD332B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5E1D963F22F0324600CD332B /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSignUpDataStoreTests.swift; sourceTree = "<group>"; };
+		5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListAPI.swift; sourceTree = "<group>"; };
+		5E1D964722F03F4A00CD332B /* FetchBookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListModel.swift; sourceTree = "<group>"; };
+		5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListEntity.swift; sourceTree = "<group>"; };
 		5E20CCD422D23E920000DB4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E20CCDC22D241150000DB4F /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		5E20CCDE22D2D00E0000DB4F /* getUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserData.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			children = (
 				5E20CCE322D2D1990000DB4F /* LoginModel.swift */,
 				5E1D963D22F0323100CD332B /* SignUpModel.swift */,
+				5E1D964722F03F4A00CD332B /* FetchBookListModel.swift */,
 			);
 			path = Parameter;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				5E20CCDC22D241150000DB4F /* LoginAPI.swift */,
 				5ED6384022F019D2009184A8 /* LogoutAPI.swift */,
 				5E1D963F22F0324600CD332B /* SignUpAPI.swift */,
+				5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */,
 				5E20CCE522D2D6230000DB4F /* AppRequestType.swift */,
 			);
 			path = Request;
@@ -291,6 +299,7 @@
 				5E20CCE022D2D10F0000DB4F /* LoginEntity.swift */,
 				5ED6383C22F0195D009184A8 /* LogoutEntity.swift */,
 				5E1D963B22F0320800CD332B /* SignUpEntity.swift */,
+				5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -521,6 +530,7 @@
 				5EFCE1AC22C72F0A004B8D3C /* SignUpViewController.swift in Sources */,
 				5E16368022D09D4100C26AD5 /* APIRoutes.swift in Sources */,
 				5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */,
+				5E1D964622F03F3700CD332B /* FetchBookListAPI.swift in Sources */,
 				5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */,
 				5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */,
 				5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */,
@@ -528,6 +538,7 @@
 				5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */,
 				5EFCE1B222C730DF004B8D3C /* MainTabBarController.swift in Sources */,
 				5E20CCE122D2D10F0000DB4F /* LoginEntity.swift in Sources */,
+				5E1D964A22F03F5900CD332B /* FetchBookListEntity.swift in Sources */,
 				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
 				5E20CCD522D23E920000DB4F /* Constants.swift in Sources */,
 				5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */,
@@ -541,6 +552,7 @@
 				5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
+				5E1D964822F03F4A00CD332B /* FetchBookListModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
 				5E1D964022F0324600CD332B /* SignUpAPI.swift in Sources */,
 				5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */,
