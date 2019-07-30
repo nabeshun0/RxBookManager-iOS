@@ -4,27 +4,16 @@ import APIKit
 //==================================================
 // MARK: - APIError
 //==================================================
-enum APPErrorCode: Int {
+enum APPErrorCode: Int, Error {
     case error400 = 400
     case error401 = 401
-}
-
-final class APPErrorResponse {
-    struct Error400: Decodable, Error {
-        let message: String
-
-        private enum CodingKeys: String, CodingKey {
-            case message
-        }
-    }
-
-    struct Error401: Decodable, Error {
-        let message: String
-
-        private enum CodingKeys: String, CodingKey {
-            case message
-        }
-    }
+    case error403 = 403
+    case error404 = 404
+    case error412 = 412
+    case error426 = 426
+    case error500 = 500
+    case error503 = 503
+    case other = 999
 }
 
 //==================================================
@@ -64,9 +53,21 @@ extension AppRequestType {
         case 200..<300:
             return object
         case 400:
-            throw APPErrorResponse.Error400(message: "error 400")
+            throw APPErrorCode.error400
         case 401:
-            throw APPErrorResponse.Error401(message: "error 401")
+            throw APPErrorCode.error401
+        case 403:
+            throw APPErrorCode.error403
+        case 404:
+            throw APPErrorCode.error404
+        case 412:
+            throw APPErrorCode.error412
+        case 426:
+            throw APPErrorCode.error426
+        case 500:
+            throw APPErrorCode.error500
+        case 503:
+            throw APPErrorCode.error503
         default:
             throw ResponseError.unacceptableStatusCode(urlResponse.statusCode)
         }
