@@ -74,7 +74,7 @@ extension AppRequestType {
 
     public func intercept(urlRequest: URLRequest) throws -> URLRequest {
         var req = urlRequest
-        req.timeoutInterval = 20.0
+        req.timeoutInterval = 5.0
         return req
     }
 }
