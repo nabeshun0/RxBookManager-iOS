@@ -25,4 +25,13 @@ struct GetLoginDataStoreImpl: GetLoginDataStore {
 // MARK: - ログアウト、リクエスト・レスポンス
 //==================================================
 
+protocol GetLogoutDataStore {
+    func getLogoutResponse() -> Single<LogoutAPI.Response>
+}
 
+struct GetLogoutDataStoreImpl: GetLogoutDataStore {
+    func getLogoutResponse() -> Single<LogoutAPI.Response> {
+        let request = LogoutAPI.Request()
+        return Session.rx_sendRequest(request: request)
+    }
+}
