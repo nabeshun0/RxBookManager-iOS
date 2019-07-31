@@ -39,6 +39,7 @@
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
 		5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */; };
+		5E8A656D22F06B9A00C43436 /* registerBookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9D22C5CD1D005B74E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
@@ -118,6 +119,7 @@
 		5E885BDC22C5A74200C9B547 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerBookDataStoreTests.swift; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
 		5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLogoutDataStoreTests.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */,
 				5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */,
 				5E1D964B22F0428E00CD332B /* fetchBookListDataStoreTests.swift */,
+				5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */,
 				5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */,
 				5E18E4CB22D9AEC600CFF52C /* getLoginDataStoreTests.swift in Sources */,
+				5E8A656D22F06B9A00C43436 /* registerBookDataStoreTests.swift in Sources */,
 				5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
