@@ -7,7 +7,7 @@ enum APIRoutes {
     case logout        // ログアウト
     case fetchBookList // 書籍一覧取得
     case registerBook  // 書籍登録
-    case editBook      // 書籍情報取得
+    case detailBook      // 書籍情報取得
 
     func configurePath() -> (method: HTTPMethod, path: String) {
         switch self {
@@ -16,7 +16,7 @@ enum APIRoutes {
         case .logout: return (.delete, "/logout")
         case .fetchBookList: return (.get, "/books")
         case .registerBook: return (.post, "/books")
-        case .editBook: return (.put, "/books")
+        case .detailBook: return (.put, "/books")
         }
     }
 }

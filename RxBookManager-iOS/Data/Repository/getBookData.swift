@@ -36,3 +36,13 @@ struct RegisterBookDataStoreImpl: RegisterBookDataStore {
 // MARK: - 書籍編集、リクエスト・レスポンス
 //==================================================
 
+protocol DetailBookDataStore {
+    func detailBookResponse(detailBook: DetailBookModel) -> Single<DetailBookAPI.Response>
+}
+
+struct DetailBookDataStoreImpl: DetailBookDataStore {
+    func detailBookResponse(detailBook: DetailBookModel) -> Single<DetailBookAPI.Response> {
+        let request = DetailBookAPI.Request(detailBookModel: detailBook)
+        return Session.rx_sendRequest(request: request)
+    }
+}
