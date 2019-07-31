@@ -21,6 +21,16 @@ struct FetchBookListDataStoreImpl: FetchBookListDataStore {
 // MARK: - 書籍追加、リクエスト・レスポンス
 //==================================================
 
+protocol RegisterBookDataStore {
+    func registerBookResponse(registerBook: RegisterBookModel) -> Single<RegisterBookAPI.Response>
+}
+
+struct RegisterBookDataStoreImpl: RegisterBookDataStore {
+    func registerBookResponse(registerBook: RegisterBookModel) -> Single<RegisterBookAPI.Response> {
+        let request = RegisterBookAPI.Request(registerBookModel: registerBook)
+        return Session.rx_sendRequest(request: request)
+    }
+}
 
 //==================================================
 // MARK: - 書籍編集、リクエスト・レスポンス
