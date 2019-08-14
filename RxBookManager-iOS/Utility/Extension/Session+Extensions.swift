@@ -8,6 +8,8 @@ extension Session {
                 switch result {
                 case .success(let res):
                     observer(.success(res))
+                case .failure(.responseError(let responseError as APPErrorCode)):
+                    observer(.error(responseError))
                 case .failure(let err):
                     observer(.error(err))
                 }
@@ -22,4 +24,3 @@ extension Session {
         return shared.rx_sendRequest(request: request)
     }
 }
-

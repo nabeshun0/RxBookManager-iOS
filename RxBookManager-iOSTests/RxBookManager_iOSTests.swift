@@ -1,11 +1,3 @@
-//
-//  RxBookManager_iOSTests.swift
-//  RxBookManager-iOSTests
-//
-//  Created by member on 2019/06/26.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
-
 import XCTest
 @testable import RxBookManager_iOS
 
