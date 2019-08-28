@@ -6,7 +6,6 @@
 //  Copyright © 2019 nabezawa. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import APIKit
 
@@ -28,6 +27,6 @@ extension LogoutViewModel {
     }
 
     struct OutPut {
-        let error: Observable<Error>
+        
     }
 }
