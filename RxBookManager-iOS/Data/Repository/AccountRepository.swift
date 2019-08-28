@@ -7,16 +7,15 @@
 //
 
 import APIKit
-import Result
 import RxSwift
 
-protocol AcoountRepository {
+protocol AccountRepository {
     func login()
     func signup()
     func logout()
 }
 
-final class AcoountRepositoryImpl: AcoountRepository {
+final class AcoountRepositoryImpl: AccountRepository {
     static let shared = AcoountRepositoryImpl()
 
     private let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
