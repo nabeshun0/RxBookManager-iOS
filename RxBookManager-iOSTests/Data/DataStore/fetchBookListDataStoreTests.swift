@@ -1,5 +1,4 @@
 import APIKit
-import Result
 import RxSwift
 import XCTest
 
