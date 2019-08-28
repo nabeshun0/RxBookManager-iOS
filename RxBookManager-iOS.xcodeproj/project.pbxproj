@@ -10,6 +10,7 @@
 		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
+		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
 		5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DB22C74961006E5475 /* DetailBookRouting.swift */; };
@@ -88,6 +89,7 @@
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
 		5E1367DB22C74961006E5475 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
@@ -188,6 +190,15 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
+		5BAF50D32316D79400584FB1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
+				5BAF50D42316D7C200584FB1 /* RoutingType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		5E18E4C622D9AE0B00CFF52C /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +258,7 @@
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5EFCE19122C637CE004B8D3C /* Data */,
 				5EFCE19222C637EF004B8D3C /* Presentation */,
+				5BAF50D32316D79400584FB1 /* Common */,
 				5EFCE19322C63808004B8D3C /* Utility */,
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
@@ -330,7 +342,6 @@
 			children = (
 				5EFCE1A322C72682004B8D3C /* Consts */,
 				5EFCE1A222C72595004B8D3C /* Extension */,
-				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -593,6 +604,7 @@
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
 				5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
+				5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */,
 				5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */,
 				5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */,
 				5E20CCDF22D2D00E0000DB4F /* AccountDataStore.swift in Sources */,
