@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import RxSwift
+import APIKit
+
+final class LogoutViewModel {
+
+    private let disposeBag = DisposeBag()
+
+    private let dependency: AccountRepository
+
+    init(dependency: AccountRepository) {
+        self.dependency = dependency
+    }
+}
+
+extension LogoutViewModel: ViewModelType {
+    struct Input {
+        let didLogoutButtonTapped: Observable<Void>
+    }
+
+    struct OutPut {
+        let error: Observable<Error>
+    }
+}
