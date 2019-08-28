@@ -3,6 +3,8 @@ import RxSwift
 
 protocol AccountDataStore {
     func login(login: LoginModel) -> Single<LoginAPI.Response>
+    func signUp(signUp: SignUpModel) -> Single<SignUpAPI.Response>
+    func logout() -> Single<LogoutAPI.Response>
 }
 
 struct AccountDataStoreImpl: AccountDataStore {

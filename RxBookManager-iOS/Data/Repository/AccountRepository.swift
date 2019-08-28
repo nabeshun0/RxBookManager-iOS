@@ -10,9 +10,9 @@ import APIKit
 import RxSwift
 
 protocol AccountRepository {
-    func login()
-    func signup()
-    func logout()
+    func login(_ params: LoginModel) -> Single<LoginAPI.Response>
+    func signup(_ params: SignUpModel) -> Single<SignUpAPI.Response>
+    func logout() -> Single<LogoutAPI.Response>
 }
 
 final class AcoountRepositoryImpl: AccountRepository {
@@ -20,15 +20,26 @@ final class AcoountRepositoryImpl: AccountRepository {
 
     private let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
 
-    func login() {
-        
+    func login(_ params: LoginModel) -> Single<LoginAPI.Response> {
+        return dataStore.login(login: params)
+            .do(onSuccess: { result in
+                // TODO: - userdefaultに保存
+                print(result.result.token)
+            })
     }
 
-    func signup() {
-
+    func signup(_ params: SignUpModel) -> Single<SignUpAPI.Response> {
+        return dataStore.signUp(signUp: params)
+            .do(onSuccess: { result in
+                // TODO: - userdefaultに保存
+                print(result.result.token)
+            })
     }
 
-    func logout() {
-
+    func logout() -> Single<LogoutAPI.Response> {
+        return dataStore.logout()
+            .do(onSuccess: { result in
+                // TODO: - userdefaltのToken削除
+            })
     }
 }

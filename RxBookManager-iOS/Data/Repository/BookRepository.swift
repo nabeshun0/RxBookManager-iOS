@@ -5,13 +5,13 @@
 //  Created by Iichiro Kawashima on 2019/08/28.
 //  Copyright © 2019 nabezawa. All rights reserved.
 //
-
-import Foundation
+import RxSwift
+import APIKit
 
 protocol BookRepository {
-    func fetchBook()
-    func registerBook()
-    func updateBook()
+    func fetchBook(_ params: FetchBookListModel) -> Single<FetchBookListAPI.Response>
+    func registerBook(_ params: RegisterBookModel) -> Single<RegisterBookAPI.Response>
+    func updateBook(_ params: DetailBookModel) -> Single<DetailBookAPI.Response>
 }
 
 final class BookRepositoryImpl: BookRepository {
@@ -20,15 +20,15 @@ final class BookRepositoryImpl: BookRepository {
 
     private let dataStore = BookDataStoreFactory.createBookDataStore()
 
-    func fetchBook() {
-
+    func fetchBook(_ params: FetchBookListModel) -> Single<FetchBookListAPI.Response> {
+        return dataStore.fetchBook(fetchBookList: params)
     }
 
-    func registerBook() {
-
+    func registerBook(_ params: RegisterBookModel) -> Single<RegisterBookAPI.Response> {
+        return dataStore.registerBook(registerBook: params)
     }
 
-    func updateBook() {
-
+    func updateBook(_ params: DetailBookModel) -> Single<DetailBookAPI.Response> {
+        return dataStore.updateBook(detailBook: params)
     }
 }
