@@ -21,7 +21,8 @@ final class LogoutViewModel {
     }
 }
 
-extension LogoutViewModel: ViewModelType {
+extension LogoutViewModel {
+
     struct Input {
         let didLogoutButtonTapped: Observable<Void>
     }
