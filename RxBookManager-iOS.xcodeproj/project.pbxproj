@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
+		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
 		5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DB22C74961006E5475 /* DetailBookRouting.swift */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
 		5E1367DB22C74961006E5475 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				5EFCE1A322C72682004B8D3C /* Consts */,
 				5EFCE1A222C72595004B8D3C /* Extension */,
+				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
+				5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */,
 				5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */,
 				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
 				5E1D965022F0565E00CD332B /* RegisterBookAPI.swift in Sources */,
@@ -710,6 +714,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -764,6 +769,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
