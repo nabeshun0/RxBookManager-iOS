@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+final class BookListViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
