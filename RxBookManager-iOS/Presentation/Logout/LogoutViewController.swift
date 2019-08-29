@@ -15,9 +15,11 @@ final class LogoutViewController: UIViewController {
 
     private let logoutButton: UIButton = {
         let button = UIButton()
+        button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle("ログアウト", for: .normal)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 2
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -48,8 +50,8 @@ final class LogoutViewController: UIViewController {
 
         // TODO: - のちほどレイアウト用ライブラリ、もしくはExtension導入
         logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logoutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        logoutButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        logoutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        logoutButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
         logoutButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 
@@ -66,7 +68,8 @@ final class LogoutViewController: UIViewController {
 
 
         output.error
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { error in
+                print(error.localizedDescription)
                 // MARK: ー アラート表示
             }).disposed(by: disposeBag)
     }
