@@ -8,23 +8,27 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let bookListView = BookListViewController()
+        bookListView.tabBarItem = UITabBarItem(title: "一覧", image: nil, tag: 1)
+        let bookListBar = UINavigationController(rootViewController: bookListView)
+
+        let logoutBar = LogoutViewControllerFactory.createInstance()
+        setViewControllers([bookListBar, logoutBar], animated: false)
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+struct LogoutViewControllerFactory {
+    static func createInstance() -> UINavigationController {
+        let dependency = AccountRepositoryImpl()
+        let viewModel = LogoutViewModel(dependency: dependency)
+        let vc = LogoutViewController(viewModel: viewModel)
+        vc.tabBarItem = UITabBarItem(title: "設定", image: nil, tag: 2)
+        let logoutBar = UINavigationController(rootViewController: vc)
+        return logoutBar
     }
-    */
-
 }
