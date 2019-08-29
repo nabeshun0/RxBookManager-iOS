@@ -15,7 +15,7 @@ protocol LogoutRouting: RoutingType {
 
 final class LogoutRoutingImpl: LogoutRouting {
 
-    weak var viewcontroller: UIViewController?
+    weak var viewController: UIViewController?
 
     func showLogin() {
 
