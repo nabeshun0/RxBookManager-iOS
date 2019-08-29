@@ -2,16 +2,16 @@ import APIKit
 import RxSwift
 
 extension Session {
-    func rx_sendRequest<T: Request>(request: T) -> Single<T.Response> {
-        return Single.create { observer in
+    func rx_sendRequest<T: Request>(request: T) -> Observable<T.Response> {
+        return Observable.create { observer in
             let task = self.send(request) { result in
                 switch result {
                 case .success(let res):
-                    observer(.success(res))
+                    observer.onNext(res)
                 case .failure(.responseError(let responseError as APPErrorCode)):
-                    observer(.error(responseError))
+                    observer.onError(responseError)
                 case .failure(let err):
-                    observer(.error(err))
+                    observer.onError(err)
                 }
             }
             return Disposables.create { [weak task] in
@@ -20,7 +20,7 @@ extension Session {
         }
     }
 
-    class func rx_sendRequest<T: Request>(request: T) -> Single<T.Response> {
+    class func rx_sendRequest<T: Request>(request: T) -> Observable<T.Response> {
         return shared.rx_sendRequest(request: request)
     }
 }

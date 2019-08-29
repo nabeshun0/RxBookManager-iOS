@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */; };
+		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
+		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
+		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
+		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
 		5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DB22C74961006E5475 /* DetailBookRouting.swift */; };
@@ -16,41 +21,37 @@
 		5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E922C77E39006E5475 /* Session+Extensions.swift */; };
 		5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */; };
 		5E16368022D09D4100C26AD5 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E16367F22D09D4100C26AD5 /* APIRoutes.swift */; };
-		5E18E4CB22D9AEC600CFF52C /* getLoginDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18E4CA22D9AEC600CFF52C /* getLoginDataStoreTests.swift */; };
+		5E18E4CB22D9AEC600CFF52C /* AccountDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */; };
 		5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963B22F0320800CD332B /* SignUpEntity.swift */; };
 		5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963D22F0323100CD332B /* SignUpModel.swift */; };
 		5E1D964022F0324600CD332B /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D963F22F0324600CD332B /* SignUpAPI.swift */; };
-		5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */; };
 		5E1D964622F03F3700CD332B /* FetchBookListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */; };
 		5E1D964822F03F4A00CD332B /* FetchBookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964722F03F4A00CD332B /* FetchBookListModel.swift */; };
 		5E1D964A22F03F5900CD332B /* FetchBookListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */; };
-		5E1D964C22F0428E00CD332B /* fetchBookListDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* fetchBookListDataStoreTests.swift */; };
+		5E1D964C22F0428E00CD332B /* BookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */; };
 		5E1D964E22F0564D00CD332B /* RegisterBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964D22F0564D00CD332B /* RegisterBookModel.swift */; };
 		5E1D965022F0565E00CD332B /* RegisterBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964F22F0565E00CD332B /* RegisterBookAPI.swift */; };
 		5E1D965222F0566D00CD332B /* RegisterBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D965122F0566D00CD332B /* RegisterBookEntity.swift */; };
 		5E20CCD522D23E920000DB4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCD422D23E920000DB4F /* Constants.swift */; };
 		5E20CCDD22D241150000DB4F /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDC22D241150000DB4F /* LoginAPI.swift */; };
-		5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* getUserData.swift */; };
+		5E20CCDF22D2D00E0000DB4F /* AccountDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* AccountDataStore.swift */; };
 		5E20CCE122D2D10F0000DB4F /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE022D2D10F0000DB4F /* LoginEntity.swift */; };
 		5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE322D2D1990000DB4F /* LoginModel.swift */; };
 		5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE522D2D6230000DB4F /* AppRequestType.swift */; };
-		5E31992F22D6D3D200DA5072 /* getBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* getBookData.swift */; };
+		5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* BookDataStore.swift */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
 		5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */; };
-		5E8A656D22F06B9A00C43436 /* registerBookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */; };
 		5E8A656F22F13A8E00C43436 /* DetailBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A656E22F13A8E00C43436 /* DetailBookModel.swift */; };
 		5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657022F13AA900C43436 /* DetailBookAPI.swift */; };
 		5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */; };
-		5E8A657522F1461300C43436 /* detailBookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657422F1461300C43436 /* detailBookDataStoreTests.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9D22C5CD1D005B74E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
-		5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */; };
 		5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EF5F68022DC71F600140C73 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
@@ -82,6 +83,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
 		5E1367DB22C74961006E5475 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
@@ -92,25 +98,24 @@
 		5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		5E16367D22D0997000C26AD5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		5E16367F22D09D4100C26AD5 /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
-		5E18E4CA22D9AEC600CFF52C /* getLoginDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLoginDataStoreTests.swift; sourceTree = "<group>"; };
+		5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataStoreTests.swift; sourceTree = "<group>"; };
 		5E1D963B22F0320800CD332B /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
 		5E1D963D22F0323100CD332B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5E1D963F22F0324600CD332B /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
-		5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSignUpDataStoreTests.swift; sourceTree = "<group>"; };
 		5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListAPI.swift; sourceTree = "<group>"; };
 		5E1D964722F03F4A00CD332B /* FetchBookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListModel.swift; sourceTree = "<group>"; };
 		5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookListEntity.swift; sourceTree = "<group>"; };
-		5E1D964B22F0428E00CD332B /* fetchBookListDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchBookListDataStoreTests.swift; sourceTree = "<group>"; };
+		5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataStoreTests.swift; sourceTree = "<group>"; };
 		5E1D964D22F0564D00CD332B /* RegisterBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookModel.swift; sourceTree = "<group>"; };
 		5E1D964F22F0565E00CD332B /* RegisterBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookAPI.swift; sourceTree = "<group>"; };
 		5E1D965122F0566D00CD332B /* RegisterBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookEntity.swift; sourceTree = "<group>"; };
 		5E20CCD422D23E920000DB4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E20CCDC22D241150000DB4F /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
-		5E20CCDE22D2D00E0000DB4F /* getUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserData.swift; sourceTree = "<group>"; };
+		5E20CCDE22D2D00E0000DB4F /* AccountDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataStore.swift; sourceTree = "<group>"; };
 		5E20CCE022D2D10F0000DB4F /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		5E20CCE322D2D1990000DB4F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5E20CCE522D2D6230000DB4F /* AppRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestType.swift; sourceTree = "<group>"; };
-		5E31992E22D6D3D200DA5072 /* getBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getBookData.swift; sourceTree = "<group>"; };
+		5E31992E22D6D3D200DA5072 /* BookDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataStore.swift; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,14 +128,11 @@
 		5E885BDC22C5A74200C9B547 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerBookDataStoreTests.swift; sourceTree = "<group>"; };
 		5E8A656E22F13A8E00C43436 /* DetailBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookModel.swift; sourceTree = "<group>"; };
 		5E8A657022F13AA900C43436 /* DetailBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookAPI.swift; sourceTree = "<group>"; };
 		5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookEntity.swift; sourceTree = "<group>"; };
-		5E8A657422F1461300C43436 /* detailBookDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailBookDataStoreTests.swift; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
-		5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLogoutDataStoreTests.swift; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
@@ -173,6 +175,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BAF50CB2316C35C00584FB1 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				5E20CCDE22D2D00E0000DB4F /* AccountDataStore.swift */,
+				5E31992E22D6D3D200DA5072 /* BookDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		5BAF50D32316D79400584FB1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
+				5BAF50D42316D7C200584FB1 /* RoutingType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		5E18E4C622D9AE0B00CFF52C /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,12 +204,8 @@
 		5E18E4C722D9AE2000CFF52C /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				5E18E4CA22D9AEC600CFF52C /* getLoginDataStoreTests.swift */,
-				5ED6384222F021A6009184A8 /* getLogoutDataStoreTests.swift */,
-				5E1D964322F035F200CD332B /* getSignUpDataStoreTests.swift */,
-				5E1D964B22F0428E00CD332B /* fetchBookListDataStoreTests.swift */,
-				5E8A656C22F06B9A00C43436 /* registerBookDataStoreTests.swift */,
-				5E8A657422F1461300C43436 /* detailBookDataStoreTests.swift */,
+				5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */,
+				5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -232,6 +248,7 @@
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5EFCE19122C637CE004B8D3C /* Data */,
 				5EFCE19222C637EF004B8D3C /* Presentation */,
+				5BAF50D32316D79400584FB1 /* Common */,
 				5EFCE19322C63808004B8D3C /* Utility */,
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
@@ -287,6 +304,7 @@
 		5EFCE19122C637CE004B8D3C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5BAF50CB2316C35C00584FB1 /* DataStore */,
 				5E96202722D0A5610050F9A0 /* Request */,
 				5EFCE19922C63983004B8D3C /* Entity */,
 				5EFCE19A22C63998004B8D3C /* Repository */,
@@ -334,8 +352,8 @@
 		5EFCE19A22C63998004B8D3C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				5E20CCDE22D2D00E0000DB4F /* getUserData.swift */,
-				5E31992E22D6D3D200DA5072 /* getBookData.swift */,
+				5BAF50CC2316C45700584FB1 /* AccountRepository.swift */,
+				5BAF50CE2316C46700584FB1 /* BookRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -414,6 +432,7 @@
 			children = (
 				5E1367E922C77E39006E5475 /* Session+Extensions.swift */,
 				5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */,
+				5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -559,6 +578,7 @@
 				5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */,
 				5E1D964622F03F3700CD332B /* FetchBookListAPI.swift in Sources */,
 				5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */,
+				5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */,
 				5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */,
 				5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */,
 				5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */,
@@ -573,11 +593,12 @@
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
-				5E31992F22D6D3D200DA5072 /* getBookData.swift in Sources */,
+				5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
+				5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */,
 				5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */,
 				5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */,
-				5E20CCDF22D2D00E0000DB4F /* getUserData.swift in Sources */,
+				5E20CCDF22D2D00E0000DB4F /* AccountDataStore.swift in Sources */,
 				5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E1D964E22F0564D00CD332B /* RegisterBookModel.swift in Sources */,
@@ -588,12 +609,15 @@
 				5E1D965222F0566D00CD332B /* RegisterBookEntity.swift in Sources */,
 				5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
+				5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */,
+				5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */,
 				5E8A656F22F13A8E00C43436 /* DetailBookModel.swift in Sources */,
 				5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */,
 				5EFCE1C022C73350004B8D3C /* RegisterBookRouting.swift in Sources */,
 				5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
+				5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */,
 				5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */,
 				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
 				5E1D965022F0565E00CD332B /* RegisterBookAPI.swift in Sources */,
@@ -604,12 +628,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1D964C22F0428E00CD332B /* fetchBookListDataStoreTests.swift in Sources */,
-				5E8A657522F1461300C43436 /* detailBookDataStoreTests.swift in Sources */,
-				5E1D964422F035F200CD332B /* getSignUpDataStoreTests.swift in Sources */,
-				5ED6384322F021A6009184A8 /* getLogoutDataStoreTests.swift in Sources */,
-				5E18E4CB22D9AEC600CFF52C /* getLoginDataStoreTests.swift in Sources */,
-				5E8A656D22F06B9A00C43436 /* registerBookDataStoreTests.swift in Sources */,
+				5E1D964C22F0428E00CD332B /* BookDataStoreTests.swift in Sources */,
+				5E18E4CB22D9AEC600CFF52C /* AccountDataStoreTests.swift in Sources */,
 				5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,6 +714,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -748,6 +769,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -756,7 +778,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -768,6 +792,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabezawa.RxBookManager-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -777,7 +802,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -789,6 +816,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabezawa.RxBookManager-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
