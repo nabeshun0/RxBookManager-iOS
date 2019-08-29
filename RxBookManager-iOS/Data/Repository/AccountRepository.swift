@@ -10,36 +10,25 @@ import APIKit
 import RxSwift
 
 protocol AccountRepository {
-    func login(_ params: LoginModel) -> Single<LoginAPI.Response>
-    func signup(_ params: SignUpModel) -> Single<SignUpAPI.Response>
-    func logout() -> Single<LogoutAPI.Response>
+    func login(_ params: LoginModel) -> Observable<LoginAPI.Response>
+    func signup(_ params: SignUpModel) -> Observable<SignUpAPI.Response>
+    func logout() -> Observable<LogoutAPI.Response>
 }
 
-final class AcoountRepositoryImpl: AccountRepository {
-    static let shared = AcoountRepositoryImpl()
+final class AccountRepositoryImpl: AccountRepository {
+    static let shared = AccountRepositoryImpl()
 
     private let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
 
-    func login(_ params: LoginModel) -> Single<LoginAPI.Response> {
+    func login(_ params: LoginModel) -> Observable<LoginAPI.Response> {
         return dataStore.login(login: params)
-            .do(onSuccess: { result in
-                // TODO: - userdefaultに保存
-                print(result.result.token)
-            })
     }
 
-    func signup(_ params: SignUpModel) -> Single<SignUpAPI.Response> {
+    func signup(_ params: SignUpModel) -> Observable<SignUpAPI.Response> {
         return dataStore.signUp(signUp: params)
-            .do(onSuccess: { result in
-                // TODO: - userdefaultに保存
-                print(result.result.token)
-            })
     }
 
-    func logout() -> Single<LogoutAPI.Response> {
+    func logout() -> Observable<LogoutAPI.Response> {
         return dataStore.logout()
-            .do(onSuccess: { result in
-                // TODO: - userdefaltのToken削除
-            })
     }
 }
