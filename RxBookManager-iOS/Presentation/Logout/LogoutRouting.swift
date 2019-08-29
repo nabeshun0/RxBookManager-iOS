@@ -6,4 +6,18 @@
 //  Copyright © 2019 nabezawa. All rights reserved.
 //
 
+import UIKit
 import Foundation
+
+protocol LogoutRouting: RoutingType {
+    func showLogin()
+}
+
+final class LogoutRoutingImpl: LogoutRouting {
+
+    weak var viewcontroller: UIViewController?
+
+    func showLogin() {
+
+    }
+}
