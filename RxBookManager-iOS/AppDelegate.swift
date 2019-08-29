@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            window?.rootViewController = UINavigationController(rootViewController: firstScreen)
 //        }
         let firstScreen = LoginViewController()
-        window?.rootViewController = firstScreen
+        window?.rootViewController = UINavigationController(rootViewController: firstScreen)
         return true
     }
 
