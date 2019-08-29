@@ -11,6 +11,8 @@
 		5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */; };
 		5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C42317FBF600F917D8 /* SplashRouting.swift */; };
 		5B3D95C7231808ED00F917D8 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C6231808ED00F917D8 /* UIAlertController+Extensions.swift */; };
+		5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D95C823180C1000F917D8 /* RxRelay.framework */; };
+		5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */; };
 		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
@@ -50,7 +52,6 @@
 		5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657022F13AA900C43436 /* DetailBookAPI.swift */; };
 		5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
-		5EC81D9D22C5CD1D005B74E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
@@ -91,6 +92,8 @@
 		5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		5B3D95C42317FBF600F917D8 /* SplashRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouting.swift; sourceTree = "<group>"; };
 		5B3D95C6231808ED00F917D8 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		5B3D95C823180C1000F917D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -162,9 +165,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */,
+				5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */,
 				5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */,
 				5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */,
-				5EC81D9D22C5CD1D005B74E1 /* Result.framework in Frameworks */,
 				5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +291,8 @@
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */,
+				5B3D95C823180C1000F917D8 /* RxRelay.framework */,
 				5E885BE022C5A77C00C9B547 /* RxCocoa.framework */,
 				5E885BDE22C5A76200C9B547 /* RxSwift.framework */,
 				5E885BDC22C5A74200C9B547 /* Result.framework */,
@@ -571,9 +577,10 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputFileListPaths = (
