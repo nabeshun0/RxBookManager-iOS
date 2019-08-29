@@ -2,6 +2,7 @@
 import UIKit
 import ObjectiveC
 import MBProgressHUD
+import RxSwift
 
 //==================================================
 // MARK: - キーボードイベント
@@ -106,5 +107,17 @@ extension UIViewController {
         } else {
             MBProgressHUD.hide(for: self.view, animated: true)
         }
+    }
+}
+
+extension UIViewController {
+    func createAlert(message: String) {
+        UIAlertController
+            .showDialog(from: self,
+                        title: "",
+                        message: me,
+                        cancelAction: AlertAction.okay)
+        .subscribe()
+        .disposed(by: DisposeBag())
     }
 }

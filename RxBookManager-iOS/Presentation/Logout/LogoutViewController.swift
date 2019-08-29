@@ -23,6 +23,12 @@ final class LogoutViewController: UIViewController {
         return button
     }()
 
+    private lazy var routing: LogoutRouting = {
+        let routing = LogoutRoutingImpl()
+        routing.self
+        return routing
+    }()
+
     private var viewModel: LogoutViewModel
 
     private let disposeBag: DisposeBag = .init()
@@ -68,9 +74,8 @@ final class LogoutViewController: UIViewController {
 
 
         output.error
-            .subscribe(onNext: { error in
-                print(error.localizedDescription)
-                // MARK: ー アラート表示
+            .subscribe(onNext: { [weak self] error in
+                self?.createAlert(message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
 }
