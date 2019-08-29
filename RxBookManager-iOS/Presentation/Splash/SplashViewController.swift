@@ -21,7 +21,6 @@ final class SplashViewController: UIViewController {
         // MARK: - 起動処理
         // Splashのアニメーション
 
-        //routing.viewController = self
         title = "Splash"
         view.backgroundColor = .white
 
