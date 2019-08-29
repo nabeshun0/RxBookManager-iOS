@@ -10,14 +10,18 @@ import UIKit
 
 final class SplashViewController: UIViewController {
 
-    private let routing = SplashRoutingImpl()
+    private lazy var routing: SplashRouting = {
+        let routing = SplashRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - 起動処理
         // Splashのアニメーション
 
-        routing.viewController = self
+        //routing.viewController = self
         title = "Splash"
         view.backgroundColor = .white
 
