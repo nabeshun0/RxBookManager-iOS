@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol RoutingType {
-    var viewcontroller: UIViewController? { get }
+    var viewController: UIViewController? { get set }
 }

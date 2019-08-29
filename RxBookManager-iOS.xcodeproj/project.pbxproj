@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */; };
+		5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */; };
+		5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C42317FBF600F917D8 /* SplashRouting.swift */; };
 		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
@@ -85,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		5B3D95C42317FBF600F917D8 /* SplashRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouting.swift; sourceTree = "<group>"; };
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -177,6 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3D95C12317FBB600F917D8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */,
+				5B3D95C42317FBF600F917D8 /* SplashRouting.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		5BAF50CB2316C35C00584FB1 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +331,7 @@
 		5EFCE19222C637EF004B8D3C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5B3D95C12317FBB600F917D8 /* Splash */,
 				5EFCE19B22C7213B004B8D3C /* Login */,
 				5EFCE1A022C722BD004B8D3C /* SignUp */,
 				5EFCE19C22C721E3004B8D3C /* MainTab */,
@@ -593,6 +607,7 @@
 				5E1D964A22F03F5900CD332B /* FetchBookListEntity.swift in Sources */,
 				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
 				5E20CCD522D23E920000DB4F /* Constants.swift in Sources */,
+				5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */,
 				5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
@@ -622,6 +637,7 @@
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
 				5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */,
+				5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */,
 				5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */,
 				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
 				5E1D965022F0565E00CD332B /* RegisterBookAPI.swift in Sources */,
