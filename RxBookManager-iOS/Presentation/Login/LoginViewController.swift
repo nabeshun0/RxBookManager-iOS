@@ -7,9 +7,15 @@ class LoginViewController: UIViewController {
     // MARK: - Presentation
     //==================================================
 
-    private lazy var emailLabel: UILabel = {
+    private let emailLabel: UILabel = {
         let label = UILabel()
         label.text = "メールアドレス"
+        return label
+    }()
+
+    private let passwordLabel: UILabel = {
+        let label = UILabel()
+        label.text = "パスワード"
         return label
     }()
 
@@ -22,12 +28,6 @@ class LoginViewController: UIViewController {
         return textField
     }()
 
-    private lazy var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "パスワード"
-        return label
-    }()
-
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "テキスト入力"
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
 
-    private lazy var loginButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("ログイン", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    private lazy var signupButton: UIButton = {
+    private let signupButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("新規作成", for: .normal)
         button.setTitleColor(.black, for: .normal)
