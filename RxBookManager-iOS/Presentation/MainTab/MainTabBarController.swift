@@ -24,7 +24,7 @@ final class MainTabBarController: UITabBarController {
 
 struct LogoutViewControllerFactory {
     static func createInstance() -> UINavigationController {
-        let dependency = AccountRepositoryImpl()
+        let dependency = AccountRepositoryImpl.shared
         let viewModel = LogoutViewModel(dependency: dependency)
         let vc = LogoutViewController(viewModel: viewModel)
         vc.tabBarItem = UITabBarItem(title: "設定", image: nil, tag: 2)
