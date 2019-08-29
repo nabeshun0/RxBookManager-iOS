@@ -1,6 +1,7 @@
 // 参考: https://medium.com/@kmlong1183/extension-approach-to-keeping-uitextfields-in-sight-9fe8695c2ac6
 import UIKit
 import ObjectiveC
+import MBProgressHUD
 
 //==================================================
 // MARK: - キーボードイベント
@@ -91,5 +92,19 @@ extension UIViewController: UITextFieldDelegate {
 
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+}
+
+//==================================================
+// MARK: - ローディング
+//==================================================
+
+extension UIViewController {
+    func setIndicator(show: Bool) {
+        if show {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        } else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
     }
 }
