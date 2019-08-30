@@ -115,7 +115,7 @@ extension UIViewController {
         UIAlertController
             .showDialog(from: self,
                         title: "",
-                        message: me,
+                        message: message,
                         cancelAction: AlertAction.okay)
         .subscribe()
         .disposed(by: DisposeBag())

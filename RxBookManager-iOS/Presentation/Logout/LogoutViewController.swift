@@ -25,7 +25,7 @@ final class LogoutViewController: UIViewController {
 
     private lazy var routing: LogoutRouting = {
         let routing = LogoutRoutingImpl()
-        routing.self
+        routing.viewController = self
         return routing
     }()
 
