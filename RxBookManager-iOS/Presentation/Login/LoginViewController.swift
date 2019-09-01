@@ -67,10 +67,19 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    private var viewModel: LoginViewModel
+    @objc func showSignUp() {
+        routing.showSignUp()
+    }
 
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
+    //==================================================
+    // MARK: - Routing
+    //==================================================
+
+    private lazy var routing: LoginRouting = {
+        let routing = LoginRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
 
     //==================================================
     // MARK: - Rx
