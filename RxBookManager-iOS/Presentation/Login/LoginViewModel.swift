@@ -1,17 +1,7 @@
-//
-//  LoginViewModel.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
-
 import RxSwift
 import APIKit
 
 final class LoginViewModel {
-
-    private let disposeBag = DisposeBag()
 
     private let dependency: AccountRepository
 
@@ -30,6 +20,31 @@ extension LoginViewModel {
     }
 
     struct OutPut {
+        let result: Observable<LoginAPI.Response>
+        let error: Observable<Error>
+        let isValid: Observable<Bool>
+    }
 
+    func transform(input: Input) -> OutPut {
+
+        let emailTextRelay = input.emailText
+            .filter { $0.count >= 6 }
+            .map { !$0.isEmpty }
+
+        let passwordRelay = input.passwordText
+            .filter { $0.count >= 6 }
+            .map { !$0.isEmpty }
+
+        let isValid = Observable.combineLatest(emailTextRelay, passwordRelay) { $0 && $1 }
+        let parameter = Observable.combineLatest(input.emailText, input.passwordText)
+
+        let response = input.didLoginButtonTapped
+            .withLatestFrom(parameter)
+            .flatMap { param -> Observable<LoginAPI.Response> in
+                let loginModel = LoginModel(email: param.0, password: param.1)
+                return self.dependency.login(loginModel)
+        }.materialize().share(replay: 1)
+
+        return OutPut(result: response.elements(), error: response.errors(), isValid: isValid)
     }
 }
