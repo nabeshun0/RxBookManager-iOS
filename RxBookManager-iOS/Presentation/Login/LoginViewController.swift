@@ -64,13 +64,8 @@ class LoginViewController: UIViewController {
         button.setTitle("新規作成", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
-        button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return button
     }()
-
-    @objc func showSignUp() {
-        routing.showSignUp()
-    }
 
     //==================================================
     // MARK: - Routing
@@ -152,6 +147,10 @@ extension LoginViewController {
 
         output.error.subscribe(onNext: { [weak self] error in
             self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+
+        signupButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.routing.showSignUp()
         }).disposed(by: disposeBag)
     }
 }
