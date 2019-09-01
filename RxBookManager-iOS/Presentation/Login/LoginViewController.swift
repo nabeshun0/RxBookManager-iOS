@@ -1,7 +1,20 @@
 import UIKit
 import APIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
+
+    private var viewModel: LoginViewModel
+
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //==================================================
     // MARK: - Presentation
@@ -50,6 +63,7 @@ class LoginViewController: UIViewController {
         button.setTitle("新規作成", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
+        button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return button
     }()
 
@@ -58,12 +72,11 @@ class LoginViewController: UIViewController {
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
 
-        super.init(nibName: nil, bundle: nil)
-    }
+    //==================================================
+    // MARK: - Rx
+    //==================================================
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let disposeBag: DisposeBag = .init()
 
     //==================================================
     // MARK: - UIViewController override
@@ -73,7 +86,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "ログイン"
+        loginButton.isHidden = true
         setupUI()
+        bindUI()
     }
 }
 
@@ -113,5 +128,22 @@ extension LoginViewController {
             .forEach {
                 $0.isActive = true
         }
+    }
+
+    private func bindUI() {
+        let input = LoginViewModel.Input(didLoginButtonTapped: loginButton.rx.tap.asObservable(), didSignupButtonTapped: signupButton.rx.tap.asObservable(), emailText: emailTextField.rx.text.orEmpty.asObservable(), passwordText: passwordTextField.rx.text.orEmpty.asObservable())
+        let output = viewModel.transform(input: input)
+        output.isValid.subscribe { [weak self] (bool) in
+            // ログインボタンを表示
+            self?.loginButton.isHidden = false
+        }.disposed(by: disposeBag)
+
+        output.result.subscribe(onNext: { [weak self] _ in
+            self?.routing.showMainTab()
+        }).disposed(by: disposeBag)
+
+        output.error.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
     }
 }
