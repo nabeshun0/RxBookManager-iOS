@@ -27,13 +27,13 @@ extension LoginViewModel {
 
     func transform(input: Input) -> OutPut {
 
-        let emailTextRelay = input.emailText
-            .filter { $0.count >= 6 }
-            .map { !$0.isEmpty }
+        let emailTextRelay = input.emailText.map {
+            $0.count >= 6
+        }
 
-        let passwordRelay = input.passwordText
-            .filter { $0.count >= 6 }
-            .map { !$0.isEmpty }
+        let passwordRelay = input.passwordText.map {
+            $0.count >= 6
+        }
 
         let isValid = Observable.combineLatest(emailTextRelay, passwordRelay) { $0 && $1 }
         let parameter = Observable.combineLatest(input.emailText, input.passwordText)

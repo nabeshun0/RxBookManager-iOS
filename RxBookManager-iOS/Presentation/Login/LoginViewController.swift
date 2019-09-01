@@ -55,6 +55,7 @@ class LoginViewController: UIViewController {
         button.setTitle("ログイン", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
+        button.isHidden = true
         return button
     }()
 
@@ -95,7 +96,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "ログイン"
-        loginButton.isHidden = true
         setupUI()
         bindUI()
     }
@@ -142,10 +142,9 @@ extension LoginViewController {
     private func bindUI() {
         let input = LoginViewModel.Input(didLoginButtonTapped: loginButton.rx.tap.asObservable(), didSignupButtonTapped: signupButton.rx.tap.asObservable(), emailText: emailTextField.rx.text.orEmpty.asObservable(), passwordText: passwordTextField.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input: input)
-        output.isValid.subscribe { [weak self] (bool) in
-            // ログインボタンを表示
-            self?.loginButton.isHidden = false
-        }.disposed(by: disposeBag)
+        output.isValid.subscribe(onNext: { [weak self] bool in
+            self?.loginButton.isHidden = !bool
+        }).disposed(by: disposeBag)
 
         output.result.subscribe(onNext: { [weak self] _ in
             self?.routing.showMainTab()
