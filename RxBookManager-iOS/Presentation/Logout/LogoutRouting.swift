@@ -1,11 +1,3 @@
-//
-//  LogoutRouting.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
-
 import UIKit
 import Foundation
 
@@ -18,6 +10,16 @@ final class LogoutRoutingImpl: LogoutRouting {
     weak var viewController: UIViewController?
 
     func showLogin() {
+        let vc = LoginViewControllerFactory.createInstance()
+        viewController?.present(vc, animated: true)
+    }
+}
 
+struct LoginViewControllerFactory {
+    static func createInstance() -> UINavigationController {
+        let dependency = AccountRepositoryImpl.shared
+        let viewModel = LoginViewModel(dependency: dependency)
+        let vc = LoginViewController(viewModel: viewModel)
+        return UINavigationController(rootViewController: vc)
     }
 }
