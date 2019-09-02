@@ -1,11 +1,3 @@
-//
-//  LogoutViewController.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RxSwift
@@ -68,8 +60,8 @@ final class LogoutViewController: UIViewController {
         let output = viewModel.transform(input: input)
 
         output.result
-            .subscribe(onNext: { _ in
-                // MARK: - 遷移処理
+            .subscribe(onNext: { [weak self] _ in
+                self?.routing.showLogin()
             }).disposed(by: disposeBag)
 
 

@@ -1,9 +1,16 @@
-//
-//  SignUpRouting.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
+import UIKit
 
-import Foundation
+protocol SignUpRouting: RoutingType {
+    func showMainTab()
+}
+
+final class SignUpRoutingImpl: SignUpRouting {
+
+    var viewController: UIViewController?
+
+    func showMainTab() {
+        let mainTabVC = MainTabBarController()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.window?.rootViewController = mainTabVC
+    }
+}
