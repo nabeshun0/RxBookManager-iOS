@@ -1,11 +1,3 @@
-//
-//  UIAlertController+Extensions.swift
-//  RxBookManager-iOS
-//
-//  Created by Iichiro Kawashima on 2019/08/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RxSwift
@@ -44,9 +36,7 @@ extension UIAlertController {
 
             viewController.present(alert, animated: true)
 
-            return Disposables.create {
-                alert.dismiss(animated: false)
-            }
+            return Disposables.create()
         }
     }
 }
