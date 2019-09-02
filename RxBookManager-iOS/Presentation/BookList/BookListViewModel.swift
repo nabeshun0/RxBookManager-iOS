@@ -1,9 +1,22 @@
-//
-//  BookListViewModel.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
+import RxSwift
+import APIKit
 
-import Foundation
+final class BookListViewModel {
+
+    private let dependency: BookRepository
+
+    init(dependency: BookRepository) {
+        self.dependency = dependency
+    }
+}
+
+extension BookListViewModel {
+
+    struct Input {
+        
+    }
+
+    struct Output {
+
+    }
+}
