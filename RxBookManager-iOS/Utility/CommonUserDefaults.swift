@@ -8,6 +8,10 @@ final class CommmonUserDefaults {
     static func saveToken(value: String) {
         saveString(value: value, key: "token")
     }
+
+    static func clearToken() {
+        saveString(value: "", key: "token")
+    }
 }
 
 extension CommmonUserDefaults {
