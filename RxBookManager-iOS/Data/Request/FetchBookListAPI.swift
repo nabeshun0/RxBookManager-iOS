@@ -12,10 +12,7 @@ final class FetchBookListAPI {
         var fetchBookListModel: FetchBookListModel
 
         var headerFields: [String: String] {
-            #warning("✅【実装予定】UserDefalutsに保存したtokenを取得する")
-            guard let accessToken = Optional("") else {
-                return [:] }
-            return ["Authorization": accessToken]
+            return ["Authorization": CommmonUserDefaults.getToken()]
         }
 
         var method: HTTPMethod {
