@@ -52,6 +52,7 @@
 		5E8A656F22F13A8E00C43436 /* DetailBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A656E22F13A8E00C43436 /* DetailBookModel.swift */; };
 		5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657022F13AA900C43436 /* DetailBookAPI.swift */; };
 		5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */; };
+		5EA88524231D313300BA017E /* CommonUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA88523231D313300BA017E /* CommonUserDefaults.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
@@ -143,6 +144,7 @@
 		5E8A656E22F13A8E00C43436 /* DetailBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookModel.swift; sourceTree = "<group>"; };
 		5E8A657022F13AA900C43436 /* DetailBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookAPI.swift; sourceTree = "<group>"; };
 		5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookEntity.swift; sourceTree = "<group>"; };
+		5EA88523231D313300BA017E /* CommonUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonUserDefaults.swift; path = "RxBookManager-iOS/Utility/CommonUserDefaults.swift"; sourceTree = SOURCE_ROOT; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
 		5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		5EFCE19322C63808004B8D3C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5EA88523231D313300BA017E /* CommonUserDefaults.swift */,
 				5EFCE1A322C72682004B8D3C /* Consts */,
 				5EFCE1A222C72595004B8D3C /* Extension */,
 			);
@@ -626,6 +629,7 @@
 				5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */,
+				5EA88524231D313300BA017E /* CommonUserDefaults.swift in Sources */,
 				5E1367EA22C77E39006E5475 /* Session+Extensions.swift in Sources */,
 				5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
