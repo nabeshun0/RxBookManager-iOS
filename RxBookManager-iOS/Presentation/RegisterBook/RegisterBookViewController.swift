@@ -241,5 +241,3 @@ extension RegisterBookViewController: UINavigationControllerDelegate, UIImagePic
         picker.dismiss(animated: true)
     }
 }
-
-extension RegisterBookViewController: ImageConvertable {}

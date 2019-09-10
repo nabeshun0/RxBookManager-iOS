@@ -234,5 +234,3 @@ extension DetailBookViewController: UINavigationControllerDelegate, UIImagePicke
         picker.dismiss(animated: true)
     }
 }
-
-extension DetailBookViewController: ImageConvertable {}
