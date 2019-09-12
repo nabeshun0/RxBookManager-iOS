@@ -4,6 +4,7 @@ import APIKit
 
 final class RegisterBookViewController: UIViewController {
 
+    let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
     //==================================================
     // MARK: - Presentation
     //==================================================
@@ -233,9 +234,10 @@ extension RegisterBookViewController: UINavigationControllerDelegate, UIImagePic
     @objc func registerImage() {
         present(imagePicker, animated: true)
     }
-    // ピックした画像をimageViewに配置
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageSubject.onNext(pickedImage)
         bookImageView.image = pickedImage
         picker.dismiss(animated: true)
     }
