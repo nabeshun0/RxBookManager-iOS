@@ -160,11 +160,10 @@ final class RegisterBookViewController: UIViewController {
     }
 
     //==================================================
-    // MARK: - Routing
+    // MARK: - Rx
     //==================================================
 
-    //    private lazy var routing: SignUpRouting = {
-    //
+    private let disposeBag: DisposeBag = .init()
     //    }
 
     //==================================================
