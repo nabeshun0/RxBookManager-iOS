@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class BookListTableViewCell: UITableViewCell {
 
@@ -14,6 +15,7 @@ class BookListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+            Nuke.loadImage(with: URL(string: image)!, into: bookImage)
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
