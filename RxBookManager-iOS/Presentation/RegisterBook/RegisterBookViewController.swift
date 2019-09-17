@@ -243,17 +243,24 @@ extension RegisterBookViewController {
 
         let output = viewModel.transform(input: input)
 
-        output.isValid.subscribe(onNext: { [weak self] bool in
+        output.isValid
+            .subscribe(onNext: { [weak self] bool in
             self?.saveButton.isEnabled = bool
             let systemBlueColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
             self?.saveButton.tintColor = bool ? systemBlueColor : UIColor(white: 0, alpha: 0)
         }).disposed(by: disposeBag)
 
-        output.result.subscribe(onNext: { [weak self] _ in
+        output.result
+            .do(onNext: { [weak self]value in
+                self?.setIndicator(show: true)
+            })
+            .subscribe(onNext: { [weak self] _ in
+            self?.setIndicator(show: false)
             self?.dismiss(animated: true)
         }).disposed(by: disposeBag)
 
-        output.error.subscribe(onNext: { [weak self] error in
+        output.error
+            .subscribe(onNext: { [weak self] error in
             self?.createAlert(message: error.localizedDescription)
         }).disposed(by: disposeBag)
     }
