@@ -35,7 +35,14 @@ extension RegisterBookViewModel {
             .filter{ !$0.isEmpty }
             .compactMap { Int($0) }
 
-        let priceTextBoolRelay = input.priceText.map { !$0.isEmpty }
+        let priceTextBoolRelay = input.priceText
+            .filter { !$0.isEmpty }
+            .map { priceStr -> Bool in
+            guard let _ = Int(priceStr) else {
+                return false
+            }
+            return true
+        }
 
         let purchaseDateTextReray = input.purchaseDateText.map { !$0.isEmpty }
 
