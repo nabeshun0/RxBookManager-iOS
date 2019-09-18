@@ -41,7 +41,7 @@ final class BookListViewController: UIViewController {
         tableView.rowHeight = Constants.Size.tableViewRowHeight
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: String(describing: BookListTableViewCell.self))
+        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: BookListTableViewCell.className)
         return tableView
     }()
 
@@ -173,9 +173,10 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // cellの生成
-        guard let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: BookListTableViewCell.self), for: indexPath) as? BookListTableViewCell else { return UITableViewCell() }
-        //        cell.accessoryType = .disclosureIndicator
-        //        cell.configureWithBook(book: books[indexPath.item])
+         let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: BookListTableViewCell.className, for: indexPath) as! BookListTableViewCell
+
+        cell.accessoryType = .disclosureIndicator
+        cell.configureWithBook(book: viewModel.books[indexPath.item])
         return cell
     }
 
