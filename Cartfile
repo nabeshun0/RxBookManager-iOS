@@ -2,3 +2,4 @@ github "ishkawa/APIKit"
 github "ReactiveX/RxSwift"
 github "jdg/MBProgressHUD" ~> 1.1.0
 github "kean/Nuke" ~> 8.0
+github "airbnb/lottie-ios" "master"

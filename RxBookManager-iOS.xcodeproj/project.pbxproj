@@ -45,6 +45,7 @@
 		5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE522D2D6230000DB4F /* AppRequestType.swift */; };
 		5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* BookDataStore.swift */; };
 		5E614D2A2330FDB7009AC7C6 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E614D292330FDB7009AC7C6 /* Nuke.framework */; };
+		5E614D2C2331D664009AC7C6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E614D2B2331D663009AC7C6 /* Lottie.framework */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
@@ -128,6 +129,7 @@
 		5E20CCE522D2D6230000DB4F /* AppRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestType.swift; sourceTree = "<group>"; };
 		5E31992E22D6D3D200DA5072 /* BookDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataStore.swift; sourceTree = "<group>"; };
 		5E614D292330FDB7009AC7C6 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		5E614D2B2331D663009AC7C6 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E614D2C2331D664009AC7C6 /* Lottie.framework in Frameworks */,
 				5E614D2A2330FDB7009AC7C6 /* Nuke.framework in Frameworks */,
 				5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */,
 				5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */,
@@ -294,6 +297,7 @@
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E614D2B2331D663009AC7C6 /* Lottie.framework */,
 				5E614D292330FDB7009AC7C6 /* Nuke.framework */,
 				5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */,
 				5B3D95C823180C1000F917D8 /* RxRelay.framework */,
@@ -586,6 +590,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputFileListPaths = (
