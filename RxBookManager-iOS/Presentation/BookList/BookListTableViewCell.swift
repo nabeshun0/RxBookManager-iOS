@@ -43,6 +43,8 @@ class BookListTableViewCell: UITableViewCell {
         titleLabel.text = book.name
         if let image = book.image {
             Nuke.loadImage(with: URL(string: image)!, into: bookImage)
+        } else {
+            bookImage.image = #imageLiteral(resourceName: "bookIcon")
         }
 
         if let price = book.price {
