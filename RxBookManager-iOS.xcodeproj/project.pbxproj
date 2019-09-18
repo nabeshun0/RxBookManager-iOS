@@ -57,6 +57,7 @@
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
+		5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ED32C3B2332580200D243AC /* 9477-fox.json */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
 		5EEDA4E52303F35B000E7E93 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */; };
@@ -146,6 +147,7 @@
 		5E8A657022F13AA900C43436 /* DetailBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookAPI.swift; sourceTree = "<group>"; };
 		5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookEntity.swift; sourceTree = "<group>"; };
 		5EA88523231D313300BA017E /* CommonUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonUserDefaults.swift; path = "RxBookManager-iOS/Utility/CommonUserDefaults.swift"; sourceTree = SOURCE_ROOT; };
+		5ED32C3B2332580200D243AC /* 9477-fox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9477-fox.json"; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
 		5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */,
 				5B3D95C42317FBF600F917D8 /* SplashRouting.swift */,
+				5ED32C3B2332580200D243AC /* 9477-fox.json */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
+				5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

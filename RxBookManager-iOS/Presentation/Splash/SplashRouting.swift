@@ -20,6 +20,6 @@ final class SplashRoutingImpl: SplashRouting {
         let viewModel = LoginViewModel(dependency: dependency)
         let vc = LoginViewController(viewModel: viewModel)
         let nc = UINavigationController(rootViewController: vc)
-        viewController?.present(nc, animated: false)
+        viewController?.present(nc, animated: true)
     }
 }
