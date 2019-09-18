@@ -32,7 +32,7 @@ final class BookListViewController: UIViewController {
     }
 
     private lazy var addButton: UIBarButtonItem = {
-        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showAddBookVC))
+        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showRegisterBookVC))
         return addButton
     }()
 
