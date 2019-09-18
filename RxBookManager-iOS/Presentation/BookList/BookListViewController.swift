@@ -15,7 +15,6 @@ final class BookListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     //==================================================
     // MARK: - Presentation
     //==================================================
@@ -94,19 +93,6 @@ final class BookListViewController: UIViewController {
         setupNavItem()
         bindUI()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        // テーブルビューをリフレッシュ
-        activityIndicator.startAnimating()
-        //        books = []
-        tableView.reloadData()
-        currentPage = Constants.Api.currentPageNum
-        //        sendRequest(limit: limit, page: currentPage)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        activityIndicator.stopAnimating()
-    }
 }
 
 extension BookListViewController {
@@ -132,7 +118,6 @@ extension BookListViewController {
             .forEach {
                 $0.isActive = true
         }
-
     }
 
     private func setupNavItem() {
@@ -195,30 +180,3 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
         routing.showDetailBookVC()
     }
 }
-
-//
-//    private func sendRequest(limit: Int, page: Int) {
-//        DispatchQueue.global(qos: .default).async {
-//            Session.send(BookListRequest(limit: limit, page: page), handler: { (result) in
-//                switch result {
-//                case .success(let response):
-//                    response.result.forEach({ data in
-//                        self.books.append(data)
-//                    })
-//                    self.tableView.reloadData()
-//                case .failure(.requestError(let APIError as APIError)):
-//                    print(APIError.message)
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            })
-//        }
-//    }
-//
-//    @objc private func fetchPage() {
-//        currentPage += 1
-//        sendRequest(limit: limit, page: currentPage)
-//    }
-
-
-
