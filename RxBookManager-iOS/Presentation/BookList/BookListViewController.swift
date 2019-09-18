@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import RxSwift
 
 final class BookListViewController: UIViewController {
 
@@ -77,6 +78,12 @@ final class BookListViewController: UIViewController {
     }()
 
     //==================================================
+    // MARK: - Rx
+    //==================================================
+
+    private let disposeBag: DisposeBag = .init()
+
+    //==================================================
     // MARK: - UIViewController override
     //==================================================
 
@@ -85,6 +92,7 @@ final class BookListViewController: UIViewController {
         view.backgroundColor = .white
         setupUI()
         setupNavItem()
+        bindUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -131,12 +139,36 @@ extension BookListViewController {
         title = "書籍一覧"
         navigationItem.rightBarButtonItem = addButton
     }
+
+    private func bindUI() {
+
+        let input = BookListViewModel.Input(didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(), viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).asObservable())
+
+        let output = viewModel.transform(input: input)
+
+        output.result.subscribe(onNext: { [weak self] result in
+            self?.viewModel.books += result.result
+            self?.tableView.reloadData()
+        }).disposed(by: disposeBag)
+
+        output.error.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+
+        output.firstResult.subscribe(onNext: { [weak self] result in
+            self?.viewModel.books += result.result
+            self?.tableView.reloadData()
+        }).disposed(by: disposeBag)
+
+        output.firstError.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //        return books.count
+        return viewModel.books.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
