@@ -18,6 +18,7 @@ extension DetailBookViewModel {
         let priceText: Observable<String>
         let purchaseDateText: Observable<String>
         let selectedImage: Observable<UIImage>
+        let id: Int
     }
 
     struct Output {
@@ -53,12 +54,10 @@ extension DetailBookViewModel {
         selectedImageRelay) {
         (name: $0, price: $1, purchaseDate: $2, imageStr: $3)}
 
-        let hogeId = 1
-
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<DetailBookAPI.Response>> in
-                let detailBookModel = DetailBookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: hogeId)
+                let detailBookModel = DetailBookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: input.id)
                 return self.dependency.updateBook(detailBookModel)
                 .materialize()
         }.share(replay: 1)

@@ -153,13 +153,13 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
          let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: BookListTableViewCell.className, for: indexPath) as! BookListTableViewCell
 
         cell.accessoryType = .disclosureIndicator
-        cell.configureWithBook(book: viewModel.books[indexPath.item])
+        cell.configureWithBook(book: viewModel.books[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let book = viewModel.books[indexPath.item]
+        let book = viewModel.books[indexPath.row]
         routing.showDetailBookVC(book: book)
     }
 }

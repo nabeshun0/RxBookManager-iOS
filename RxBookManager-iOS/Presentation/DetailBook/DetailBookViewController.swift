@@ -9,10 +9,11 @@ final class DetailBookViewController: UIViewController {
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    var book: Book?
+    private var book: Book?
 
-    init(viewModel: DetailBookViewModel) {
+    init(viewModel: DetailBookViewModel, book: Book) {
         self.viewModel = viewModel
+        self.book = book
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -183,17 +184,11 @@ final class DetailBookViewController: UIViewController {
         setupNavItem()
         setupObserver()
         bindUI()
-
-        guard let id = book?.id else { return }
-        guard let name = book?.name else { return }
-        guard let image = book?.image else { return }
-        guard let price = book?.price else { return }
-        guard let purchaseDate = book?.purchaseDate else { return }
-        bookNameTextField.text = name
-        priceTextField.text = String(price)
-        purchaseDateTextField.text = purchaseDate
-        Nuke.loadImage(with: URL(string: image)!, into: bookImageView)
-
+        bookNameTextField.text = book?.name ?? ""
+        priceTextField.text = String(book?.price ?? 0)
+        purchaseDateTextField.text = book?.purchaseDate ?? ""
+        guard let url = URL(string: book?.image ?? "") else { return }
+        Nuke.loadImage(with: url, into: bookImageView)
     }
 }
 
@@ -250,7 +245,7 @@ extension DetailBookViewController {
     }
 
     private func bindUI() {
-        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable())
+        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: book?.id ?? 0)
 
         let output = viewModel.transform(input: input)
 

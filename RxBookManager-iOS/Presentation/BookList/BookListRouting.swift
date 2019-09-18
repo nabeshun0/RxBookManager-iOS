@@ -17,8 +17,7 @@ final class BookListRoutingImpl: BookListRouting {
     }
 
     func showDetailBookVC(book: Book) {
-        let vc = DetailBookViewControllerFactory.createInstance()
-        vc.book = book
+        let vc = DetailBookViewControllerFactory.createInstance(book: book)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -33,9 +32,9 @@ struct RegisterBookViewControllerFactory {
 }
 
 struct DetailBookViewControllerFactory {
-    static func createInstance() -> DetailBookViewController {
+    static func createInstance(book: Book) -> DetailBookViewController {
         let dependency = BookRepositoryImpl.shared
         let viewModel = DetailBookViewModel(dependency: dependency)
-        return DetailBookViewController(viewModel: viewModel)
+        return DetailBookViewController(viewModel: viewModel, book: book)
     }
 }
