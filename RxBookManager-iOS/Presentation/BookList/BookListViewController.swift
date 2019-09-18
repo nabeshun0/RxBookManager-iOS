@@ -61,19 +61,20 @@ final class BookListViewController: UIViewController {
         return activityIndicator
     }()
 
-    @objc private func showAddBookVC() {
-        let registerBookView = RegisterBookViewController()
-        let navi = UINavigationController(rootViewController: registerBookView)
-        present(navi, animated: true)
+    @objc private func showRegisterBookVC() {
+        routing.showRegisterBookVC()
     }
 
     //==================================================
     // MARK: - Routing
     //==================================================
 
-    //    private lazy var routing: SignUpRouting = {
-    //
-    //    }
+    private lazy var routing: BookListRouting = {
+        let routing = BookListRoutingImpl()
+        routing.viewController = self
+        routing.navigationController = self.navigationController
+        return routing
+    }()
 
     //==================================================
     // MARK: - UIViewController override
@@ -158,8 +159,7 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
         //        AuthManager.setBook(price, forKey: Constants.Api.price)
         //        AuthManager.setBook(purchaseDate, forKey: Constants.Api.purchaseDate)
         //        AuthManager.userDefault.synchronize()
-                let detailBookView = DetailBookViewController()
-                navigationController?.pushViewController(detailBookView, animated: true)
+        routing.showDetailBookVC()
     }
 }
 
