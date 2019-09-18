@@ -5,6 +5,9 @@ import RxSwift
 final class DetailBookViewController: UIViewController {
 
     private var viewModel: DetailBookViewModel
+
+    private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
+
     init(viewModel: DetailBookViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -258,9 +261,10 @@ extension DetailBookViewController: UINavigationControllerDelegate, UIImagePicke
     @objc func registerImage() {
         present(imagePicker, animated: true)
     }
-    // ピックした画像をimageViewに配置
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageSubject.onNext(pickedImage)
         bookImageView.image = pickedImage
         picker.dismiss(animated: true)
     }
