@@ -2,7 +2,7 @@ import UIKit
 
 protocol BookListRouting: RoutingType {
     func showRegisterBookVC()
-    func showDetailBookVC()
+    func showDetailBookVC(book: Book)
 }
 
 final class BookListRoutingImpl: BookListRouting {
@@ -16,8 +16,9 @@ final class BookListRoutingImpl: BookListRouting {
         viewController?.present(vc, animated: true)
     }
 
-    func showDetailBookVC() {
+    func showDetailBookVC(book: Book) {
         let vc = DetailBookViewControllerFactory.createInstance()
+        vc.book = book
         navigationController?.pushViewController(vc, animated: true)
     }
 }

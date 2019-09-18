@@ -1,12 +1,15 @@
 import UIKit
 import APIKit
 import RxSwift
+import Nuke
 
 final class DetailBookViewController: UIViewController {
 
     private var viewModel: DetailBookViewModel
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
+
+    var book: Book?
 
     init(viewModel: DetailBookViewModel) {
         self.viewModel = viewModel
@@ -180,6 +183,17 @@ final class DetailBookViewController: UIViewController {
         setupNavItem()
         setupObserver()
         bindUI()
+
+        guard let id = book?.id else { return }
+        guard let name = book?.name else { return }
+        guard let image = book?.image else { return }
+        guard let price = book?.price else { return }
+        guard let purchaseDate = book?.purchaseDate else { return }
+        bookNameTextField.text = name
+        priceTextField.text = String(price)
+        purchaseDateTextField.text = purchaseDate
+        Nuke.loadImage(with: URL(string: image)!, into: bookImageView)
+
     }
 }
 

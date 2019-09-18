@@ -19,16 +19,8 @@ final class BookListViewController: UIViewController {
     // MARK: - Presentation
     //==================================================
 
-    //    private var books: [BookListResponse.Book] = []
     private var limit = Constants.Api.limitPageNum
     private var currentPage = Constants.Api.currentPageNum
-
-    struct Book {
-        let bookImage: UIImage?
-        let bookTitle: UILabel?
-        let bookPrice: UILabel?
-        let bookID: UILabel?
-    }
 
     private lazy var addButton: UIBarButtonItem = {
         let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showRegisterBookVC))
@@ -167,16 +159,7 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //        let book = books[indexPath.item]
-        //        let image = book.image ?? Constants.emptyString
-        //        let price = book.price ?? Constants.emptyInt
-        //        let purchaseDate = book.purchaseDate ?? Constants.emptyString
-        //        AuthManager.setBook(book.id, forKey: Constants.Api.id)
-        //        AuthManager.setBook(book.name, forKey: Constants.Api.name)
-        //        AuthManager.setBook(image, forKey: Constants.Api.image)
-        //        AuthManager.setBook(price, forKey: Constants.Api.price)
-        //        AuthManager.setBook(purchaseDate, forKey: Constants.Api.purchaseDate)
-        //        AuthManager.userDefault.synchronize()
-        routing.showDetailBookVC()
+        let book = viewModel.books[indexPath.item]
+        routing.showDetailBookVC(book: book)
     }
 }
