@@ -168,6 +168,16 @@ final class DetailBookViewController: UIViewController {
     }
 
     //==================================================
+    // MARK: - Routing
+    //==================================================
+
+    private lazy var routing: DetailBookRouting = {
+        let routing = DetaiBookRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
+
+    //==================================================
     // MARK: - Rx
     //==================================================
 
@@ -256,7 +266,7 @@ extension DetailBookViewController {
         }).disposed(by: disposeBag)
 
         output.result.subscribe(onNext: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
+            self?.routing.showBookListVC()
         }).disposed(by: disposeBag)
 
         output.error.subscribe(onNext: { [weak self] error in

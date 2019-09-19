@@ -60,6 +60,7 @@
 		5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ED32C3B2332580200D243AC /* 9477-fox.json */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
+		5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE97BD923332CD40048F422 /* DetailBookRouting.swift */; };
 		5EEDA4E52303F35B000E7E93 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */; };
 		5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
@@ -150,6 +151,7 @@
 		5ED32C3B2332580200D243AC /* 9477-fox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9477-fox.json"; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
+		5EE97BD923332CD40048F422 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
 		5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 			children = (
 				5E1367D722C748FF006E5475 /* DetailBookViewController.swift */,
 				5E1367D922C74948006E5475 /* DetailBookViewModel.swift */,
+				5EE97BD923332CD40048F422 /* DetailBookRouting.swift */,
 			);
 			path = DetailBook;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E1D964E22F0564D00CD332B /* RegisterBookModel.swift in Sources */,
+				5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5E1D964822F03F4A00CD332B /* FetchBookListModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
