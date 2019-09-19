@@ -64,7 +64,6 @@ final class BookListViewController: UIViewController {
     private lazy var routing: BookListRouting = {
         let routing = BookListRoutingImpl()
         routing.viewController = self
-        routing.navigationController = self.navigationController
         return routing
     }()
 

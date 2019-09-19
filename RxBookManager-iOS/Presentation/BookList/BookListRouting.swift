@@ -9,8 +9,6 @@ final class BookListRoutingImpl: BookListRouting {
 
     var viewController: UIViewController?
 
-    var navigationController: UINavigationController?
-
     func showRegisterBookVC() {
         let vc = RegisterBookViewControllerFactory.createInstance()
         viewController?.present(vc, animated: true)
@@ -18,7 +16,8 @@ final class BookListRoutingImpl: BookListRouting {
 
     func showDetailBookVC(book: Book) {
         let vc = DetailBookViewControllerFactory.createInstance(book: book)
-        navigationController?.pushViewController(vc, animated: true)
+        guard let view = viewController?.navigationController else { return }
+        view.pushViewController(vc, animated: true)
     }
 }
 
