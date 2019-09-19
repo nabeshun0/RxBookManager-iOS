@@ -9,11 +9,11 @@ final class DetailBookViewController: UIViewController {
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    private var book: Book?
+    private var selectedBook: Book!
 
     init(viewModel: DetailBookViewModel, book: Book) {
         self.viewModel = viewModel
-        self.book = book
+        self.selectedBook = book
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -184,10 +184,10 @@ final class DetailBookViewController: UIViewController {
         setupNavItem()
         setupObserver()
         bindUI()
-        bookNameTextField.text = book?.name ?? ""
-        priceTextField.text = String(book?.price ?? 0)
-        purchaseDateTextField.text = book?.purchaseDate ?? ""
-        guard let url = URL(string: book?.image ?? "") else { return }
+        bookNameTextField.text = selectedBook.name
+        priceTextField.text = String(selectedBook?.price ?? 0)
+        purchaseDateTextField.text = selectedBook?.purchaseDate ?? ""
+        guard let url = URL(string: selectedBook?.image ?? "") else { return }
         Nuke.loadImage(with: url, into: bookImageView)
     }
 }
@@ -245,7 +245,7 @@ extension DetailBookViewController {
     }
 
     private func bindUI() {
-        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: book?.id ?? 0)
+        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: selectedBook.id)
 
         let output = viewModel.transform(input: input)
 
