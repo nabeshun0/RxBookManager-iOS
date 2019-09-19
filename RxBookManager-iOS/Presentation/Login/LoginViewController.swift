@@ -38,6 +38,9 @@ class LoginViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textAlignment = .center
         textField.delegate = self
+        #if DEBUG
+        textField.text = "test2@gmail.com"
+        #endif
         return textField
     }()
 
@@ -47,6 +50,9 @@ class LoginViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textAlignment = .center
         textField.delegate = self
+        #if DEBUG
+        textField.text = "123123"
+        #endif
         return textField
     }()
 
