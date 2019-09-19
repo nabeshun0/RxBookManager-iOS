@@ -3,7 +3,7 @@ import Lottie
 
 final class SplashViewController: UIViewController {
 
-    struct Const {
+    struct SplashAnimation {
         static let foxAnimation = "9477-fox"
     }
 
@@ -15,26 +15,25 @@ final class SplashViewController: UIViewController {
 
     private var animationView: AnimationView = {
         let animationView = AnimationView()
-        let animation = Animation.named(Const.foxAnimation)
+        let animation = Animation.named(SplashAnimation.foxAnimation)
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFill
         animationView.backgroundColor = .clear
-        animationView.animationSpeed = 1
+        animationView.animationSpeed = 5
+        animationView.contentMode = .scaleAspectFit
         return animationView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // MARK: - 起動処理
-        // Splashのアニメーション
         title = "Splash"
         view.backgroundColor = .lightGray
         view.addSubview(animationView)
         animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        animationView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        animationView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        animationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        animationView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 50).isActive = true
+        animationView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -50).isActive = true
+        animationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
     }
 
     func showAnimation() {
