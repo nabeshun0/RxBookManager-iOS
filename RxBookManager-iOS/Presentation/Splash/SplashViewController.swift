@@ -42,7 +42,7 @@ final class SplashViewController: UIViewController {
             //if 2回目の起動時はログイン {
             //    self?.routing.showLogin()
             //}
-            self?.routing.showTutorial()
+            self?.routing.showWalkthrough()
         }
     }
 

@@ -2,7 +2,7 @@ import UIKit
 
 protocol SplashRouting: RoutingType {
     func showLogin()
-    func showTutorial()
+    func showWalkthrough()
 }
 
 final class SplashRoutingImpl: SplashRouting {
@@ -17,8 +17,8 @@ final class SplashRoutingImpl: SplashRouting {
         viewController?.present(nc, animated: true)
     }
 
-    func showTutorial() {
-        let vc = TutorialViewController()
+    func showWalkthrough() {
+        let vc = WalkthroughViewController()
         viewController?.present(vc, animated: true)
     }
 }
