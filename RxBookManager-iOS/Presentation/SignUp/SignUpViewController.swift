@@ -158,7 +158,6 @@ extension SignUpViewController {
         }).disposed(by: disposeBag)
 
         output.result.subscribe(onNext: { [weak self] _ in
-            #warning("TODO: 返却してきたTOKENを保存")
             self?.routing.showMainTab()
         }).disposed(by: disposeBag)
 

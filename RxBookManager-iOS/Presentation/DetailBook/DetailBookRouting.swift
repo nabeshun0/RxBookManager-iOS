@@ -1,9 +1,14 @@
-//
-//  DetailBookRouting.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
+import UIKit
 
-import Foundation
+protocol DetailBookRouting: RoutingType {
+    func showBookListVC()
+}
+
+final class DetaiBookRoutingImpl: DetailBookRouting {
+    var viewController: UIViewController?
+
+    func showBookListVC() {
+        guard let view = viewController?.navigationController else { return }
+        view.popViewController(animated: true)
+    }
+}

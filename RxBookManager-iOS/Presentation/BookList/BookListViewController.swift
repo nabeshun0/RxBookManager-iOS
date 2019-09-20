@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import RxSwift
 
 final class BookListViewController: UIViewController {
 
@@ -14,24 +15,15 @@ final class BookListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     //==================================================
     // MARK: - Presentation
     //==================================================
 
-    //    private var books: [BookListResponse.Book] = []
     private var limit = Constants.Api.limitPageNum
     private var currentPage = Constants.Api.currentPageNum
 
-    struct Book {
-        let bookImage: UIImage?
-        let bookTitle: UILabel?
-        let bookPrice: UILabel?
-        let bookID: UILabel?
-    }
-
     private lazy var addButton: UIBarButtonItem = {
-        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showAddBookVC))
+        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showRegisterBookVC))
         return addButton
     }()
 
@@ -40,7 +32,7 @@ final class BookListViewController: UIViewController {
         tableView.rowHeight = Constants.Size.tableViewRowHeight
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: String(describing: BookListTableViewCell.self))
+        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: BookListTableViewCell.className)
         return tableView
     }()
 
@@ -61,19 +53,25 @@ final class BookListViewController: UIViewController {
         return activityIndicator
     }()
 
-    @objc private func showAddBookVC() {
-        let registerBookView = RegisterBookViewController()
-        let navi = UINavigationController(rootViewController: registerBookView)
-        present(navi, animated: true)
+    @objc private func showRegisterBookVC() {
+        routing.showRegisterBookVC()
     }
 
     //==================================================
     // MARK: - Routing
     //==================================================
 
-    //    private lazy var routing: SignUpRouting = {
-    //
-    //    }
+    private lazy var routing: BookListRouting = {
+        let routing = BookListRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
+
+    //==================================================
+    // MARK: - Rx
+    //==================================================
+
+    private let disposeBag: DisposeBag = .init()
 
     //==================================================
     // MARK: - UIViewController override
@@ -84,19 +82,7 @@ final class BookListViewController: UIViewController {
         view.backgroundColor = .white
         setupUI()
         setupNavItem()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        // テーブルビューをリフレッシュ
-        activityIndicator.startAnimating()
-        //        books = []
-        tableView.reloadData()
-        currentPage = Constants.Api.currentPageNum
-        //        sendRequest(limit: limit, page: currentPage)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        activityIndicator.stopAnimating()
+        bindUI()
     }
 }
 
@@ -123,69 +109,56 @@ extension BookListViewController {
             .forEach {
                 $0.isActive = true
         }
-
     }
 
     private func setupNavItem() {
         title = "書籍一覧"
         navigationItem.rightBarButtonItem = addButton
     }
+
+    private func bindUI() {
+
+        let input = BookListViewModel.Input(didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(), viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).asObservable())
+
+        let output = viewModel.transform(input: input)
+
+        output.result.subscribe(onNext: { [weak self] result in
+            self?.viewModel.books += result.result
+            self?.tableView.reloadData()
+        }).disposed(by: disposeBag)
+
+        output.error.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+
+        output.firstResult.subscribe(onNext: { [weak self] result in
+            self?.viewModel.books += result.result
+            self?.tableView.reloadData()
+        }).disposed(by: disposeBag)
+
+        output.firstError.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //        return books.count
+        return viewModel.books.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // cellの生成
-        guard let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: BookListTableViewCell.self), for: indexPath) as? BookListTableViewCell else { return UITableViewCell() }
-        //        cell.accessoryType = .disclosureIndicator
-        //        cell.configureWithBook(book: books[indexPath.item])
+         let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: BookListTableViewCell.className, for: indexPath) as! BookListTableViewCell
+
+        cell.accessoryType = .disclosureIndicator
+        cell.configureWithBook(book: viewModel.books[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //        let book = books[indexPath.item]
-        //        let image = book.image ?? Constants.emptyString
-        //        let price = book.price ?? Constants.emptyInt
-        //        let purchaseDate = book.purchaseDate ?? Constants.emptyString
-        //        AuthManager.setBook(book.id, forKey: Constants.Api.id)
-        //        AuthManager.setBook(book.name, forKey: Constants.Api.name)
-        //        AuthManager.setBook(image, forKey: Constants.Api.image)
-        //        AuthManager.setBook(price, forKey: Constants.Api.price)
-        //        AuthManager.setBook(purchaseDate, forKey: Constants.Api.purchaseDate)
-        //        AuthManager.userDefault.synchronize()
-                let detailBookView = DetailBookViewController()
-                navigationController?.pushViewController(detailBookView, animated: true)
+        let book = viewModel.books[indexPath.row]
+        routing.showDetailBookVC(book: book)
     }
 }
-
-//
-//    private func sendRequest(limit: Int, page: Int) {
-//        DispatchQueue.global(qos: .default).async {
-//            Session.send(BookListRequest(limit: limit, page: page), handler: { (result) in
-//                switch result {
-//                case .success(let response):
-//                    response.result.forEach({ data in
-//                        self.books.append(data)
-//                    })
-//                    self.tableView.reloadData()
-//                case .failure(.requestError(let APIError as APIError)):
-//                    print(APIError.message)
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            })
-//        }
-//    }
-//
-//    @objc private func fetchPage() {
-//        currentPage += 1
-//        sendRequest(limit: limit, page: currentPage)
-//    }
-
-
-

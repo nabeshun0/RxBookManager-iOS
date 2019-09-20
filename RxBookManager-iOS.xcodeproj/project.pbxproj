@@ -17,10 +17,9 @@
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
-		5E066856231B89440045D901 /* ImageConvertableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* ImageConvertableProtocol.swift */; };
+		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
-		5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DB22C74961006E5475 /* DetailBookRouting.swift */; };
 		5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DD22C7497C006E5475 /* LogoutViewController.swift */; };
 		5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */; };
 		5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E122C7499D006E5475 /* LogoutRouting.swift */; };
@@ -45,6 +44,8 @@
 		5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE322D2D1990000DB4F /* LoginModel.swift */; };
 		5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCE522D2D6230000DB4F /* AppRequestType.swift */; };
 		5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* BookDataStore.swift */; };
+		5E614D2A2330FDB7009AC7C6 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E614D292330FDB7009AC7C6 /* Nuke.framework */; };
+		5E614D2C2331D664009AC7C6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E614D2B2331D663009AC7C6 /* Lottie.framework */; };
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
@@ -56,8 +57,10 @@
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
+		5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ED32C3B2332580200D243AC /* 9477-fox.json */; };
 		5ED6383D22F0195D009184A8 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6383C22F0195D009184A8 /* LogoutEntity.swift */; };
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
+		5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE97BD923332CD40048F422 /* DetailBookRouting.swift */; };
 		5EEDA4E52303F35B000E7E93 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */; };
 		5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
@@ -76,7 +79,6 @@
 		5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1B922C73214004B8D3C /* BookListTableViewCell.swift */; };
 		5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1BB22C732C4004B8D3C /* RegisterBookViewController.swift */; };
 		5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1BD22C73303004B8D3C /* RegisterBookViewModel.swift */; };
-		5EFCE1C022C73350004B8D3C /* RegisterBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1BF22C73350004B8D3C /* RegisterBookRouting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,10 +102,9 @@
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
-		5E066855231B89440045D901 /* ImageConvertableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConvertableProtocol.swift; sourceTree = "<group>"; };
+		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
-		5E1367DB22C74961006E5475 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
 		5E1367DD22C7497C006E5475 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		5E1367DF22C7498C006E5475 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		5E1367E122C7499D006E5475 /* LogoutRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRouting.swift; sourceTree = "<group>"; };
@@ -129,6 +130,8 @@
 		5E20CCE322D2D1990000DB4F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5E20CCE522D2D6230000DB4F /* AppRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequestType.swift; sourceTree = "<group>"; };
 		5E31992E22D6D3D200DA5072 /* BookDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataStore.swift; sourceTree = "<group>"; };
+		5E614D292330FDB7009AC7C6 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		5E614D2B2331D663009AC7C6 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		5E649BC922C3872700E562F1 /* RxBookManager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBookManager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E649BCC22C3872700E562F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,8 +148,10 @@
 		5E8A657022F13AA900C43436 /* DetailBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookAPI.swift; sourceTree = "<group>"; };
 		5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookEntity.swift; sourceTree = "<group>"; };
 		5EA88523231D313300BA017E /* CommonUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonUserDefaults.swift; path = "RxBookManager-iOS/Utility/CommonUserDefaults.swift"; sourceTree = SOURCE_ROOT; };
+		5ED32C3B2332580200D243AC /* 9477-fox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9477-fox.json"; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
+		5EE97BD923332CD40048F422 /* DetailBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookRouting.swift; sourceTree = "<group>"; };
 		5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -161,7 +166,6 @@
 		5EFCE1B922C73214004B8D3C /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
 		5EFCE1BB22C732C4004B8D3C /* RegisterBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookViewController.swift; sourceTree = "<group>"; };
 		5EFCE1BD22C73303004B8D3C /* RegisterBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookViewModel.swift; sourceTree = "<group>"; };
-		5EFCE1BF22C73350004B8D3C /* RegisterBookRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBookRouting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E614D2C2331D664009AC7C6 /* Lottie.framework in Frameworks */,
+				5E614D2A2330FDB7009AC7C6 /* Nuke.framework in Frameworks */,
 				5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */,
 				5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */,
 				5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */,
@@ -196,6 +202,7 @@
 			children = (
 				5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */,
 				5B3D95C42317FBF600F917D8 /* SplashRouting.swift */,
+				5ED32C3B2332580200D243AC /* 9477-fox.json */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -214,7 +221,6 @@
 			children = (
 				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
 				5BAF50D42316D7C200584FB1 /* RoutingType.swift */,
-				5E066855231B89440045D901 /* ImageConvertableProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -296,6 +302,8 @@
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E614D2B2331D663009AC7C6 /* Lottie.framework */,
+				5E614D292330FDB7009AC7C6 /* Nuke.framework */,
 				5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */,
 				5B3D95C823180C1000F917D8 /* RxRelay.framework */,
 				5E885BE022C5A77C00C9B547 /* RxCocoa.framework */,
@@ -411,7 +419,6 @@
 			children = (
 				5EFCE1BB22C732C4004B8D3C /* RegisterBookViewController.swift */,
 				5EFCE1BD22C73303004B8D3C /* RegisterBookViewModel.swift */,
-				5EFCE1BF22C73350004B8D3C /* RegisterBookRouting.swift */,
 			);
 			path = RegisterBook;
 			sourceTree = "<group>";
@@ -421,7 +428,7 @@
 			children = (
 				5E1367D722C748FF006E5475 /* DetailBookViewController.swift */,
 				5E1367D922C74948006E5475 /* DetailBookViewModel.swift */,
-				5E1367DB22C74961006E5475 /* DetailBookRouting.swift */,
+				5EE97BD923332CD40048F422 /* DetailBookRouting.swift */,
 			);
 			path = DetailBook;
 			sourceTree = "<group>";
@@ -465,6 +472,7 @@
 				5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */,
 				5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */,
 				5B3D95C6231808ED00F917D8 /* UIAlertController+Extensions.swift */,
+				5E066855231B89440045D901 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
+				5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +596,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputFileListPaths = (
@@ -613,7 +624,7 @@
 				5E1D964622F03F3700CD332B /* FetchBookListAPI.swift in Sources */,
 				5EFCE1BA22C73214004B8D3C /* BookListTableViewCell.swift in Sources */,
 				5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */,
-				5E066856231B89440045D901 /* ImageConvertableProtocol.swift in Sources */,
+				5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */,
 				5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */,
 				5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */,
 				5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */,
@@ -640,18 +651,17 @@
 				5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E1D964E22F0564D00CD332B /* RegisterBookModel.swift in Sources */,
+				5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */,
 				5EFCE1B622C73172004B8D3C /* BookListViewModel.swift in Sources */,
 				5E1D964822F03F4A00CD332B /* FetchBookListModel.swift in Sources */,
 				5EFCE1BC22C732C4004B8D3C /* RegisterBookViewController.swift in Sources */,
 				5E1D964022F0324600CD332B /* SignUpAPI.swift in Sources */,
 				5E1D965222F0566D00CD332B /* RegisterBookEntity.swift in Sources */,
-				5E1367DC22C74961006E5475 /* DetailBookRouting.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
 				5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */,
 				5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */,
 				5E8A656F22F13A8E00C43436 /* DetailBookModel.swift in Sources */,
 				5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */,
-				5EFCE1C022C73350004B8D3C /* RegisterBookRouting.swift in Sources */,
 				5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,

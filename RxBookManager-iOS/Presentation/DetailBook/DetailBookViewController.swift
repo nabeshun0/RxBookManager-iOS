@@ -1,7 +1,25 @@
 import UIKit
 import APIKit
+import RxSwift
+import Nuke
 
 final class DetailBookViewController: UIViewController {
+
+    private var viewModel: DetailBookViewModel
+
+    private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
+
+    private var selectedBook: Book!
+
+    init(viewModel: DetailBookViewModel, book: Book) {
+        self.viewModel = viewModel
+        self.selectedBook = book
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //==================================================
     // MARK: - Presentation
@@ -25,16 +43,12 @@ final class DetailBookViewController: UIViewController {
         return imagePicker
     }()
 
-    private func setupNavItem() {
-        title = "書籍編集"
-        navigationItem.rightBarButtonItem = saveButton
-    }
-
     private lazy var saveButton: UIBarButtonItem = {
-        let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didSaveButtonTapped))
-        return saveButton
+        let button = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didSaveButtonTapped))
+        button.isEnabled = false
+        button.tintColor = UIColor(white: 0, alpha: 0)
+        return button
     }()
-
 
     private let bookImageView: UIImageView = {
         let imageView = UIImageView()
@@ -157,9 +171,17 @@ final class DetailBookViewController: UIViewController {
     // MARK: - Routing
     //==================================================
 
-    //    private lazy var routing: SignUpRouting = {
-    //
-    //    }
+    private lazy var routing: DetailBookRouting = {
+        let routing = DetaiBookRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
+
+    //==================================================
+    // MARK: - Rx
+    //==================================================
+
+    private let disposeBag: DisposeBag = .init()
 
     //==================================================
     // MARK: - UIViewController override
@@ -171,6 +193,12 @@ final class DetailBookViewController: UIViewController {
         setupUI()
         setupNavItem()
         setupObserver()
+        bindUI()
+        bookNameTextField.text = selectedBook.name
+        priceTextField.text = String(selectedBook?.price ?? 0)
+        purchaseDateTextField.text = selectedBook?.purchaseDate ?? ""
+        guard let url = URL(string: selectedBook?.image ?? "") else { return }
+        Nuke.loadImage(with: url, into: bookImageView)
     }
 }
 
@@ -220,6 +248,31 @@ extension DetailBookViewController {
                 $0.isActive = true
         }
     }
+
+    private func setupNavItem() {
+        title = "書籍編集"
+        navigationItem.rightBarButtonItem = saveButton
+    }
+
+    private func bindUI() {
+        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: selectedBook.id)
+
+        let output = viewModel.transform(input: input)
+
+        output.isValid.subscribe(onNext: { [weak self] bool in
+            self?.saveButton.isEnabled = bool
+            let systemBlueColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
+            self?.saveButton.tintColor = bool ? systemBlueColor : UIColor(white: 0, alpha: 0)
+        }).disposed(by: disposeBag)
+
+        output.result.subscribe(onNext: { [weak self] _ in
+            self?.routing.showBookListVC()
+        }).disposed(by: disposeBag)
+
+        output.error.subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension DetailBookViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -227,12 +280,11 @@ extension DetailBookViewController: UINavigationControllerDelegate, UIImagePicke
     @objc func registerImage() {
         present(imagePicker, animated: true)
     }
-    // ピックした画像をimageViewに配置
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageSubject.onNext(pickedImage)
         bookImageView.image = pickedImage
         picker.dismiss(animated: true)
     }
 }
-
-extension DetailBookViewController: ImageConvertable {}

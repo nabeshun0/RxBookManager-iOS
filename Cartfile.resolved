@@ -1,3 +1,5 @@
 github "ReactiveX/RxSwift" "5.0.1"
+github "airbnb/lottie-ios" "57d3435a4c08cbc2a2a271c226672fb1f987baa5"
 github "ishkawa/APIKit" "5.0.0"
 github "jdg/MBProgressHUD" "1.1.0"
+github "kean/Nuke" "8.1.1"

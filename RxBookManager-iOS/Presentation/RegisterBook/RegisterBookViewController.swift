@@ -1,9 +1,22 @@
 import UIKit
 import APIKit
-
+import RxSwift
 
 final class RegisterBookViewController: UIViewController {
 
+    private var viewModel: RegisterBookViewModel
+
+    let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
+
+    init(viewModel: RegisterBookViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //==================================================
     // MARK: - Presentation
     //==================================================
@@ -26,20 +39,16 @@ final class RegisterBookViewController: UIViewController {
         return imagePicker
     }()
 
-    private func setupNavItem() {
-        title = "書籍追加"
-        navigationItem.rightBarButtonItem = saveButton
-        navigationItem.leftBarButtonItem = cancelButton
-    }
-
     private lazy var saveButton: UIBarButtonItem = {
-        let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didSaveButtonTapped))
-        return saveButton
+        let button = UIBarButtonItem(title: "保存", style: .plain, target: self, action: nil)
+        button.isEnabled = false
+        button.tintColor = UIColor(white: 0, alpha: 0)
+        return button
     }()
 
     private lazy var cancelButton: UIBarButtonItem = {
-        let cancelButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(didCancelButtonTapped))
-        return cancelButton
+        let button = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(didCancelButtonTapped))
+        return button
     }()
 
     private let bookImageView: UIImageView = {
@@ -146,9 +155,6 @@ final class RegisterBookViewController: UIViewController {
         return toolBarButton
     }()
 
-    @objc private func didSaveButtonTapped() {
-    }
-
     @objc private func didCancelButtonTapped() {
         dismiss(animated: true)
     }
@@ -160,12 +166,10 @@ final class RegisterBookViewController: UIViewController {
     }
 
     //==================================================
-    // MARK: - Routing
+    // MARK: - Rx
     //==================================================
 
-    //    private lazy var routing: SignUpRouting = {
-    //
-    //    }
+    private let disposeBag: DisposeBag = .init()
 
     //==================================================
     // MARK: - UIViewController override
@@ -177,8 +181,8 @@ final class RegisterBookViewController: UIViewController {
         setupUI()
         setupNavItem()
         setupObserver()
+        bindUI()
     }
-
 }
 
 extension RegisterBookViewController {
@@ -227,6 +231,39 @@ extension RegisterBookViewController {
                 $0.isActive = true
         }
     }
+
+    private func setupNavItem() {
+        title = "書籍追加"
+        navigationItem.rightBarButtonItem = saveButton
+        navigationItem.leftBarButtonItem = cancelButton
+    }
+
+    private func bindUI() {
+        let input = RegisterBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable())
+
+        let output = viewModel.transform(input: input)
+
+        output.isValid
+            .subscribe(onNext: { [weak self] bool in
+            self?.saveButton.isEnabled = bool
+            let systemBlueColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
+            self?.saveButton.tintColor = bool ? systemBlueColor : UIColor(white: 0, alpha: 0)
+        }).disposed(by: disposeBag)
+
+        output.result
+            .do(onNext: { [weak self]value in
+                self?.setIndicator(show: true)
+            })
+            .subscribe(onNext: { [weak self] _ in
+            self?.setIndicator(show: false)
+            self?.dismiss(animated: true)
+        }).disposed(by: disposeBag)
+
+        output.error
+            .subscribe(onNext: { [weak self] error in
+            self?.createAlert(message: error.localizedDescription)
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension RegisterBookViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -234,12 +271,11 @@ extension RegisterBookViewController: UINavigationControllerDelegate, UIImagePic
     @objc func registerImage() {
         present(imagePicker, animated: true)
     }
-    // ピックした画像をimageViewに配置
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageSubject.onNext(pickedImage)
         bookImageView.image = pickedImage
         picker.dismiss(animated: true)
     }
 }
-
-extension RegisterBookViewController: ImageConvertable {}
