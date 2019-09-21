@@ -20,6 +20,12 @@
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
 		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
 		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
+		5BD66536233640BB009A66B6 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66533233640BA009A66B6 /* AWSCognito.framework */; };
+		5BD66537233640BB009A66B6 /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66533233640BA009A66B6 /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BD66538233640BB009A66B6 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66534233640BB009A66B6 /* AWSCore.framework */; };
+		5BD66539233640BB009A66B6 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66534233640BB009A66B6 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BD6653A233640BB009A66B6 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66535233640BB009A66B6 /* AWSS3.framework */; };
+		5BD6653B233640BB009A66B6 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66535233640BB009A66B6 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
@@ -94,6 +100,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5BD6653C233640BB009A66B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BD66537233640BB009A66B6 /* AWSCognito.framework in Embed Frameworks */,
+				5BD66539233640BB009A66B6 /* AWSCore.framework in Embed Frameworks */,
+				5BD6653B233640BB009A66B6 /* AWSS3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +130,9 @@
 		5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		5BD6652F23363814009A66B6 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
+		5BD66533233640BA009A66B6 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
+		5BD66534233640BB009A66B6 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		5BD66535233640BB009A66B6 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
@@ -183,9 +208,12 @@
 				5E614D2A2330FDB7009AC7C6 /* Nuke.framework in Frameworks */,
 				5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */,
 				5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */,
+				5BD6653A233640BB009A66B6 /* AWSS3.framework in Frameworks */,
 				5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */,
 				5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */,
+				5BD66536233640BB009A66B6 /* AWSCognito.framework in Frameworks */,
 				5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */,
+				5BD66538233640BB009A66B6 /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +299,9 @@
 		5E649BC022C3872700E562F1 = {
 			isa = PBXGroup;
 			children = (
+				5BD66533233640BA009A66B6 /* AWSCognito.framework */,
+				5BD66534233640BB009A66B6 /* AWSCore.framework */,
+				5BD66535233640BB009A66B6 /* AWSS3.framework */,
 				5E649BCB22C3872700E562F1 /* RxBookManager-iOS */,
 				5E649BE022C3872800E562F1 /* RxBookManager-iOSTests */,
 				5E649BCA22C3872700E562F1 /* Products */,
@@ -513,6 +544,8 @@
 				5E649BC622C3872700E562F1 /* Frameworks */,
 				5E649BC722C3872700E562F1 /* Resources */,
 				5E2DD91822C5C21C005410E1 /* Copy Carthage Frameworks */,
+				5BD6653C233640BB009A66B6 /* Embed Frameworks */,
+				5BD6653D233640DF009A66B6 /* AWS Frameworks */,
 			);
 			buildRules = (
 			);
@@ -600,6 +633,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5BD6653D233640DF009A66B6 /* AWS Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "AWS Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"\n";
+		};
 		5E2DD91822C5C21C005410E1 /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -853,6 +904,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "RxBookManager-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -877,6 +929,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "RxBookManager-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
