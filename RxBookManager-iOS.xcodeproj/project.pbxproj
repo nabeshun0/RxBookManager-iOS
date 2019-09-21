@@ -48,6 +48,8 @@
 		5BD6656923366C9B009A66B6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6656823366C9B009A66B6 /* libc++.tbd */; };
 		5BD665722336733B009A66B6 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD665702336733B009A66B6 /* Nuke.framework */; };
 		5BD665732336733B009A66B6 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD665712336733B009A66B6 /* nanopb.framework */; };
+		5BD6657623367766009A66B6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657423367765009A66B6 /* Fabric.framework */; };
+		5BD6657723367766009A66B6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657523367765009A66B6 /* Crashlytics.framework */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
@@ -177,6 +179,8 @@
 		5BD6656823366C9B009A66B6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		5BD665702336733B009A66B6 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		5BD665712336733B009A66B6 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		5BD6657423367765009A66B6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5BD6657523367765009A66B6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
@@ -273,10 +277,12 @@
 				5BD6655123366AAD009A66B6 /* GoogleUtilities.framework in Frameworks */,
 				5BD6655C23366AAD009A66B6 /* FirebaseCore.framework in Frameworks */,
 				5BD66538233640BB009A66B6 /* AWSCore.framework in Frameworks */,
+				5BD6657723367766009A66B6 /* Crashlytics.framework in Frameworks */,
 				5BD6655D23366AAD009A66B6 /* GoogleMobileAds.framework in Frameworks */,
 				5BD6656123366B34009A66B6 /* Protobuf.framework in Frameworks */,
 				5BD6655323366AAD009A66B6 /* FirebaseAnalytics.framework in Frameworks */,
 				5BD6655723366AAD009A66B6 /* FIRAnalyticsConnector.framework in Frameworks */,
+				5BD6657623367766009A66B6 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +415,8 @@
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BD6657523367765009A66B6 /* Crashlytics.framework */,
+				5BD6657423367765009A66B6 /* Fabric.framework */,
 				5BD665712336733B009A66B6 /* nanopb.framework */,
 				5BD665702336733B009A66B6 /* Nuke.framework */,
 				5BD6655F23366B34009A66B6 /* Protobuf.framework */,
