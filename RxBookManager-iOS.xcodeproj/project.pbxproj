@@ -18,6 +18,8 @@
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
+		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
+		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
@@ -104,6 +106,8 @@
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
 		5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
+		5BD6652F23363814009A66B6 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
@@ -227,6 +231,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		5BD6652E233637F5009A66B6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5BD6652F23363814009A66B6 /* CameraService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		5E18E4C622D9AE0B00CFF52C /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +295,7 @@
 				5EFCE19222C637EF004B8D3C /* Presentation */,
 				5BAF50D32316D79400584FB1 /* Common */,
 				5EFCE19322C63808004B8D3C /* Utility */,
+				5BD6652E233637F5009A66B6 /* Service */,
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
@@ -476,6 +489,7 @@
 				5B3D95C6231808ED00F917D8 /* UIAlertController+Extensions.swift */,
 				5E066855231B89440045D901 /* UIImage+Extension.swift */,
 				5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */,
+				5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -638,6 +652,7 @@
 				5B3D95C7231808ED00F917D8 /* UIAlertController+Extensions.swift in Sources */,
 				5E1D964A22F03F5900CD332B /* FetchBookListEntity.swift in Sources */,
 				5EFCE1B822C7318A004B8D3C /* BookListRouting.swift in Sources */,
+				5BD6653023363814009A66B6 /* CameraService.swift in Sources */,
 				5E20CCD522D23E920000DB4F /* Constants.swift in Sources */,
 				5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */,
 				5E20CCE422D2D1990000DB4F /* LoginModel.swift in Sources */,
@@ -673,6 +688,7 @@
 				5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */,
 				5E1367DE22C7497C006E5475 /* LogoutViewController.swift in Sources */,
 				5EFCE1B422C73157004B8D3C /* BookListViewController.swift in Sources */,
+				5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */,
 				5E1D965022F0565E00CD332B /* RegisterBookAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
