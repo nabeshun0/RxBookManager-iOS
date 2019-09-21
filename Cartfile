@@ -3,3 +3,11 @@ github "ReactiveX/RxSwift"
 github "jdg/MBProgressHUD" ~> 1.1.0
 github "kean/Nuke" ~> 8.0
 github "airbnb/lottie-ios" "master"
+
+// Firebase Services
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAdMobBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseDynamicLinksBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseInAppMessagingBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseInAppMessagingDisplayBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseMessagingBinary.json"
