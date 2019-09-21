@@ -61,7 +61,7 @@ public struct Anchor {
         self.centerY = centerY
     }
 
-    private func update(edge: NSLayoutAttribute, constraint: NSLayoutConstraint?) -> Anchor {
+    private func update(edge: NSLayoutConstraint.Attribute, constraint: NSLayoutConstraint?) -> Anchor {
         var top = self.top
         var left = self.left
         var bottom = self.bottom
@@ -137,7 +137,7 @@ public struct Anchor {
         return right(to: superview.right, constant: c)
     }
 
-    public func edgesToSuperview(omitEdge e: NSLayoutAttribute = .notAnAttribute, insets: UIEdgeInsets = UIEdgeInsets.zero) -> Anchor {
+    public func edgesToSuperview(omitEdge e: NSLayoutConstraint.Attribute = .notAnAttribute, insets: UIEdgeInsets = UIEdgeInsets.zero) -> Anchor {
         let superviewAnchors = topToSuperview(constant: insets.top)
             .leftToSuperview(constant: insets.left)
             .bottomToSuperview(constant: insets.bottom)
