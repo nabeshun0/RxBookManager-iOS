@@ -26,6 +26,7 @@
 		5BD66539233640BB009A66B6 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66534233640BB009A66B6 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BD6653A233640BB009A66B6 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66535233640BB009A66B6 /* AWSS3.framework */; };
 		5BD6653B233640BB009A66B6 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD66535233640BB009A66B6 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BD6653F23364294009A66B6 /* AWSS3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653E23364294009A66B6 /* AWSS3Service.swift */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* DetailBookViewController.swift */; };
 		5E1367DA22C74948006E5475 /* DetailBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* DetailBookViewModel.swift */; };
@@ -133,6 +134,7 @@
 		5BD66533233640BA009A66B6 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
 		5BD66534233640BB009A66B6 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		5BD66535233640BB009A66B6 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		5BD6653E23364294009A66B6 /* AWSS3Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Service.swift; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* DetailBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD6652F23363814009A66B6 /* CameraService.swift */,
+				5BD6653E23364294009A66B6 /* AWSS3Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */,
 				5E20CCDF22D2D00E0000DB4F /* AccountDataStore.swift in Sources */,
 				5E1D963E22F0323100CD332B /* SignUpModel.swift in Sources */,
+				5BD6653F23364294009A66B6 /* AWSS3Service.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
 				5E1D964E22F0564D00CD332B /* RegisterBookModel.swift in Sources */,
 				5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */,
