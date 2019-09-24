@@ -17,6 +17,7 @@
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
+		5BCE4A67233A4FAB0093495F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */; };
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
 		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
 		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
@@ -150,6 +151,7 @@
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
+		5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		5BD6652F23363814009A66B6 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				5E649BD322C3872800E562F1 /* Assets.xcassets */,
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
+				5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */,
 				5E649BD822C3872800E562F1 /* Info.plist */,
 			);
 			path = "RxBookManager-iOS";
@@ -711,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
+				5BCE4A67233A4FAB0093495F /* GoogleService-Info.plist in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
 				5ED32C3C2332580200D243AC /* 9477-fox.json in Resources */,
 			);
@@ -1001,8 +1005,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = B46YA9GNL5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1019,7 +1023,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabezawa.RxBookManager-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = DevWildcard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1030,7 +1034,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
