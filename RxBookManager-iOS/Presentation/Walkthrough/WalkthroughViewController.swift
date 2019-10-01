@@ -49,6 +49,30 @@ extension WalkthroughViewController {
         stacKView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
         stacKView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 
+        let firstView = WalkthroughView()
+        stacKView.addArrangedSubview(firstView)
+        firstView.applyUI(view: .first)
+        firstView.setupUI()
+        firstView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        firstView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        firstView.backgroundColor = .blue
+
+        let secondView = WalkthroughView()
+        stacKView.addArrangedSubview(secondView)
+        secondView.applyUI(view: .second)
+        secondView.setupUI()
+        secondView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        secondView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        secondView.backgroundColor = .yellow
+
+        let thirdView = WalkthroughView()
+        stacKView.addArrangedSubview(thirdView)
+        thirdView.applyUI(view: .third)
+        thirdView.setupUI()
+        thirdView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        thirdView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        thirdView.backgroundColor = .red
+
     }
     
 }
