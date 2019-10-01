@@ -13,6 +13,7 @@ class WalkthroughViewController: UIViewController {
 
     private let stacKView: UIStackView = {
         let stackView = UIStackView()
+        stackView.axis = .horizontal
         return stackView
     }()
 
