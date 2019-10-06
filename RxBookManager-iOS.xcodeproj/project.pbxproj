@@ -17,9 +17,11 @@
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
+		5BB389582349C61D00F1C06B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A69233A53ED0093495F /* Nimble.framework */; };
+		5BB389592349C61D00F1C06B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A68233A53ED0093495F /* Quick.framework */; };
+		5BB3895C2349C61D00F1C06B /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895A2349C61D00F1C06B /* RxTest.framework */; };
+		5BB3895D2349C61D00F1C06B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895B2349C61D00F1C06B /* RxBlocking.framework */; };
 		5BCE4A67233A4FAB0093495F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */; };
-		5BCE4A6A233A53ED0093495F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A68233A53ED0093495F /* Quick.framework */; };
-		5BCE4A6B233A53ED0093495F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A69233A53ED0093495F /* Nimble.framework */; };
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
 		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
 		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
@@ -97,10 +99,6 @@
 		5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED6384022F019D2009184A8 /* LogoutAPI.swift */; };
 		5EE97BDA23332CD40048F422 /* DetailBookRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE97BD923332CD40048F422 /* DetailBookRouting.swift */; };
 		5EEDA4E52303F35B000E7E93 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */; };
-		5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
-		5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDC22C5A74200C9B547 /* Result.framework */; };
-		5EF5F68022DC71F600140C73 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
-		5EF5F68122DC71F600140C73 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EFCE1A522C7270E004B8D3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A422C7270E004B8D3C /* LoginViewController.swift */; };
 		5EFCE1A722C72C4D004B8D3C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A622C72C4D004B8D3C /* LoginViewModel.swift */; };
 		5EFCE1AA22C72E64004B8D3C /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCE1A922C72E64004B8D3C /* LoginRouting.swift */; };
@@ -153,6 +151,8 @@
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
+		5BB3895A2349C61D00F1C06B /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		5BB3895B2349C61D00F1C06B /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BCE4A68233A53ED0093495F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		5BCE4A69233A53ED0093495F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -257,8 +257,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BCE4A6A233A53ED0093495F /* Quick.framework in Frameworks */,
-				5BCE4A6B233A53ED0093495F /* Nimble.framework in Frameworks */,
 				5BD665722336733B009A66B6 /* Nuke.framework in Frameworks */,
 				5BD665732336733B009A66B6 /* nanopb.framework in Frameworks */,
 				5BD6656923366C9B009A66B6 /* libc++.tbd in Frameworks */,
@@ -298,10 +296,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF5F67E22DC71F600140C73 /* APIKit.framework in Frameworks */,
-				5EF5F67F22DC71F600140C73 /* Result.framework in Frameworks */,
-				5EF5F68022DC71F600140C73 /* RxCocoa.framework in Frameworks */,
-				5EF5F68122DC71F600140C73 /* RxSwift.framework in Frameworks */,
+				5BB3895C2349C61D00F1C06B /* RxTest.framework in Frameworks */,
+				5BB3895D2349C61D00F1C06B /* RxBlocking.framework in Frameworks */,
+				5BB389582349C61D00F1C06B /* Nimble.framework in Frameworks */,
+				5BB389592349C61D00F1C06B /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +422,8 @@
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BB3895B2349C61D00F1C06B /* RxBlocking.framework */,
+				5BB3895A2349C61D00F1C06B /* RxTest.framework */,
 				5BCE4A69233A53ED0093495F /* Nimble.framework */,
 				5BCE4A68233A53ED0093495F /* Quick.framework */,
 				5BD6657523367765009A66B6 /* Crashlytics.framework */,
@@ -667,6 +667,7 @@
 				5E649BD922C3872800E562F1 /* Sources */,
 				5E649BDA22C3872800E562F1 /* Frameworks */,
 				5E649BDB22C3872800E562F1 /* Resources */,
+				5BB3895E2349CE0A00F1C06B /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -738,6 +739,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5BB3895E2349CE0A00F1C06B /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		5BD6653D233640DF009A66B6 /* AWS Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -771,8 +794,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputFileListPaths = (

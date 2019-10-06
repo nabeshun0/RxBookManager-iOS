@@ -1,6 +1,8 @@
 import APIKit
 import RxSwift
 import XCTest
+import RxTest
+import RxBlocking
 
 @testable import RxBookManager_iOS
 
@@ -64,5 +66,33 @@ class BookDataStoreTests: XCTestCase {
         }).disposed(by: disposebag)
 
         wait(for: [exp], timeout: 5.0)
+    }
+
+    let scheduler = TestScheduler(initialClock: 1)
+
+    func testViewModel() {
+        let emailObservable = [
+            Recorded.next(1, "i.kawashima41@gmail.com")
+        ]
+
+        let passwordObservable = [
+            Recorded.next(1, "0401Tiro")
+        ]
+
+
+
+        do {
+            let email = scheduler.createHotObservable(emailObservable)
+            let password = scheduler.createHotObservable(passwordObservable)
+            let viewModel = LoginViewModel(dependency: AccountRepositoryImpl())
+            let input = LoginViewModel.Input(didLoginButtonTapped: Observable.of(), didSignupButtonTapped: Observable.of(), emailText: email.asObservable(), passwordText: password.asObservable())
+            let output = viewModel.transform(input: input)
+            output.result
+                .subscribe(onNext: { result in
+                    print(result)
+                }).disposed(by: disposebag)
+
+            scheduler.start()
+        }
     }
 }
