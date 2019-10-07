@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class WalkthroughViewController: UIViewController {
 
@@ -17,6 +19,20 @@ class WalkthroughViewController: UIViewController {
         return stackView
     }()
 
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = .darkGray
+        pageControl.numberOfPages = 3
+        pageControl.pageIndicatorTintColor = .white
+        return pageControl
+    }()
+
+    //==================================================
+    // MARK: - Rx
+    //==================================================
+
+    private let disposeBag: DisposeBag = DisposeBag()
+
     //==================================================
     // MARK: - Routing
     //==================================================
@@ -29,6 +45,8 @@ class WalkthroughViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
+        pageControl.currentPage = 0
+        bindUI()
     }
 }
 
@@ -55,7 +73,7 @@ extension WalkthroughViewController {
         firstView.setupUI()
         firstView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         firstView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-        firstView.backgroundColor = .blue
+        firstView.backgroundColor = .lightGray
 
         let secondView = WalkthroughView()
         stacKView.addArrangedSubview(secondView)
@@ -73,6 +91,22 @@ extension WalkthroughViewController {
         thirdView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
         thirdView.backgroundColor = .red
 
+        view.addSubview(pageControl)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-    
+
+    func bindUI() {
+        scrollView.rx.didScroll.subscribe(onNext: { [unowned self] _ in
+            self.scrollView.contentOffset.y = 0
+        }).disposed(by: disposeBag)
+
+        scrollView.rx.didEndDecelerating.subscribe(onNext: { [unowned self] _ in
+            if fmod(self.scrollView.contentOffset.x, self.scrollView.frame.width) == 0 {
+                self.pageControl.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.frame.width)
+                print("•\(Int(self.scrollView.contentOffset.x / self.scrollView.frame.width))")
+            }
+        }).disposed(by: disposeBag)
+    }
 }

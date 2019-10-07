@@ -31,11 +31,11 @@ extension WalkthroughView {
         var image: UIImage {
             switch self {
             case .first:
-                return #imageLiteral(resourceName: "bookIconTab")
+                return #imageLiteral(resourceName: "Octocat-400x400")
             case .second:
-                return #imageLiteral(resourceName: "settingIconTab")
+                return #imageLiteral(resourceName: "9d4d314ec7722d05541111a180e4e54b")
             case .third:
-                return #imageLiteral(resourceName: "bookIcon")
+                return #imageLiteral(resourceName: "D6OgILOW0AUe7qo")
             }
         }
     }
@@ -45,7 +45,7 @@ final class WalkthroughView: UIView {
 
     let descriptionImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "Screen Shot 2019-05-20 at 20.12.36")
+        imageView.image = #imageLiteral(resourceName: "Octocat-400x400")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -64,17 +64,6 @@ final class WalkthroughView: UIView {
         return textView
     }()
 
-    let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.backgroundColor = .lightGray
-        pageControl.currentPageIndicatorTintColor = .black
-        pageControl.numberOfPages = 3
-        pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = .white
-        return pageControl
-    }()
-
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -89,7 +78,6 @@ final class WalkthroughView: UIView {
         self.addSubview(descriptionImageView)
         self.addSubview(titleLabel)
         self.addSubview(descriptionTextView)
-        self.addSubview(pageControl)
 
         descriptionImageView.translatesAutoresizingMaskIntoConstraints = false
         descriptionImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -106,14 +94,6 @@ final class WalkthroughView: UIView {
         descriptionTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         descriptionTextView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 30).isActive = true
-        
-        pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        pageControl.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        pageControl.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
     }
 
     func applyUI(view: WalkthroughView.Layout) {
