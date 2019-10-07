@@ -8,8 +8,12 @@ class WalkthroughViewController: UIViewController {
     // MARK: - Presentation
     //==================================================
 
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        let width = self.view.frame.width
+        scrollView.frame = self.view.frame
+        scrollView.isPagingEnabled = true
+        scrollView.contentSize = CGSize(width: 3 * width , height: 0)
         return scrollView
     }()
 
