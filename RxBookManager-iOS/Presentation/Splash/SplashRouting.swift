@@ -10,7 +10,7 @@ final class SplashRoutingImpl: SplashRouting {
     weak var viewController: UIViewController?
 
     func showLogin() {
-        let dependency = AccountRepositoryImpl.shared
+        let dependency = AccountRepositoryImpl()
         let viewModel = LoginViewModel(dependency: dependency)
         let vc = LoginViewController(viewModel: viewModel)
         let nc = UINavigationController(rootViewController: vc)

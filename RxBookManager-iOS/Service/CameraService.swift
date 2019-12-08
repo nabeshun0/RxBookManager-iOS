@@ -63,17 +63,6 @@ final class CameraService: NSObject, AVCaptureMetadataOutputObjectsDelegate {
             self.preview = AVCaptureVideoPreviewLayer(session: session)
             self.preview?.videoGravity = AVLayerVideoGravity.resizeAspectFill
 
-            do {
-                try device.lockForConfiguration()
-                device.torchMode = .auto
-                device.isSmoothAutoFocusEnabled = true
-                device.focusMode = .continuousAutoFocus
-                device.exposureMode = .continuousAutoExposure
-                device.unlockForConfiguration()
-            } catch {
-                return Disposables.create()
-            }
-
             observer.onNext(true)
 
             return Disposables.create()

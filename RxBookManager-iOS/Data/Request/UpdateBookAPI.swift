@@ -21,7 +21,7 @@ final class UpdateBookAPI {
         }
 
         var path: String {
-            return APIRoutes.updateBook.configurePath().path + "/\(info.id)"
+            return APIRoutes.updateBook.configurePath().path + String(describing: info.id)
         }
 
         var parameters: Any? {

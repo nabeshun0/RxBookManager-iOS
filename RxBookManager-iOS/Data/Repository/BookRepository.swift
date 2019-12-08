@@ -15,9 +15,7 @@ protocol BookRepository {
 }
 
 final class BookRepositoryImpl: BookRepository {
-
-    static let shared = BookRepositoryImpl()
-
+    
     private let dataStore = BookDataStoreFactory.createBookDataStore()
 
     func fetchBook(_ params: BookListModel) -> Observable<FetchBookListAPI.Response> {

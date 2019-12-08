@@ -16,7 +16,6 @@ protocol AccountRepository {
 }
 
 final class AccountRepositoryImpl: AccountRepository {
-    static let shared = AccountRepositoryImpl()
 
     private let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
 

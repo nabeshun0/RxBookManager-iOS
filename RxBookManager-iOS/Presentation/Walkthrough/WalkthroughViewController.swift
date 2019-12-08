@@ -48,8 +48,9 @@ class WalkthroughViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupUI()
         pageControl.currentPage = 0
+
+        setupUI()
         bindUI()
     }
 }

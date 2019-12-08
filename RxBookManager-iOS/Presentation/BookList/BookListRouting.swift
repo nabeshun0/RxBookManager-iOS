@@ -24,7 +24,7 @@ final class BookListRoutingImpl: BookListRouting {
 private extension BookListRoutingImpl {
     struct RegisterBookViewControllerFactory {
         static func makeInstance() -> UINavigationController {
-            let dependency = BookRepositoryImpl.shared
+            let dependency = BookRepositoryImpl()
             let viewModel = RegisterBookViewModel(dependency: dependency)
             let vc = RegisterBookViewController(viewModel: viewModel)
             return UINavigationController(rootViewController: vc)
@@ -33,7 +33,7 @@ private extension BookListRoutingImpl {
 
     struct DetailBookViewControllerFactory {
         static func makeInstance(book: Book) -> DetailBookViewController {
-            let dependency = BookRepositoryImpl.shared
+            let dependency = BookRepositoryImpl()
             let viewModel = DetailBookViewModel(dependency: dependency)
             return DetailBookViewController(viewModel: viewModel, book: book)
         }
