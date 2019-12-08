@@ -2,8 +2,8 @@ import APIKit
 import RxSwift
 
 protocol AccountDataStore {
-    func login(login: LoginModel) -> Observable<LoginAPI.Response>
-    func signUp(signUp: SignUpModel) -> Observable<SignUpAPI.Response>
+    func login(with info: AuthModel) -> Observable<LoginAPI.Response>
+    func signUp(with info: AuthModel) -> Observable<SignUpAPI.Response>
     func logout() -> Observable<LogoutAPI.Response>
 }
 
@@ -13,8 +13,8 @@ struct AccountDataStoreImpl: AccountDataStore {
     // MARK: - ログイン、リクエスト・レスポンス
     //==================================================
 
-    func login(login: LoginModel) -> Observable<LoginAPI.Response> {
-        let request = LoginAPI.Request(loginModel: login)
+    func login(with info: AuthModel) -> Observable<LoginAPI.Response> {
+        let request = LoginAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
     }
 
@@ -22,8 +22,8 @@ struct AccountDataStoreImpl: AccountDataStore {
     // MARK: - 新規登録、リクエスト・レスポンス
     //==================================================
 
-    func signUp(signUp: SignUpModel) -> Observable<SignUpAPI.Response> {
-        let request = SignUpAPI.Request(signUpModel: signUp)
+    func signUp(with info: AuthModel) -> Observable<SignUpAPI.Response> {
+        let request = SignUpAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
     }
 

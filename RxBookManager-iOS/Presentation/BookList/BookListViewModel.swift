@@ -13,7 +13,7 @@ final class BookListViewModel {
     }
 }
 
-extension BookListViewModel {
+extension BookListViewModel: ViewModelType {
 
     struct Input {
         let didReloadButtonTapped: Observable<Void>
@@ -34,18 +34,18 @@ extension BookListViewModel {
                 guard let self = self else {
                     return Observable.empty()
                 }
-                let fetchBookListModel = FetchBookListModel(limit: 5, page: self.pageCount)
+                let model = BookListModel(limit: 5, page: self.pageCount)
                 self.pageCount += 1
-                return self.dependency.fetchBook(fetchBookListModel)
+                return self.dependency.fetchBook(model)
                     .materialize()
             }.share(replay: 1)
 
         let response = input.didReloadButtonTapped
             .flatMap { [weak self] _ -> Observable<Event<FetchBookListAPI.Response>> in
                 guard let self = self else { return Observable.empty() }
-                let fetchBookListModel = FetchBookListModel(limit: 5, page: self.pageCount)
+                let model = BookListModel(limit: 5, page: self.pageCount)
                 self.pageCount += 1
-                return self.dependency.fetchBook(fetchBookListModel)
+                return self.dependency.fetchBook(model)
                 .materialize()
             }.share(replay: 1)
 

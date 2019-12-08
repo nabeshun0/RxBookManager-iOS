@@ -16,16 +16,18 @@ final class LoginRoutingImpl: LoginRouting {
     }
 
     func showSignUp() {
-        let vc = SignUpViewControllerFactory.createInstance()
+        let vc = SignUpViewControllerFactory.makeInstance()
         viewController?.present(vc, animated: true)
     }
 }
 
-struct SignUpViewControllerFactory {
-    static func createInstance() -> UINavigationController {
-        let dependency = AccountRepositoryImpl.shared
-        let viewModel = SignUpViewModel(dependency: dependency)
-        let vc = SignUpViewController(viewModel: viewModel)
-        return UINavigationController(rootViewController: vc)
+private extension LoginRoutingImpl {
+    struct SignUpViewControllerFactory {
+        static func makeInstance() -> UINavigationController {
+            let dependency = AccountRepositoryImpl.shared
+            let viewModel = SignUpViewModel(dependency: dependency)
+            let vc = SignUpViewController(viewModel: viewModel)
+            return UINavigationController(rootViewController: vc)
+        }
     }
 }

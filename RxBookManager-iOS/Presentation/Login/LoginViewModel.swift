@@ -41,8 +41,8 @@ extension LoginViewModel {
         let response = input.didLoginButtonTapped
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<LoginAPI.Response>> in
-                let loginModel = LoginModel(email: param.0, password: param.1)
-                return self.dependency.login(loginModel)
+                let info = AuthModel(email: param.0, password: param.1)
+                return self.dependency.login(info)
                 .materialize()
         }
         .share(replay: 1)

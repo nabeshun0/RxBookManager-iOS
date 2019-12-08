@@ -9,9 +9,9 @@ import RxSwift
 import APIKit
 
 protocol BookRepository {
-    func fetchBook(_ params: FetchBookListModel) -> Observable<FetchBookListAPI.Response>
-    func registerBook(_ params: RegisterBookModel) -> Observable<RegisterBookAPI.Response>
-    func updateBook(_ params: DetailBookModel) -> Observable<DetailBookAPI.Response>
+    func fetchBook(_ params: BookListModel) -> Observable<FetchBookListAPI.Response>
+    func registerBook(_ params: BookModel) -> Observable<RegisterBookAPI.Response>
+    func updateBook(_ params: BookModel) -> Observable<UpdateBookAPI.Response>
 }
 
 final class BookRepositoryImpl: BookRepository {
@@ -20,15 +20,15 @@ final class BookRepositoryImpl: BookRepository {
 
     private let dataStore = BookDataStoreFactory.createBookDataStore()
 
-    func fetchBook(_ params: FetchBookListModel) -> Observable<FetchBookListAPI.Response> {
-        return dataStore.fetchBook(fetchBookList: params)
+    func fetchBook(_ params: BookListModel) -> Observable<FetchBookListAPI.Response> {
+        return dataStore.fetchBook(with: params)
     }
 
-    func registerBook(_ params: RegisterBookModel) -> Observable<RegisterBookAPI.Response> {
-        return dataStore.registerBook(registerBook: params)
+    func registerBook(_ params: BookModel) -> Observable<RegisterBookAPI.Response> {
+        return dataStore.registerBook(with: params)
     }
 
-    func updateBook(_ params: DetailBookModel) -> Observable<DetailBookAPI.Response> {
-        return dataStore.updateBook(detailBook: params)
+    func updateBook(_ params: BookModel) -> Observable<UpdateBookAPI.Response> {
+        return dataStore.updateBook(with: params)
     }
 }

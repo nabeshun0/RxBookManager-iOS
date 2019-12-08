@@ -11,8 +11,6 @@ import APIKit
 
 final class LogoutViewModel {
 
-    private let disposeBag = DisposeBag()
-
     private let dependency: AccountRepository
 
     init(dependency: AccountRepository) {

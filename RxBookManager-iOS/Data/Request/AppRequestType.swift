@@ -1,4 +1,3 @@
-import Foundation
 import APIKit
 
 //==================================================
@@ -9,11 +8,7 @@ enum APPErrorCode: Int, Error {
     case error401 = 401
     case error403 = 403
     case error404 = 404
-    case error412 = 412
-    case error426 = 426
     case error500 = 500
-    case error503 = 503
-    case other = 999
 }
 
 //==================================================
@@ -60,14 +55,8 @@ extension AppRequestType {
             throw APPErrorCode.error403
         case 404:
             throw APPErrorCode.error404
-        case 412:
-            throw APPErrorCode.error412
-        case 426:
-            throw APPErrorCode.error426
         case 500:
             throw APPErrorCode.error500
-        case 503:
-            throw APPErrorCode.error503
         default:
             throw ResponseError.unacceptableStatusCode(urlResponse.statusCode)
         }

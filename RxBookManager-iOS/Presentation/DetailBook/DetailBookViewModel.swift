@@ -10,7 +10,7 @@ final class DetailBookViewModel {
     }
 }
 
-extension DetailBookViewModel {
+extension DetailBookViewModel: ViewModelType {
 
     struct Input {
         let didSaveButtonTapped: Observable<Void>
@@ -22,7 +22,7 @@ extension DetailBookViewModel {
     }
 
     struct Output {
-        let result: Observable<DetailBookAPI.Response>
+        let result: Observable<UpdateBookAPI.Response>
         let error: Observable<Error>
         let isValid: Observable<Bool>
     }
@@ -56,9 +56,9 @@ extension DetailBookViewModel {
 
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
-            .flatMap { param -> Observable<Event<DetailBookAPI.Response>> in
-                let detailBookModel = DetailBookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: input.id)
-                return self.dependency.updateBook(detailBookModel)
+            .flatMap { param -> Observable<Event<UpdateBookAPI.Response>> in
+                let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: input.id)
+                return self.dependency.updateBook(info)
                 .materialize()
         }.share(replay: 1)
 

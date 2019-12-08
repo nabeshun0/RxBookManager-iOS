@@ -5,7 +5,7 @@ import Foundation
 //==================================================
 extension RegisterBookAPI {
     struct Response: Decodable {
-        let status: Int
-        let result: Book
+        var status: Int
+        var result: Book
     }
 }

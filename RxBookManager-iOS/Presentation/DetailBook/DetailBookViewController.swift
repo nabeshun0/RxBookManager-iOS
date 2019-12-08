@@ -9,7 +9,7 @@ final class DetailBookViewController: UIViewController {
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    private var selectedBook: Book!
+    private var selectedBook: Book
 
     init(viewModel: DetailBookViewModel, book: Book) {
         self.viewModel = viewModel
@@ -44,7 +44,7 @@ final class DetailBookViewController: UIViewController {
     }()
 
     private lazy var saveButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didSaveButtonTapped))
+        let button = UIBarButtonItem(title: "保存", style: .plain, target: self, action: nil)
         button.isEnabled = false
         button.tintColor = UIColor(white: 0, alpha: 0)
         return button
@@ -67,7 +67,6 @@ final class DetailBookViewController: UIViewController {
         button.layer.cornerRadius = Constants.Size.buttonCornerRadius
         button.backgroundColor = .lightGray
         button.adjustsImageWhenDisabled = true
-        button.addTarget(self, action: #selector(registerImage), for: .touchUpInside)
         return button
     }()
 
@@ -154,9 +153,6 @@ final class DetailBookViewController: UIViewController {
         return toolBarButton
     }()
 
-    @objc private func didSaveButtonTapped() {
-    }
-
     @objc private func didCancelButtonTapped() {
         dismiss(animated: true)
     }
@@ -190,20 +186,23 @@ final class DetailBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupUI()
-        setupNavItem()
+        setupLayout()
         setupObserver()
         bindUI()
+
         bookNameTextField.text = selectedBook.name
-        priceTextField.text = String(selectedBook?.price ?? 0)
-        purchaseDateTextField.text = selectedBook?.purchaseDate ?? ""
-        guard let url = URL(string: selectedBook?.image ?? "") else { return }
+        priceTextField.text = String(describing: selectedBook.price)
+        purchaseDateTextField.text = selectedBook.purchaseDate
+
+        guard let url = URL(string: selectedBook.image ?? "") else { return }
         Nuke.loadImage(with: url, into: bookImageView)
     }
 }
 
 extension DetailBookViewController {
-    private func setupUI() {
+    private func setupLayout() {
+        title = "書籍編集"
+        navigationItem.rightBarButtonItem = saveButton
 
         [bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField].forEach {
             self.view.addSubview($0)
@@ -247,11 +246,6 @@ extension DetailBookViewController {
             .forEach {
                 $0.isActive = true
         }
-    }
-
-    private func setupNavItem() {
-        title = "書籍編集"
-        navigationItem.rightBarButtonItem = saveButton
     }
 
     private func bindUI() {

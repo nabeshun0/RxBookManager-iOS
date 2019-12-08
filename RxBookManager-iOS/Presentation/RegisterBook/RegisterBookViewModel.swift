@@ -11,7 +11,7 @@ final class RegisterBookViewModel {
     }
 }
 
-extension RegisterBookViewModel {
+extension RegisterBookViewModel: ViewModelType {
 
     struct Input {
         let didSaveButtonTapped: Observable<Void>
@@ -54,17 +54,21 @@ extension RegisterBookViewModel {
         }
 
         let parameter = Observable.combineLatest(
-        input.bookNameText,
-        priceTextRelay,
-        input.purchaseDateText,
-        selectedImageRelay)
-        {(name: $0, price: $1, purchaseDate: $2, imageStr: $3)}
+            input.bookNameText,
+            priceTextRelay,
+            input.purchaseDateText,
+            selectedImageRelay
+        ){ (name: $0,
+            price: $1,
+            purchaseDate: $2,
+            imageStr: $3
+        )}
 
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<RegisterBookAPI.Response>> in
-                let registerBookModel = RegisterBookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate)
-                return self.dependency.registerBook(registerBookModel)
+                let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate)
+                return self.dependency.registerBook(info)
                 .materialize()
         }.share(replay: 1)
 

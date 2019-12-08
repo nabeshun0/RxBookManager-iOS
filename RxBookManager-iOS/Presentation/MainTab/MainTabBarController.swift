@@ -13,7 +13,7 @@ final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let bookListBar = BookListViewControllerFactory.createInstance()
-        let logoutBar = LogoutViewControllerFactory.createInstance()
+        let logoutBar = LogoutViewControllerFactory.makeInstance()
         setViewControllers([bookListBar, logoutBar], animated: false)
     }
 }
@@ -30,7 +30,7 @@ struct BookListViewControllerFactory {
 }
 
 struct LogoutViewControllerFactory {
-    static func createInstance() -> UINavigationController {
+    static func makeInstance() -> UINavigationController {
         let dependency = AccountRepositoryImpl.shared
         let viewModel = LogoutViewModel(dependency: dependency)
         let vc = LogoutViewController(viewModel: viewModel)

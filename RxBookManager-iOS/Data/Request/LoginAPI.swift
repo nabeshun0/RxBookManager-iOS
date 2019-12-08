@@ -9,11 +9,7 @@ final class LoginAPI {
         typealias Response = LoginAPI.Response
 
         // パラメータモデル
-        var loginModel: LoginModel
-
-        var headerFields: [String: String] {
-            return [:]
-        }
+        var info: AuthModel
 
         var method: HTTPMethod {
             return APIRoutes.login.configurePath().method
@@ -25,8 +21,8 @@ final class LoginAPI {
 
         var parameters: Any? {
             var data = [String: Any]()
-            data["email"] = loginModel.email
-            data["password"] = loginModel.password
+            data["email"] = info.email
+            data["password"] = info.password
             return data
         }
     }

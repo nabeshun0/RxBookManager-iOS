@@ -9,11 +9,7 @@ final class SignUpAPI {
         typealias Response = SignUpAPI.Response
 
         // パラメータモデル
-        var signUpModel: SignUpModel
-
-        var headerFields: [String: String] {
-            return [:]
-        }
+        var info: AuthModel
 
         var method: HTTPMethod {
             return APIRoutes.signUp.configurePath().method
@@ -25,8 +21,8 @@ final class SignUpAPI {
 
         var parameters: Any? {
             var data = [String: Any]()
-            data["email"] = signUpModel.email
-            data["password"] = signUpModel.password
+            data["email"] = info.email
+            data["password"] = info.password
             return data
         }
     }
