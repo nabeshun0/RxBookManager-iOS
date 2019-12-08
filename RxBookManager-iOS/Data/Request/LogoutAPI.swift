@@ -9,7 +9,7 @@ final class LogoutAPI {
         typealias Response = LogoutAPI.Response
 
         var headerFields: [String: String] {
-            return ["Authorization": CommmonUserDefaults.getToken()]
+            return ["Authorization": LocalDataStore.getToken()]
         }
 
         var method: HTTPMethod {

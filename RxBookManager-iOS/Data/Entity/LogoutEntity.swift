@@ -5,6 +5,6 @@ import Foundation
 //==================================================
 extension LogoutAPI {
     struct Response: Decodable {
-        let status: Int
+        var status: Int
     }
 }

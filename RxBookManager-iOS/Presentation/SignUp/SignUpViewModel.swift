@@ -13,16 +13,16 @@ final class SignUpViewModel {
 extension SignUpViewModel {
 
     struct Input {
-        let didSaveButtonTapped: Observable<Void>
-        let emailText: Observable<String>
-        let passwordText: Observable<String>
-        let confirmText: Observable<String>
+        var didSaveButtonTapped: Observable<Void>
+        var emailText: Observable<String>
+        var passwordText: Observable<String>
+        var confirmText: Observable<String>
     }
 
     struct OutPut {
-        let result: Observable<SignUpAPI.Response>
-        let error: Observable<Error>
-        let isValid: Observable<Bool>
+        var result: Observable<SignUpAPI.Response>
+        var error: Observable<Error>
+        var isValid: Observable<Bool>
     }
 
     func transform(input: Input) -> OutPut {
@@ -44,9 +44,9 @@ extension SignUpViewModel {
 
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
-            .flatMap { param -> Observable<Event<SignUpAPI.Response>> in
-                let signUpModel = SignUpModel(email: param.0, password: param.1)
-                return self.dependency.signup(signUpModel)
+            .flatMap { (email, password) -> Observable<Event<SignUpAPI.Response>> in
+                let info = AuthModel(email: email, password: password)
+                return self.dependency.signup(info)
                 .materialize()
         }.share(replay: 1)
 

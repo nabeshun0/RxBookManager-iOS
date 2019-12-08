@@ -10,8 +10,8 @@ import APIKit
 import RxSwift
 
 protocol AccountRepository {
-    func login(_ params: LoginModel) -> Observable<LoginAPI.Response>
-    func signup(_ params: SignUpModel) -> Observable<SignUpAPI.Response>
+    func login(_ params: AuthModel) -> Observable<LoginAPI.Response>
+    func signup(_ params: AuthModel) -> Observable<SignUpAPI.Response>
     func logout() -> Observable<LogoutAPI.Response>
 }
 
@@ -20,19 +20,19 @@ final class AccountRepositoryImpl: AccountRepository {
 
     private let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
 
-    func login(_ params: LoginModel) -> Observable<LoginAPI.Response> {
-        return dataStore.login(login: params)
+    func login(_ params: AuthModel) -> Observable<LoginAPI.Response> {
+        return dataStore.login(with: params)
         .do(onNext: { result in
             let token = result.result.token
-            CommmonUserDefaults.saveToken(value: token)
+            LocalDataStore.saveToken(value: token)
         })
     }
 
-    func signup(_ params: SignUpModel) -> Observable<SignUpAPI.Response> {
-        return dataStore.signUp(signUp: params)
+    func signup(_ params: AuthModel) -> Observable<SignUpAPI.Response> {
+        return dataStore.signUp(with: params)
             .do(onNext: { result in
                 let token = result.result.token
-                CommmonUserDefaults.saveToken(value: token)
+                LocalDataStore.saveToken(value: token)
         })
     }
 
@@ -40,7 +40,7 @@ final class AccountRepositoryImpl: AccountRepository {
         return dataStore.logout()
             .do(onNext: { result in
                 // tokenを削除
-                CommmonUserDefaults.clearToken()
+                LocalDataStore.clearToken()
             })
     }
 }

@@ -5,7 +5,7 @@ import RxSwift
 final class AWSS3Service {
 
     // 別ファイルで一括管理
-    struct S3Credentials {
+    private struct S3Credentials {
         static let accessKey: String = ""
         static let secretKey: String = ""
         static let sessionToken: String = ""
@@ -22,17 +22,12 @@ final class AWSS3Service {
 }
 
 extension AWSS3Service {
-
-    enum AWSS3Result<T> {
-        case success(T)
-        case failure(Error)
-    }
     // クロージャーで渡す
-    func uploadImage(imageData: Data, completion: @escaping(URL) -> Void) {
-
+    func uploadImage(imageData: Data, completion: @escaping (Result<URL, Error>) -> Void) {
+        
     }
 
-    func downloadImage(imageUrl: URL, complation: @escaping (Data) -> Void) {
+    func downloadImage(imageUrl: URL, complation: @escaping (Result<Data, Error>) -> Void) {
 
     }
 

@@ -63,8 +63,8 @@ extension RegisterBookViewModel {
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<RegisterBookAPI.Response>> in
-                let registerBookModel = RegisterBookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate)
-                return self.dependency.registerBook(registerBookModel)
+                let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate)
+                return self.dependency.registerBook(info)
                 .materialize()
         }.share(replay: 1)
 

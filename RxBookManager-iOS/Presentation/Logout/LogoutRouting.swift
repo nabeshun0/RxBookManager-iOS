@@ -10,13 +10,13 @@ final class LogoutRoutingImpl: LogoutRouting {
     weak var viewController: UIViewController?
 
     func showLogin() {
-        let vc = LoginViewControllerFactory.createInstance()
+        let vc = LoginViewControllerFactory.makeInstance()
         viewController?.present(vc, animated: true)
     }
 }
 
 struct LoginViewControllerFactory {
-    static func createInstance() -> UINavigationController {
+    static func makeInstance() -> UINavigationController {
         let dependency = AccountRepositoryImpl.shared
         let viewModel = LoginViewModel(dependency: dependency)
         let vc = LoginViewController(viewModel: viewModel)

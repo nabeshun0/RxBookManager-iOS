@@ -4,7 +4,7 @@ import Lottie
 final class SplashViewController: UIViewController {
 
     struct SplashAnimation {
-        static let foxAnimation = "9477-fox"
+        static let foxAnimation = "splash"
     }
 
     private lazy var routing: SplashRouting = {

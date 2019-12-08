@@ -5,13 +5,13 @@ import Foundation
 //==================================================
 extension SignUpAPI {
     struct Response: Decodable {
-        let status: Int
-        let result: User
+        var status: Int
+        var result: User
 
         struct User: Decodable {
-            let id: Int
-            let email: String
-            let token: String
+            var id: Int
+            var email: String
+            var token: String
         }
     }
 }

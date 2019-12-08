@@ -9,10 +9,10 @@ final class FetchBookListAPI {
         typealias Response = FetchBookListAPI.Response
 
         // パラメータモデル
-        var fetchBookListModel: FetchBookListModel
+        var info: BookListModel
 
         var headerFields: [String: String] {
-            return ["Authorization": CommmonUserDefaults.getToken()]
+            return ["Authorization": LocalDataStore.getToken()]
         }
 
         var method: HTTPMethod {
@@ -25,8 +25,8 @@ final class FetchBookListAPI {
 
         var parameters: Any? {
             var data = [String: Any]()
-            data["limit"] = fetchBookListModel.limit
-            data["page"] = fetchBookListModel.page
+            data["limit"] = info.limit
+            data["page"] = info.page
             return data
         }
     }

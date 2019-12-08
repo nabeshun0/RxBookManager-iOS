@@ -19,8 +19,13 @@ final class BookListViewController: UIViewController {
     // MARK: - Presentation
     //==================================================
 
-    private var limit = Constants.Api.limitPageNum
-    private var currentPage = Constants.Api.currentPageNum
+    struct PagingConstants {
+        static let limitPageNum: Int = 5
+        static let currentPageNum: Int = 1
+    }
+
+    private var limit = PagingConstants.limitPageNum
+    private var currentPage = PagingConstants.currentPageNum
 
     private lazy var addButton: UIBarButtonItem = {
         let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showRegisterBookVC))

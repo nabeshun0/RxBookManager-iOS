@@ -3,9 +3,10 @@ import Foundation
 //==================================================
 // MARK: - Model
 //==================================================
-struct RegisterBookModel {
-    let name: String
-    let image: String
-    let price: Int
-    let purchaseDate: String
+struct BookModel {
+    var name: String
+    var image: String
+    var price: Int
+    var purchaseDate: String
+    var id: Int? = nil
 }

@@ -3,7 +3,7 @@ import Foundation
 //==================================================
 // MARK: - Model
 //==================================================
-struct LoginModel {
-    let email: String
-    let password: String
+struct AuthModel {
+    var email: String
+    var password: String
 }

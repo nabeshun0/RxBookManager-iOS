@@ -10,10 +10,10 @@ final class RegisterBookAPI {
         typealias Response = RegisterBookAPI.Response
 
         // パラメータモデル
-        var registerBookModel: RegisterBookModel
+        var info: BookModel
 
         var headerFields: [String: String] {
-            return ["Authorization": CommmonUserDefaults.getToken()]
+            return ["Authorization": LocalDataStore.getToken()]
         }
 
         var method: HTTPMethod {
@@ -26,10 +26,10 @@ final class RegisterBookAPI {
 
         var parameters: Any? {
             var data = [String: Any]()
-            data["name"] = registerBookModel.name
-            data["image"] = registerBookModel.image
-            data["price"] = registerBookModel.price
-            data["purchase_date"] = registerBookModel.purchaseDate
+            data["name"] = info.name
+            data["image"] = info.image
+            data["price"] = info.price
+            data["purchase_date"] = info.purchaseDate
             return data
         }
     }

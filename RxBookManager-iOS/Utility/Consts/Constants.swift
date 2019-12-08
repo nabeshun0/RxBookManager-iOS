@@ -2,10 +2,6 @@ import Foundation
 import UIKit
 
 struct Constants {
-
-    static let emptyString = ""
-    static let emptyInt = 0
-
     struct Constraint {
         // addLoadPageButton
         static let addLoadPageButtonHeightConstraint: CGFloat = 50
@@ -36,11 +32,6 @@ struct Constants {
         static let purchaseDateLeftConstraintInCell: CGFloat = 20
     }
 
-    struct Flag {
-        static let bookListTabBarFlag = 1
-        static let logoutTabBarFlag = 2
-    }
-
     struct Size {
         // tableView
         static let tableViewRowHeight: CGFloat = 160
@@ -54,20 +45,7 @@ struct Constants {
         static let buttonCornerRadius: CGFloat = 5
     }
 
-    struct DictKey {
-        static let firstLaunch = "firstLaunch"
-    }
-
     struct Api {
-        static let limitPageNum: Int = 5
-        static let pageNum: Int = 1
-        static let currentPageNum: Int = 1
-        static let token = "token"
-        static let id = "id"
-        static let name = "name"
-        static let image = "image"
-        static let price = "price"
-        static let purchaseDate = "purchaseDate"
         static let baseURL = "http://54.250.239.8"
     }
 }

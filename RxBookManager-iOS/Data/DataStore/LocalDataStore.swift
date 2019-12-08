@@ -1,6 +1,14 @@
+//
+//  LocalDataStore.swift
+//  RxBookManager-iOS
+//
+//  Created by Iichiro Kawashima on 2019/12/08.
+//  Copyright © 2019 nabezawa. All rights reserved.
+//
+
 import Foundation
 
-final class CommmonUserDefaults {
+final class LocalDataStore {
     static func getToken() -> String {
         return getString(key: "token")
     }
@@ -14,7 +22,7 @@ final class CommmonUserDefaults {
     }
 }
 
-extension CommmonUserDefaults {
+extension LocalDataStore {
     static func getString(key: String) -> String {
         let userDefault = UserDefaults.standard
         return userDefault.string(forKey: key) ?? ""

@@ -10,10 +10,10 @@ final class DetailBookAPI {
         typealias Response = DetailBookAPI.Response
 
         // パラメータモデル
-        var detailBookModel: DetailBookModel
+        var info: BookModel
 
         var headerFields: [String: String] {
-            return ["Authorization": CommmonUserDefaults.getToken()]
+            return ["Authorization": LocalDataStore.getToken()]
         }
 
         var method: HTTPMethod {
@@ -21,15 +21,15 @@ final class DetailBookAPI {
         }
 
         var path: String {
-            return APIRoutes.detailBook.configurePath().path + "/\(detailBookModel.id)"
+            return APIRoutes.detailBook.configurePath().path + "/\(info.id)"
         }
 
         var parameters: Any? {
             var data = [String: Any]()
-            data["name"] = detailBookModel.name
-            data["image"] = detailBookModel.image
-            data["price"] = detailBookModel.price
-            data["purchase_date"] = detailBookModel.purchaseDate
+            data["name"] = info.name
+            data["image"] = info.image
+            data["price"] = info.price
+            data["purchase_date"] = info.purchaseDate
             return data
         }
     }

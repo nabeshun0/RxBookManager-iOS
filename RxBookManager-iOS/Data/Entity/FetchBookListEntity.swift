@@ -5,17 +5,17 @@ import Foundation
 //==================================================
 extension FetchBookListAPI {
     struct Response: Decodable {
-        let status: Int
-        let result: [Book]
+        var status: Int
+        var result: [Book]
     }
 }
 
 struct Book: Decodable {
-    let id: Int
-    let name: String
-    let image: String?
-    let price: Int?
-    let purchaseDate: String?
+    var id: Int
+    var name: String
+    var image: String?
+    var price: Int?
+    var purchaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case purchaseDate = "purchase_date"
