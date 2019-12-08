@@ -20,7 +20,7 @@ final class MainTabBarController: UITabBarController {
 
 struct BookListViewControllerFactory {
     static func createInstance() -> UINavigationController {
-        let dependency = BookRepositoryImpl.shared
+        let dependency = BookRepositoryImpl()
         let viewModel = BookListViewModel(dependency: dependency)
         let vc = BookListViewController(viewModel: viewModel)
         vc.tabBarItem = UITabBarItem(title: "一覧", image: #imageLiteral(resourceName: "bookIconTab"), tag: 1)
@@ -31,7 +31,7 @@ struct BookListViewControllerFactory {
 
 struct LogoutViewControllerFactory {
     static func makeInstance() -> UINavigationController {
-        let dependency = AccountRepositoryImpl.shared
+        let dependency = AccountRepositoryImpl()
         let viewModel = LogoutViewModel(dependency: dependency)
         let vc = LogoutViewController(viewModel: viewModel)
         vc.tabBarItem = UITabBarItem(title: "設定", image: #imageLiteral(resourceName: "settingIconTab"), tag: 2)

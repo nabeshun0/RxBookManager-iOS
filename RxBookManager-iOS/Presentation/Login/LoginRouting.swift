@@ -24,7 +24,7 @@ final class LoginRoutingImpl: LoginRouting {
 private extension LoginRoutingImpl {
     struct SignUpViewControllerFactory {
         static func makeInstance() -> UINavigationController {
-            let dependency = AccountRepositoryImpl.shared
+            let dependency = AccountRepositoryImpl()
             let viewModel = SignUpViewModel(dependency: dependency)
             let vc = SignUpViewController(viewModel: viewModel)
             return UINavigationController(rootViewController: vc)

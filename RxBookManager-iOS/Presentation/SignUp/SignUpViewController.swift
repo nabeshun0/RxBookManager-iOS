@@ -56,6 +56,7 @@ class SignUpViewController: UIViewController {
 
     private lazy var confirmPasswordTextField: UITextField = {
         let textField = UITextField()
+        textField.delegate = self
         textField.placeholder = "テキスト入力"
         textField.textAlignment = .center
         textField.borderStyle = .roundedRect

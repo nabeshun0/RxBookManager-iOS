@@ -17,7 +17,7 @@ final class LogoutRoutingImpl: LogoutRouting {
 
 struct LoginViewControllerFactory {
     static func makeInstance() -> UINavigationController {
-        let dependency = AccountRepositoryImpl.shared
+        let dependency = AccountRepositoryImpl()
         let viewModel = LoginViewModel(dependency: dependency)
         let vc = LoginViewController(viewModel: viewModel)
         return UINavigationController(rootViewController: vc)

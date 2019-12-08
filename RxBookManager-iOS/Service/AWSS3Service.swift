@@ -22,20 +22,10 @@ final class AWSS3Service {
 }
 
 extension AWSS3Service {
-    // クロージャーで渡す
-    func uploadImage(imageData: Data, completion: @escaping (Result<URL, Error>) -> Void) {
-        
-    }
+    // TODO: - impl next ticket
+    func uploadImage(imageData: Data, completion: @escaping (Result<URL, Error>) -> Void) {}
 
-    func downloadImage(imageUrl: URL, complation: @escaping (Result<Data, Error>) -> Void) {
+    func downloadImage(imageUrl: URL, complation: @escaping (Result<Data, Error>) -> Void) {}
 
-    }
-
-    func getlastModifiedDate() {
-
-    }
-
-    func cancelTask() {
-
-    }
+    func cancelTask() {}
 }

@@ -39,7 +39,10 @@ final class SplashViewController: UIViewController {
     func showAnimation() {
         animationView.play { [weak self] _ in
             self?.animationView.removeFromSuperview()
-            self?.routing.showLogin()
+            //if 2回目の起動時はログイン {
+            //    self?.routing.showLogin()
+            //}
+            self?.routing.showWalkthrough()
         }
     }
 

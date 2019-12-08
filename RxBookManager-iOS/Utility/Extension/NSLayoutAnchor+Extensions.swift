@@ -5,16 +5,16 @@ import UIKit
 */
 
 public extension UIView {
-    public func anchor() -> Anchor { return Anchor(view: self) }
+    func anchor() -> Anchor { return Anchor(view: self) }
 
-    public var top: NSLayoutAnchor<NSLayoutYAxisAnchor> { return topAnchor }
-    public var left: NSLayoutAnchor<NSLayoutXAxisAnchor> { return leftAnchor }
-    public var bottom: NSLayoutAnchor<NSLayoutYAxisAnchor> { return bottomAnchor }
-    public var right: NSLayoutAnchor<NSLayoutXAxisAnchor> { return rightAnchor }
-    public var height: NSLayoutDimension { return heightAnchor }
-    public var width: NSLayoutDimension { return widthAnchor }
-    public var centerX: NSLayoutXAxisAnchor { return centerXAnchor }
-    public var centerY: NSLayoutYAxisAnchor { return centerYAnchor }
+    var top: NSLayoutAnchor<NSLayoutYAxisAnchor> { return topAnchor }
+    var left: NSLayoutAnchor<NSLayoutXAxisAnchor> { return leftAnchor }
+    var bottom: NSLayoutAnchor<NSLayoutYAxisAnchor> { return bottomAnchor }
+    var right: NSLayoutAnchor<NSLayoutXAxisAnchor> { return rightAnchor }
+    var height: NSLayoutDimension { return heightAnchor }
+    var width: NSLayoutDimension { return widthAnchor }
+    var centerX: NSLayoutXAxisAnchor { return centerXAnchor }
+    var centerY: NSLayoutYAxisAnchor { return centerYAnchor }
 }
 
 public struct Anchor {
@@ -249,7 +249,7 @@ public struct Anchor {
     // MARK: Activation
     public func activate() -> Anchor {
         view.translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [top, left, bottom, right, height, width, centerX, centerY].flatMap({ $0 })
+        let constraints = [top, left, bottom, right, height, width, centerX, centerY].compactMap({ $0 })
         NSLayoutConstraint.activate(constraints)
         return self
     }
