@@ -11,4 +11,11 @@ import UIKit
 
 protocol RoutingType {
     var viewController: UIViewController? { get set }
+    static func makeInstance() -> UINavigationController
+}
+
+extension RoutingType {
+    static func makeInstance() -> UINavigationController {
+        return UINavigationController()
+    }
 }

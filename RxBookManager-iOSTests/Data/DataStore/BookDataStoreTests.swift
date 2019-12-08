@@ -21,10 +21,10 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testFetch() {
-        let fetchBookList = FetchBookListModel(limit: 5, page: 1)
+        let model = BookListModel(limit: 5, page: 1)
         let exp = expectation(description: "fetchBookListRequest")
 
-        dataStore.fetchBook(fetchBookList: fetchBookList)
+        dataStore.fetchBook(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -37,10 +37,10 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testRegister() {
-        let register = RegisterBookModel(name: "花火", image: "image", price: 400, purchaseDate: "2019-07-31")
+        let model = BookModel(name: "花火", image: "image", price: 400, purchaseDate: "2019-07-31")
         let exp = expectation(description: "registerBookRequest")
 
-        dataStore.registerBook(registerBook: register)
+        dataStore.registerBook(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -53,10 +53,10 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testUpdate() {
-        let detailBook = DetailBookModel(name: "花火祭り", image: "image", price: 2000, purchaseDate: "2019-08-04", id: 1508)
+        let model = BookModel(name: "花火祭り", image: "image", price: 2000, purchaseDate: "2019-08-04", id: 1508)
         let exp = expectation(description: "detailBookRequest")
 
-        dataStore.updateBook(detailBook: detailBook)
+        dataStore.updateBook(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()

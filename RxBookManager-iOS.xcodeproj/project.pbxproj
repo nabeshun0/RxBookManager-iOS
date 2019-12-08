@@ -87,8 +87,8 @@
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
 		5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */; };
 		5E8A656F22F13A8E00C43436 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A656E22F13A8E00C43436 /* BookModel.swift */; };
-		5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657022F13AA900C43436 /* DetailBookAPI.swift */; };
-		5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */; };
+		5E8A657122F13AA900C43436 /* UpdateBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657022F13AA900C43436 /* UpdateBookAPI.swift */; };
+		5E8A657322F13ACE00C43436 /* UpdateBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A657222F13ACE00C43436 /* UpdateBookEntity.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
@@ -226,8 +226,8 @@
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5E885BE022C5A77C00C9B547 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5E8A656E22F13A8E00C43436 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
-		5E8A657022F13AA900C43436 /* DetailBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookAPI.swift; sourceTree = "<group>"; };
-		5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookEntity.swift; sourceTree = "<group>"; };
+		5E8A657022F13AA900C43436 /* UpdateBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookAPI.swift; sourceTree = "<group>"; };
+		5E8A657222F13ACE00C43436 /* UpdateBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookEntity.swift; sourceTree = "<group>"; };
 		5ED32C3B2332580200D243AC /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		5ED6383C22F0195D009184A8 /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		5ED6384022F019D2009184A8 /* LogoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAPI.swift; sourceTree = "<group>"; };
@@ -398,10 +398,9 @@
 		5E649BCB22C3872700E562F1 /* RxBookManager-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5B7420B0239D16E100C699B3 /* Resource */,
 				5EFCE19122C637CE004B8D3C /* Data */,
 				5EFCE19222C637EF004B8D3C /* Presentation */,
-				5BAF50D32316D79400584FB1 /* Common */,
+				5B7420B0239D16E100C699B3 /* Resource */,
 				5EFCE19322C63808004B8D3C /* Utility */,
 				5BD6652E233637F5009A66B6 /* Service */,
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
@@ -476,7 +475,7 @@
 				5E1D963F22F0324600CD332B /* SignUpAPI.swift */,
 				5E1D964522F03F3700CD332B /* FetchBookListAPI.swift */,
 				5E1D964F22F0565E00CD332B /* RegisterBookAPI.swift */,
-				5E8A657022F13AA900C43436 /* DetailBookAPI.swift */,
+				5E8A657022F13AA900C43436 /* UpdateBookAPI.swift */,
 				5E16367F22D09D4100C26AD5 /* APIRoutes.swift */,
 				5E20CCE522D2D6230000DB4F /* AppRequestType.swift */,
 			);
@@ -505,6 +504,7 @@
 		5EFCE19222C637EF004B8D3C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5BAF50D32316D79400584FB1 /* Common */,
 				5B3D95C12317FBB600F917D8 /* Splash */,
 				5EFCE19B22C7213B004B8D3C /* Login */,
 				5EFCE1A022C722BD004B8D3C /* SignUp */,
@@ -534,7 +534,7 @@
 				5E1D963B22F0320800CD332B /* SignUpEntity.swift */,
 				5E1D964922F03F5900CD332B /* FetchBookListEntity.swift */,
 				5E1D965122F0566D00CD332B /* RegisterBookEntity.swift */,
-				5E8A657222F13ACE00C43436 /* DetailBookEntity.swift */,
+				5E8A657222F13ACE00C43436 /* UpdateBookEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -825,7 +825,7 @@
 				5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */,
 				5E1D963C22F0320800CD332B /* SignUpEntity.swift in Sources */,
 				5E1367D822C748FF006E5475 /* DetailBookViewController.swift in Sources */,
-				5E8A657322F13ACE00C43436 /* DetailBookEntity.swift in Sources */,
+				5E8A657322F13ACE00C43436 /* UpdateBookEntity.swift in Sources */,
 				5EFCE1A722C72C4D004B8D3C /* LoginViewModel.swift in Sources */,
 				5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */,
 				5EFCE1B222C730DF004B8D3C /* MainTabBarController.swift in Sources */,
@@ -842,7 +842,7 @@
 				5E31992F22D6D3D200DA5072 /* BookDataStore.swift in Sources */,
 				5E1367E022C7498C006E5475 /* LogoutViewModel.swift in Sources */,
 				5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */,
-				5E8A657122F13AA900C43436 /* DetailBookAPI.swift in Sources */,
+				5E8A657122F13AA900C43436 /* UpdateBookAPI.swift in Sources */,
 				5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */,
 				5B7420AF239D15B100C699B3 /* LocalDataStore.swift in Sources */,
 				5ED6384122F019D2009184A8 /* LogoutAPI.swift in Sources */,

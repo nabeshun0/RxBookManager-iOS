@@ -11,7 +11,7 @@ import APIKit
 protocol BookRepository {
     func fetchBook(_ params: BookListModel) -> Observable<FetchBookListAPI.Response>
     func registerBook(_ params: BookModel) -> Observable<RegisterBookAPI.Response>
-    func updateBook(_ params: BookModel) -> Observable<DetailBookAPI.Response>
+    func updateBook(_ params: BookModel) -> Observable<UpdateBookAPI.Response>
 }
 
 final class BookRepositoryImpl: BookRepository {
@@ -28,7 +28,7 @@ final class BookRepositoryImpl: BookRepository {
         return dataStore.registerBook(with: params)
     }
 
-    func updateBook(_ params: BookModel) -> Observable<DetailBookAPI.Response> {
+    func updateBook(_ params: BookModel) -> Observable<UpdateBookAPI.Response> {
         return dataStore.updateBook(with: params)
     }
 }

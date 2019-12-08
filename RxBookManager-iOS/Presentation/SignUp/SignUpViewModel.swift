@@ -10,7 +10,7 @@ final class SignUpViewModel {
     }
 }
 
-extension SignUpViewModel {
+extension SignUpViewModel: ViewModelType {
 
     struct Input {
         var didSaveButtonTapped: Observable<Void>

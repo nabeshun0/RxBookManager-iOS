@@ -13,7 +13,7 @@ final class BookListViewModel {
     }
 }
 
-extension BookListViewModel {
+extension BookListViewModel: ViewModelType {
 
     struct Input {
         let didReloadButtonTapped: Observable<Void>

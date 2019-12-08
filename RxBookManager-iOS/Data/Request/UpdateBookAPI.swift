@@ -5,9 +5,9 @@ import APIKit
 //==================================================
 // MARK: - API
 //==================================================
-final class DetailBookAPI {
+final class UpdateBookAPI {
     struct Request: AppRequestType {
-        typealias Response = DetailBookAPI.Response
+        typealias Response = UpdateBookAPI.Response
 
         // パラメータモデル
         var info: BookModel
@@ -17,11 +17,11 @@ final class DetailBookAPI {
         }
 
         var method: HTTPMethod {
-            return APIRoutes.detailBook.configurePath().method
+            return APIRoutes.updateBook.configurePath().method
         }
 
         var path: String {
-            return APIRoutes.detailBook.configurePath().path + "/\(info.id)"
+            return APIRoutes.updateBook.configurePath().path + "/\(info.id)"
         }
 
         var parameters: Any? {

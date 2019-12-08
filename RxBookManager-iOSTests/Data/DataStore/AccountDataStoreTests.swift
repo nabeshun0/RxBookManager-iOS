@@ -6,6 +6,8 @@ import XCTest
 
 class AccountDataStoreTests: XCTestCase {
 
+    let disposebag = DisposeBag()
+
     override func setUp() {
         super.setUp()
     }
@@ -16,11 +18,10 @@ class AccountDataStoreTests: XCTestCase {
 
     func testLogin() {
         let dataStore = AccountDataStoreImpl()
-        let login = LoginModel(email: "", password: "")
-        let disposebag = DisposeBag()
+        let model = AuthModel(email: "", password: "")
         let exp = expectation(description: "loginRequest")
 
-        dataStore.login(login: login)
+        dataStore.login(with: model)
             .subscribe(onNext: { response in
                 print(response)
                 exp.fulfill()
@@ -34,11 +35,10 @@ class AccountDataStoreTests: XCTestCase {
 
     func testSignup() {
         let dataStore = AccountDataStoreImpl()
-        let signUp = SignUpModel(email: "", password: "")
-        let disposebag = DisposeBag()
+        let model = AuthModel(email: "", password: "")
         let exp = expectation(description: "signupRequest")
 
-        dataStore.signUp(signUp: signUp)
+        dataStore.signUp(with: model)
             .subscribe(onNext: { response in
                 print(response)
                 exp.fulfill()
@@ -52,7 +52,6 @@ class AccountDataStoreTests: XCTestCase {
 
     func testLogout() {
         let dataStore = AccountDataStoreImpl()
-        let disposebag = DisposeBag()
         let exp = expectation(description: "signupRequest")
 
         dataStore.logout()

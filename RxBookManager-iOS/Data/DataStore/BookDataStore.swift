@@ -4,7 +4,7 @@ import RxSwift
 protocol BookDataStore {
     func fetchBook(with info: BookListModel) -> Observable<FetchBookListAPI.Response>
     func registerBook(with info: BookModel) -> Observable<RegisterBookAPI.Response>
-    func updateBook(with info: BookModel) -> Observable<DetailBookAPI.Response>
+    func updateBook(with info: BookModel) -> Observable<UpdateBookAPI.Response>
 }
 
 struct BookDataStoreImpl: BookDataStore {
@@ -31,8 +31,8 @@ struct BookDataStoreImpl: BookDataStore {
     // MARK: - 書籍編集、リクエスト・レスポンス
     //==================================================
 
-    func updateBook(with info: BookModel) -> Observable<DetailBookAPI.Response> {
-        let request = DetailBookAPI.Request(info: info)
+    func updateBook(with info: BookModel) -> Observable<UpdateBookAPI.Response> {
+        let request = UpdateBookAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
     }
 }
