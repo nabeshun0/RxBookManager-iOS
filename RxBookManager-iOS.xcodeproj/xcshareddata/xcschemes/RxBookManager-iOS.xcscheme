@@ -55,6 +55,16 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5BA8F435239FAC1600C354D2"
+               BuildableName = "DataManagerTests.xctest"
+               BlueprintName = "DataManagerTests"
+               ReferencedContainer = "container:RxBookManager-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
