@@ -4,10 +4,6 @@ import RxCocoa
 
 class TutorialViewController: UIViewController {
 
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
-
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         let width = self.view.frame.width

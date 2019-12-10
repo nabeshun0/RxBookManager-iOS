@@ -1,7 +1,7 @@
 import UIKit
 import DataManager
 
-struct Factory {
+struct AppFactory {
     static func makeSignInViewController() -> UINavigationController {
         let dependency = AccountRepositoryImpl()
         let viewModel = SignInViewModel(dependency: dependency)
@@ -24,7 +24,6 @@ struct Factory {
         let HomeBar = UINavigationController(rootViewController: vc)
         return HomeBar
     }
-
 
     static func makeSignOutViewController() -> UINavigationController {
         let dependency = AccountRepositoryImpl()

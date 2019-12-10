@@ -16,10 +16,6 @@ class SignInViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
-
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.text = "メールアドレス"

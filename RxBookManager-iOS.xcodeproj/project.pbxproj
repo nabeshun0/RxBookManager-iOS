@@ -46,7 +46,7 @@
 		5BA8F4C6239FD79600C354D2 /* BookDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31992E22D6D3D200DA5072 /* BookDataStore.swift */; };
 		5BA8F4C7239FD79C00C354D2 /* AccountDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCDE22D2D00E0000DB4F /* AccountDataStore.swift */; };
 		5BA8F4CA239FDA6A00C354D2 /* BookInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4C9239FDA6A00C354D2 /* BookInfomation.swift */; };
-		5BA8F4CC239FDEC900C354D2 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4CB239FDEC900C354D2 /* ViewControllerFactory.swift */; };
+		5BA8F4CC239FDEC900C354D2 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4CB239FDEC900C354D2 /* AppFactory.swift */; };
 		5BA8F4CE239FE71300C354D2 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4CD239FE71300C354D2 /* UserEntity.swift */; };
 		5BA8F4CF23A056E200C354D2 /* AccountDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */; };
 		5BA8F4D023A056E700C354D2 /* BookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */; };
@@ -190,7 +190,7 @@
 		5BA8F43D239FAC1600C354D2 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		5BA8F43F239FAC1600C354D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA8F4C9239FDA6A00C354D2 /* BookInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfomation.swift; sourceTree = "<group>"; };
-		5BA8F4CB239FDEC900C354D2 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		5BA8F4CB239FDEC900C354D2 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		5BA8F4CD239FE71300C354D2 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 			children = (
 				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
 				5BAF50D42316D7C200584FB1 /* RoutingType.swift */,
-				5BA8F4CB239FDEC900C354D2 /* ViewControllerFactory.swift */,
+				5BA8F4CB239FDEC900C354D2 /* AppFactory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -822,7 +822,6 @@
 					};
 					5BA8F435239FAC1600C354D2 = {
 						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = 5E649BC822C3872700E562F1;
 					};
 					5E649BC822C3872700E562F1 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1021,7 +1020,7 @@
 				5EFCE1A522C7270E004B8D3C /* SignInViewController.swift in Sources */,
 				5E1367E022C7498C006E5475 /* SignOutViewModel.swift in Sources */,
 				5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */,
-				5BA8F4CC239FDEC900C354D2 /* ViewControllerFactory.swift in Sources */,
+				5BA8F4CC239FDEC900C354D2 /* AppFactory.swift in Sources */,
 				5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */,
 				5BD6653F23364294009A66B6 /* AWSS3Service.swift in Sources */,
 				5EFCE1B022C72F3F004B8D3C /* SignUpRouting.swift in Sources */,
@@ -1174,7 +1173,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBookManager-iOS.app/RxBookManager-iOS";
 			};
 			name = Debug;
 		};
@@ -1194,7 +1192,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBookManager-iOS.app/RxBookManager-iOS";
 			};
 			name = Release;
 		};

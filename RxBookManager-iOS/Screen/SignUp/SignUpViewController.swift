@@ -16,10 +16,6 @@ class SignUpViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
-
     private lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "メールアドレス"

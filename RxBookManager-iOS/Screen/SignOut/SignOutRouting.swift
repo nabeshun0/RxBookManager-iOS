@@ -9,7 +9,7 @@ final class SignOutRoutingImpl: SignOutRouting {
     weak var viewController: UIViewController?
 
     func showSignIn() {
-        let vc = Factory.makeSignInViewController()
+        let vc = AppFactory.makeSignInViewController()
         viewController?.present(vc, animated: true)
     }
 }

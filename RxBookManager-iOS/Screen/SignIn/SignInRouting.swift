@@ -16,7 +16,7 @@ final class SignInRoutingImpl: SignInRouting {
     }
 
     func showSignUp() {
-        let vc = Factory.makeSignUpViewController()
+        let vc = AppFactory.makeSignUpViewController()
         viewController?.present(vc, animated: true)
     }
 }
