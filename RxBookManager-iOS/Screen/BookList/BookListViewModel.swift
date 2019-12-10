@@ -4,7 +4,7 @@ import DataManager
 final class BookListViewModel {
 
     private let dependency: BookRepository
-    lazy var books: [Book] = []
+    lazy var books: [BookInfo] = []
     private var pageCount = 1
 
     init(dependency: BookRepository) {

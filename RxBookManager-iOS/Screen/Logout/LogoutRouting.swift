@@ -1,5 +1,5 @@
 import UIKit
-import Foundation
+import DataManager
 
 protocol LogoutRouting: RoutingType {
     func showLogin()

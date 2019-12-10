@@ -39,7 +39,7 @@ class BookListTableViewCell: UITableViewCell {
         fatalError("セルを初期化できません")
     }
 
-    func configureWithBook(book: Book) {
+    func configureWithBook(book: BookInfo) {
         titleLabel.text = book.name
         if let image = book.image {
             Nuke.loadImage(with: URL(string: image)!, into: bookImage)

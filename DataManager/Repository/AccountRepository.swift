@@ -19,6 +19,8 @@ public class AccountRepositoryImpl: AccountRepository {
 
     public let dataStore = AccountDataStoreFactory.createUserAccountDataStore()
 
+    public init() {}
+    
     public func login(_ params: AuthModel) -> Observable<LoginAPI.Response> {
         return dataStore.login(with: params)
         .do(onNext: { result in

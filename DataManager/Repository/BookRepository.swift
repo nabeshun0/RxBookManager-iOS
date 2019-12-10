@@ -18,6 +18,7 @@ public class BookRepositoryImpl: BookRepository {
     
     public let dataStore = BookDataStoreFactory.createBookDataStore()
 
+    public init() {}
     public func fetchBook(_ params: BookListModel) -> Observable<FetchBookListAPI.Response> {
         return dataStore.fetchBook(with: params)
     }

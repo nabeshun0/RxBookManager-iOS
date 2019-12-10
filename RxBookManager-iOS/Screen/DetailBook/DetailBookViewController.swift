@@ -9,9 +9,9 @@ final class DetailBookViewController: UIViewController {
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    private var selectedBook: Book
+    private var selectedBook: BookInfo
 
-    init(viewModel: DetailBookViewModel, book: Book) {
+    init(viewModel: DetailBookViewModel, book: BookInfo) {
         self.viewModel = viewModel
         self.selectedBook = book
         super.init(nibName: nil, bundle: nil)

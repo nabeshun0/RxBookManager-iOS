@@ -1,8 +1,9 @@
 import UIKit
+import DataManager
 
 protocol BookListRouting: RoutingType {
     func showRegisterBookVC()
-    func showDetailBookVC(book: Book)
+    func showDetailBookVC(book: BookInfo)
 }
 
 final class BookListRoutingImpl: BookListRouting {
@@ -14,7 +15,7 @@ final class BookListRoutingImpl: BookListRouting {
         viewController?.present(vc, animated: true)
     }
 
-    func showDetailBookVC(book: Book) {
+    func showDetailBookVC(book: BookInfo) {
         let vc = DetailBookViewControllerFactory.makeInstance(book: book)
         guard let view = viewController?.navigationController else { return }
         view.pushViewController(vc, animated: true)
@@ -32,7 +33,7 @@ private extension BookListRoutingImpl {
     }
 
     struct DetailBookViewControllerFactory {
-        static func makeInstance(book: Book) -> DetailBookViewController {
+        static func makeInstance(book: BookInfo) -> DetailBookViewController {
             let dependency = BookRepositoryImpl()
             let viewModel = DetailBookViewModel(dependency: dependency)
             return DetailBookViewController(viewModel: viewModel, book: book)

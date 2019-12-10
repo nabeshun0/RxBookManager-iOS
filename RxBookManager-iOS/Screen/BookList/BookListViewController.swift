@@ -128,7 +128,15 @@ extension BookListViewController {
         let output = viewModel.transform(input: input)
 
         output.result.subscribe(onNext: { [weak self] result in
-            self?.viewModel.books += result.result
+            self?.viewModel.books += result.result.map {
+                BookInfo(
+                    id: $0.id,
+                    name: $0.name,
+                    image: $0.image,
+                    price: $0.price,
+                    purchaseDate: $0.purchaseDate
+                )
+            }
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
 
@@ -137,7 +145,15 @@ extension BookListViewController {
         }).disposed(by: disposeBag)
 
         output.firstResult.subscribe(onNext: { [weak self] result in
-            self?.viewModel.books += result.result
+            self?.viewModel.books += result.result.map {
+                BookInfo(
+                    id: $0.id,
+                    name: $0.name,
+                    image: $0.image,
+                    price: $0.price,
+                    purchaseDate: $0.purchaseDate
+                )
+            }
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
 

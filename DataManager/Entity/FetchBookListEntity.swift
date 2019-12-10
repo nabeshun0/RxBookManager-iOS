@@ -1,17 +1,17 @@
 
 extension FetchBookListAPI {
     public struct Response: Decodable {
-        var status: Int
-        var result: [Book]
+        public var status: Int
+        public var result: [Book]
     }
 }
 
 public struct Book: Decodable {
-    var id: Int
-    var name: String
-    var image: String?
-    var price: Int?
-    var purchaseDate: String?
+    public var id: Int
+    public var name: String
+    public var image: String?
+    public var price: Int?
+    public var purchaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case purchaseDate = "purchase_date"
