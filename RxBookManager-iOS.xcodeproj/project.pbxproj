@@ -14,6 +14,7 @@
 		5B3D95CA23180C1100F917D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D95C823180C1000F917D8 /* RxRelay.framework */; };
 		5B3D95CB23180C1100F917D8 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */; };
 		5B7420AF239D15B100C699B3 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7420AE239D15B100C699B3 /* LocalDataStore.swift */; };
+		5B7420B3239D418300C699B3 /* TestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7420B2239D418300C699B3 /* TestModule.swift */; };
 		5BAF50CD2316C45700584FB1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CC2316C45700584FB1 /* AccountRepository.swift */; };
 		5BAF50CF2316C46700584FB1 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50CE2316C46700584FB1 /* BookRepository.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
@@ -148,6 +149,7 @@
 		5B3D95C823180C1000F917D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		5B3D95C923180C1000F917D8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		5B7420AE239D15B100C699B3 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
+		5B7420B2239D418300C699B3 /* TestModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModule.swift; sourceTree = "<group>"; };
 		5BAF50CC2316C45700584FB1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		5BAF50CE2316C46700584FB1 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5BAF50D02316CDF200584FB1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			children = (
 				5EFCE1A322C72682004B8D3C /* Consts */,
 				5EFCE1A222C72595004B8D3C /* Extension */,
+				5B7420B2239D418300C699B3 /* TestModule.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				5E8A656F22F13A8E00C43436 /* BookModel.swift in Sources */,
 				5E1367E222C7499D006E5475 /* LogoutRouting.swift in Sources */,
 				5E20CCE622D2D6230000DB4F /* AppRequestType.swift in Sources */,
+				5B7420B3239D418300C699B3 /* TestModule.swift in Sources */,
 				5EEEB5192334C47900A87837 /* WalkthroughView.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* RegisterBookViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
