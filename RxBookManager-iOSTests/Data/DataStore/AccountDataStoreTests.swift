@@ -16,12 +16,12 @@ class AccountDataStoreTests: XCTestCase {
         super.tearDown()
     }
 
-    func testLogin() {
+    func testSignIn() {
         let dataStore = AccountDataStoreImpl()
         let model = AuthModel(email: "", password: "")
-        let exp = expectation(description: "loginRequest")
+        let exp = expectation(description: "SignInRequest")
 
-        dataStore.login(with: model)
+        dataStore.SignIn(with: model)
             .subscribe(onNext: { response in
                 print(response)
                 exp.fulfill()
@@ -50,11 +50,11 @@ class AccountDataStoreTests: XCTestCase {
         wait(for: [exp], timeout: 5.0)
     }
 
-    func testLogout() {
+    func testSignOut() {
         let dataStore = AccountDataStoreImpl()
         let exp = expectation(description: "signupRequest")
 
-        dataStore.logout()
+        dataStore.SignOut()
             .subscribe(onNext: { response in
                 print(response)
                 exp.fulfill()

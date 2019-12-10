@@ -1,18 +1,11 @@
-//
-//  UserRepository.swift
-//  RxBookManager-iOS
-//
-//  Created by Iichiro Kawashima on 2019/08/28.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
 
 import APIKit
 import RxSwift
 
 public protocol AccountRepository {
-    func login(_ params: AuthModel) -> Observable<LoginAPI.Response>
+    func SignIn(_ params: AuthModel) -> Observable<SignInAPI.Response>
     func signup(_ params: AuthModel) -> Observable<SignUpAPI.Response>
-    func logout() -> Observable<LogoutAPI.Response>
+    func SignOut() -> Observable<SignOutAPI.Response>
 }
 
 public class AccountRepositoryImpl: AccountRepository {
@@ -21,8 +14,8 @@ public class AccountRepositoryImpl: AccountRepository {
 
     public init() {}
     
-    public func login(_ params: AuthModel) -> Observable<LoginAPI.Response> {
-        return dataStore.login(with: params)
+    public func SignIn(_ params: AuthModel) -> Observable<SignInAPI.Response> {
+        return dataStore.SignIn(with: params)
         .do(onNext: { result in
             let token = result.result.token
             LocalDataStore.saveToken(value: token)
@@ -37,8 +30,8 @@ public class AccountRepositoryImpl: AccountRepository {
         })
     }
 
-    public func logout() -> Observable<LogoutAPI.Response> {
-        return dataStore.logout()
+    public func SignOut() -> Observable<SignOutAPI.Response> {
+        return dataStore.SignOut()
             .do(onNext: { result in
                 // tokenを削除
                 LocalDataStore.clearToken()

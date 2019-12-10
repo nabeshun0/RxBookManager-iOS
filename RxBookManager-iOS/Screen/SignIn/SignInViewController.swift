@@ -3,11 +3,11 @@ import APIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
 
-    private var viewModel: LoginViewModel
+    private var viewModel: SignInViewModel
 
-    init(viewModel: LoginViewModel) {
+    init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
 
-    private let loginButton: UIButton = {
+    private let SignInButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("ログイン", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -77,8 +77,8 @@ class LoginViewController: UIViewController {
     // MARK: - Routing
     //==================================================
 
-    private lazy var routing: LoginRouting = {
-        let routing = LoginRoutingImpl()
+    private lazy var routing: SignInRouting = {
+        let routing = SignInRoutingImpl()
         routing.viewController = self
         return routing
     }()
@@ -102,11 +102,11 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController {
+extension SignInViewController {
 
 
     func setupUI() {
-        [emailLabel, emailTextField, passwordLabel, passwordTextField, loginButton, signupButton]
+        [emailLabel, emailTextField, passwordLabel, passwordTextField, SignInButton, signupButton]
             .forEach {
                 self.view.addSubview($0)
                 $0.translatesAutoresizingMaskIntoConstraints = false
@@ -128,13 +128,13 @@ extension LoginViewController {
          passwordTextField.rightAnchor.constraint(equalTo: emailTextField.rightAnchor),
          passwordTextField.heightAnchor.constraint(equalToConstant: 40),
 
-         loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-         loginButton.leftAnchor.constraint(equalTo: passwordTextField.leftAnchor),
-         loginButton.rightAnchor.constraint(equalTo: passwordTextField.rightAnchor),
-         loginButton.heightAnchor.constraint(equalToConstant: 50),
+         SignInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+         SignInButton.leftAnchor.constraint(equalTo: passwordTextField.leftAnchor),
+         SignInButton.rightAnchor.constraint(equalTo: passwordTextField.rightAnchor),
+         SignInButton.heightAnchor.constraint(equalToConstant: 50),
 
-         signupButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
-         signupButton.rightAnchor.constraint(equalTo: loginButton.rightAnchor),
+         signupButton.topAnchor.constraint(equalTo: SignInButton.bottomAnchor, constant: 30),
+         signupButton.rightAnchor.constraint(equalTo: SignInButton.rightAnchor),
          signupButton.heightAnchor.constraint(equalToConstant: 50),
          signupButton.widthAnchor.constraint(equalToConstant: 120)]
             .forEach {
@@ -143,10 +143,10 @@ extension LoginViewController {
     }
 
     private func bindUI() {
-        let input = LoginViewModel.Input(didLoginButtonTapped: loginButton.rx.tap.asObservable(), didSignupButtonTapped: signupButton.rx.tap.asObservable(), emailText: emailTextField.rx.text.orEmpty.asObservable(), passwordText: passwordTextField.rx.text.orEmpty.asObservable())
+        let input = SignInViewModel.Input(didSignInButtonTapped: SignInButton.rx.tap.asObservable(), didSignupButtonTapped: signupButton.rx.tap.asObservable(), emailText: emailTextField.rx.text.orEmpty.asObservable(), passwordText: passwordTextField.rx.text.orEmpty.asObservable())
         let output = viewModel.transform(input: input)
         output.isValid.subscribe(onNext: { [weak self] bool in
-            self?.loginButton.isHidden = !bool
+            self?.SignInButton.isHidden = !bool
         }).disposed(by: disposeBag)
 
         output.result.subscribe(onNext: { [weak self] _ in

@@ -1,10 +1,3 @@
-//
-//  ViewModelType.swift
-//  RxBookManager-iOS
-//
-//  Created by Iichiro Kawashima on 2019/08/28.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
 
 protocol ViewModelType {
     associatedtype Input

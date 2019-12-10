@@ -1,12 +1,11 @@
 import UIKit
-import DataManager
 
-protocol LoginRouting: RoutingType {
+protocol SignInRouting: RoutingType {
     func showMainTab()
     func showSignUp()
 }
 
-final class LoginRoutingImpl: LoginRouting {
+final class SignInRoutingImpl: SignInRouting {
 
     weak var viewController: UIViewController?
 

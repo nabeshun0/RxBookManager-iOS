@@ -1,10 +1,3 @@
-//
-//  DataManager.h
-//  DataManager
-//
-//  Created by Iichiro Kawashima on 2019/12/10.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 

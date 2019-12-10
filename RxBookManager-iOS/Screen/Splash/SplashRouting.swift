@@ -2,24 +2,21 @@ import UIKit
 import DataManager
 
 protocol SplashRouting: RoutingType {
-    func showLogin()
-    func showWalkthrough()
+    func showSignIn()
+    func showTutorial()
 }
 
 final class SplashRoutingImpl: SplashRouting {
 
     weak var viewController: UIViewController?
 
-    func showLogin() {
-        let dependency = AccountRepositoryImpl()
-        let viewModel = LoginViewModel(dependency: dependency)
-        let vc = LoginViewController(viewModel: viewModel)
-        let nc = UINavigationController(rootViewController: vc)
-        viewController?.present(nc, animated: true)
+    func showSignIn() {
+        let vc = Factory.makeSignInViewController()
+        viewController?.present(vc, animated: true)
     }
 
-    func showWalkthrough() {
-        let vc = WalkthroughViewController()
+    func showTutorial() {
+        let vc = TutorialViewController()
         viewController?.present(vc, animated: true)
     }
 }

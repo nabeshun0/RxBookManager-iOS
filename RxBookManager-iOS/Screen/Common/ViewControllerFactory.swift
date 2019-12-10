@@ -2,10 +2,10 @@ import UIKit
 import DataManager
 
 struct Factory {
-    static func makeLoginViewController() -> UINavigationController {
+    static func makeSignInViewController() -> UINavigationController {
         let dependency = AccountRepositoryImpl()
-        let viewModel = LoginViewModel(dependency: dependency)
-        let vc = LoginViewController(viewModel: viewModel)
+        let viewModel = SignInViewModel(dependency: dependency)
+        let vc = SignInViewController(viewModel: viewModel)
         return UINavigationController(rootViewController: vc)
     }
 
@@ -16,36 +16,36 @@ struct Factory {
         return UINavigationController(rootViewController: vc)
     }
 
-    static func makeBookListViewController() -> UINavigationController {
+    static func makeHomeViewController() -> UINavigationController {
         let dependency = BookRepositoryImpl()
-        let viewModel = BookListViewModel(dependency: dependency)
-        let vc = BookListViewController(viewModel: viewModel)
+        let viewModel = HomeViewModel(dependency: dependency)
+        let vc = HomeViewController(viewModel: viewModel)
         vc.tabBarItem = UITabBarItem(title: "一覧", image: #imageLiteral(resourceName: "bookIconTab"), tag: 1)
-        let bookListBar = UINavigationController(rootViewController: vc)
-        return bookListBar
+        let HomeBar = UINavigationController(rootViewController: vc)
+        return HomeBar
     }
 
 
-    static func makeLogoutViewController() -> UINavigationController {
+    static func makeSignOutViewController() -> UINavigationController {
         let dependency = AccountRepositoryImpl()
-        let viewModel = LogoutViewModel(dependency: dependency)
-        let vc = LogoutViewController(viewModel: viewModel)
+        let viewModel = SignOutViewModel(dependency: dependency)
+        let vc = SignOutViewController(viewModel: viewModel)
         vc.tabBarItem = UITabBarItem(title: "設定", image: #imageLiteral(resourceName: "settingIconTab"), tag: 2)
-        let logoutBar = UINavigationController(rootViewController: vc)
-        return logoutBar
+        let SignOutBar = UINavigationController(rootViewController: vc)
+        return SignOutBar
     }
 
-    static func makeRegisterBookViewController() -> UINavigationController {
+    static func makeBookRegistrationViewController() -> UINavigationController {
         let dependency = BookRepositoryImpl()
-        let viewModel = RegisterBookViewModel(dependency: dependency)
-        let vc = RegisterBookViewController(viewModel: viewModel)
+        let viewModel = BookRegistrationViewModel(dependency: dependency)
+        let vc = BookRegistrationViewController(viewModel: viewModel)
         return UINavigationController(rootViewController: vc)
     }
 
 
-    static func makeDetailBookViewController(book: BookInfo) -> DetailBookViewController {
+    static func makeBookDetailViewController(book: BookInfomation) -> BookDetailViewController {
         let dependency = BookRepositoryImpl()
-        let viewModel = DetailBookViewModel(dependency: dependency)
-        return DetailBookViewController(viewModel: viewModel, book: book)
+        let viewModel = BookDetailViewModel(dependency: dependency)
+        return BookDetailViewController(viewModel: viewModel, book: book)
     }
 }

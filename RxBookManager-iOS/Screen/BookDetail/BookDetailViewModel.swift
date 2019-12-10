@@ -2,7 +2,7 @@ import RxSwift
 import DataManager
 import UIKit
 
-final class DetailBookViewModel {
+final class BookDetailViewModel {
     private let dependency: BookRepository
 
     init(dependency: BookRepository) {
@@ -10,7 +10,7 @@ final class DetailBookViewModel {
     }
 }
 
-extension DetailBookViewModel: ViewModelType {
+extension BookDetailViewModel: ViewModelType {
 
     struct Input {
         let didSaveButtonTapped: Observable<Void>
@@ -58,7 +58,7 @@ extension DetailBookViewModel: ViewModelType {
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<UpdateBookAPI.Response>> in
                 let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: input.id)
-                return self.dependency.updateBook(info)
+                return self.dependency.update(info)
                 .materialize()
         }.share(replay: 1)
 

@@ -1,13 +1,13 @@
 import UIKit
 import RxSwift
 
-final class RegisterBookViewController: UIViewController {
+final class BookRegistrationViewController: UIViewController {
 
-    private var viewModel: RegisterBookViewModel
+    private var viewModel: BookRegistrationViewModel
 
     let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    init(viewModel: RegisterBookViewModel) {
+    init(viewModel: BookRegistrationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -15,10 +15,6 @@ final class RegisterBookViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
 
     private let dateFormat: DateFormatter = {
         let dateFormat = DateFormatter()
@@ -185,7 +181,7 @@ final class RegisterBookViewController: UIViewController {
     }
 }
 
-extension RegisterBookViewController {
+extension BookRegistrationViewController {
     private func setupUI() {
 
         [bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField].forEach {
@@ -239,7 +235,7 @@ extension RegisterBookViewController {
     }
 
     private func bindUI() {
-        let input = RegisterBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable())
+        let input = BookRegistrationViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable())
 
         let output = viewModel.transform(input: input)
 
@@ -266,7 +262,7 @@ extension RegisterBookViewController {
     }
 }
 
-extension RegisterBookViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension BookRegistrationViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @objc func registerImage() {
         present(imagePicker, animated: true)

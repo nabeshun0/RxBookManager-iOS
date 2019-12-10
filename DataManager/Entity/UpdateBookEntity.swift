@@ -1,7 +1,7 @@
 
 extension UpdateBookAPI {
     public struct Response: Decodable {
-        var status: Int
-        var result: Book
+        public var status: Int
+        public var result: Book
     }
 }

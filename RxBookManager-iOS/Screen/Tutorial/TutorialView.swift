@@ -1,6 +1,6 @@
 import UIKit
 
-extension WalkthroughView {
+extension TutorialView {
     enum Layout {
         case first
         case second
@@ -30,7 +30,7 @@ extension WalkthroughView {
     }
 }
 
-final class WalkthroughView: UIView {
+final class TutorialView: UIView {
 
     let descriptionImageView: UIImageView = {
         let imageView = UIImageView()
@@ -84,9 +84,9 @@ final class WalkthroughView: UIView {
         descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 
-    func applyUI(view: WalkthroughView.Layout) {
+    func applyUI(view: TutorialView.Layout) {
         titleLabel.text = view.title
         descriptionTextView.text = view.description
-        
+
     }
 }

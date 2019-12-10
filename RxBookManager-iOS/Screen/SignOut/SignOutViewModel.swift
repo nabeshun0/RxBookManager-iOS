@@ -1,15 +1,9 @@
-//
-//  LogoutViewModel.swift
-//  RxBookManager-iOS
-//
-//  Created by member on 2019/06/29.
-//  Copyright © 2019 nabezawa. All rights reserved.
-//
+
 import RxCocoa
 import RxSwift
 import DataManager
 
-final class LogoutViewModel {
+final class SignOutViewModel {
 
     private let dependency: AccountRepository
 
@@ -18,22 +12,22 @@ final class LogoutViewModel {
     }
 }
 
-extension LogoutViewModel: ViewModelType {
+extension SignOutViewModel: ViewModelType {
 
     struct Input {
         let didButtonTapped: Observable<Void>
     }
 
     struct Output {
-        let result: Observable<LogoutAPI.Response>
+        let result: Observable<SignOutAPI.Response>
         let error: Observable<Error>
     }
 
     func transform(input: Input) -> Output {
 
         let response = input.didButtonTapped
-            .flatMap { _ -> Observable<LogoutAPI.Response> in
-                return self.dependency.logout()
+            .flatMap { _ -> Observable<SignOutAPI.Response> in
+                return self.dependency.SignOut()
             }.materialize().share(replay: 1)
 
         return Output(result: response.elements(), error: response.errors())

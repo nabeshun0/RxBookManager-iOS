@@ -3,15 +3,15 @@ import APIKit
 import RxSwift
 import Nuke
 
-final class DetailBookViewController: UIViewController {
+final class BookDetailViewController: UIViewController {
 
-    private var viewModel: DetailBookViewModel
+    private var viewModel: BookDetailViewModel
 
     private let imageSubject: BehaviorSubject<UIImage> = BehaviorSubject(value: #imageLiteral(resourceName: "bookIcon"))
 
-    private var selectedBook: BookInfo
+    private var selectedBook: BookInfomation
 
-    init(viewModel: DetailBookViewModel, book: BookInfo) {
+    init(viewModel: BookDetailViewModel, book: BookInfomation) {
         self.viewModel = viewModel
         self.selectedBook = book
         super.init(nibName: nil, bundle: nil)
@@ -167,8 +167,8 @@ final class DetailBookViewController: UIViewController {
     // MARK: - Routing
     //==================================================
 
-    private lazy var routing: DetailBookRouting = {
-        let routing = DetaiBookRoutingImpl()
+    private lazy var routing: BookDetailRouting = {
+        let routing = BookDetailRoutingImpl()
         routing.viewController = self
         return routing
     }()
@@ -199,7 +199,7 @@ final class DetailBookViewController: UIViewController {
     }
 }
 
-extension DetailBookViewController {
+extension BookDetailViewController {
     private func setupLayout() {
         title = "書籍編集"
         navigationItem.rightBarButtonItem = saveButton
@@ -249,7 +249,7 @@ extension DetailBookViewController {
     }
 
     private func bindUI() {
-        let input = DetailBookViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: selectedBook.id)
+        let input = BookDetailViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: selectedBook.id)
 
         let output = viewModel.transform(input: input)
 
@@ -260,7 +260,7 @@ extension DetailBookViewController {
         }).disposed(by: disposeBag)
 
         output.result.subscribe(onNext: { [weak self] _ in
-            self?.routing.showBookListVC()
+            self?.routing.showHomeVC()
         }).disposed(by: disposeBag)
 
         output.error.subscribe(onNext: { [weak self] error in
@@ -269,7 +269,7 @@ extension DetailBookViewController {
     }
 }
 
-extension DetailBookViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension BookDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @objc func registerImage() {
         present(imagePicker, animated: true)

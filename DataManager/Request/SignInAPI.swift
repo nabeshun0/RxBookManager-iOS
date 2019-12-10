@@ -1,18 +1,18 @@
 import APIKit
 
-public class LoginAPI {
+public class SignInAPI {
     struct Request: AppRequestType {
-        typealias Response = LoginAPI.Response
+        typealias Response = SignInAPI.Response
 
         // パラメータモデル
         var info: AuthModel
 
         var method: HTTPMethod {
-            return APIRoutes.login.configurePath().method
+            return APIRoutes.SignIn.configurePath().method
         }
 
         var path: String {
-            return APIRoutes.login.configurePath().path
+            return APIRoutes.SignIn.configurePath().path
         }
 
         var parameters: Any? {

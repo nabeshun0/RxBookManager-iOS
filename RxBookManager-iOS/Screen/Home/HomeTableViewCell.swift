@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 import Nuke
 
-class BookListTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
 
     private let bookImage: UIImageView = {
         let bookImage = UIImageView()
@@ -39,7 +39,7 @@ class BookListTableViewCell: UITableViewCell {
         fatalError("セルを初期化できません")
     }
 
-    func configureWithBook(book: BookInfo) {
+    func configureWithBook(book: BookInfomation) {
         titleLabel.text = book.name
         if let image = book.image {
             Nuke.loadImage(with: URL(string: image)!, into: bookImage)
@@ -56,7 +56,7 @@ class BookListTableViewCell: UITableViewCell {
     }
 }
 
-extension BookListTableViewCell {
+extension HomeTableViewCell {
     private func setupUI() {
         [bookImage, titleLabel, priceLabel, purchaseDateLabel]
             .forEach {

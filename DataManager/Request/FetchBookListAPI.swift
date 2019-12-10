@@ -12,11 +12,11 @@ public class FetchBookListAPI {
         }
 
         var method: HTTPMethod {
-            return APIRoutes.fetchBookList.configurePath().method
+            return APIRoutes.fetchBook.configurePath().method
         }
 
         var path: String {
-            return APIRoutes.fetchBookList.configurePath().path
+            return APIRoutes.fetchBook.configurePath().path
         }
 
         var parameters: Any? {

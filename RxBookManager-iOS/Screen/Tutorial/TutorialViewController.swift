@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class WalkthroughViewController: UIViewController {
+class TutorialViewController: UIViewController {
 
     //==================================================
     // MARK: - Presentation
@@ -55,7 +55,7 @@ class WalkthroughViewController: UIViewController {
     }
 }
 
-extension WalkthroughViewController {
+extension TutorialViewController {
 
     private func setupUI() {
         view.addSubview(scrollView)
@@ -72,7 +72,7 @@ extension WalkthroughViewController {
         stacKView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
         stacKView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 
-        let firstView = WalkthroughView()
+        let firstView = TutorialView()
         stacKView.addArrangedSubview(firstView)
         firstView.applyUI(view: .first)
         firstView.setupUI()
@@ -80,7 +80,7 @@ extension WalkthroughViewController {
         firstView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
         firstView.backgroundColor = .lightGray
 
-        let secondView = WalkthroughView()
+        let secondView = TutorialView()
         stacKView.addArrangedSubview(secondView)
         secondView.applyUI(view: .second)
         secondView.setupUI()
@@ -88,7 +88,7 @@ extension WalkthroughViewController {
         secondView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
         secondView.backgroundColor = .yellow
 
-        let thirdView = WalkthroughView()
+        let thirdView = TutorialView()
         stacKView.addArrangedSubview(thirdView)
         thirdView.applyUI(view: .third)
         thirdView.setupUI()

@@ -1,10 +1,10 @@
 import RxSwift
 import DataManager
 
-final class BookListViewModel {
+final class HomeViewModel {
 
     private let dependency: BookRepository
-    lazy var books: [BookInfo] = []
+    lazy var books: [BookInfomation] = []
     private var pageCount = 1
 
     init(dependency: BookRepository) {
@@ -12,7 +12,7 @@ final class BookListViewModel {
     }
 }
 
-extension BookListViewModel: ViewModelType {
+extension HomeViewModel: ViewModelType {
 
     struct Input {
         let didReloadButtonTapped: Observable<Void>
@@ -35,7 +35,7 @@ extension BookListViewModel: ViewModelType {
                 }
                 let model = BookListModel(limit: 5, page: self.pageCount)
                 self.pageCount += 1
-                return self.dependency.fetchBook(model)
+                return self.dependency.fetch(model)
                     .materialize()
             }.share(replay: 1)
 
@@ -44,7 +44,7 @@ extension BookListViewModel: ViewModelType {
                 guard let self = self else { return Observable.empty() }
                 let model = BookListModel(limit: 5, page: self.pageCount)
                 self.pageCount += 1
-                return self.dependency.fetchBook(model)
+                return self.dependency.fetch(model)
                 .materialize()
             }.share(replay: 1)
 

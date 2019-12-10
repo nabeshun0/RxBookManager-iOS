@@ -2,9 +2,9 @@ import APIKit
 import RxSwift
 
 public protocol AccountDataStore {
-    func login(with info: AuthModel) -> Observable<LoginAPI.Response>
+    func SignIn(with info: AuthModel) -> Observable<SignInAPI.Response>
     func signUp(with info: AuthModel) -> Observable<SignUpAPI.Response>
-    func logout() -> Observable<LogoutAPI.Response>
+    func SignOut() -> Observable<SignOutAPI.Response>
 }
 
 public struct AccountDataStoreImpl: AccountDataStore {
@@ -13,8 +13,8 @@ public struct AccountDataStoreImpl: AccountDataStore {
     // MARK: - ログイン、リクエスト・レスポンス
     //==================================================
 
-    public func login(with info: AuthModel) -> Observable<LoginAPI.Response> {
-        let request = LoginAPI.Request(info: info)
+    public func SignIn(with info: AuthModel) -> Observable<SignInAPI.Response> {
+        let request = SignInAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
     }
 
@@ -31,8 +31,8 @@ public struct AccountDataStoreImpl: AccountDataStore {
     // MARK: - ログアウト、リクエスト・レスポンス
     //==================================================
 
-    public func logout() -> Observable<LogoutAPI.Response> {
-        let request = LogoutAPI.Request()
+    public func SignOut() -> Observable<SignOutAPI.Response> {
+        let request = SignOutAPI.Request()
         return Session.rx_sendRequest(request: request)
     }
 }

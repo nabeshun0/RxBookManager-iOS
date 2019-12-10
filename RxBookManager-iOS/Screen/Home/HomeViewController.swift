@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 import RxSwift
 
-final class BookListViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-    private var viewModel: BookListViewModel
+    private var viewModel: HomeViewModel
 
-    init(viewModel: BookListViewModel) {
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -14,10 +14,6 @@ final class BookListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
 
     struct PagingConstants {
         static let limitPageNum: Int = 5
@@ -28,7 +24,7 @@ final class BookListViewController: UIViewController {
     private var currentPage = PagingConstants.currentPageNum
 
     private lazy var addButton: UIBarButtonItem = {
-        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showRegisterBookVC))
+        let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showBookRegistrationVC))
         return addButton
     }()
 
@@ -37,7 +33,7 @@ final class BookListViewController: UIViewController {
         tableView.rowHeight = Constants.Size.tableViewRowHeight
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: BookListTableViewCell.className)
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.className)
         return tableView
     }()
 
@@ -58,29 +54,17 @@ final class BookListViewController: UIViewController {
         return activityIndicator
     }()
 
-    @objc private func showRegisterBookVC() {
-        routing.showRegisterBookVC()
+    @objc private func showBookRegistrationVC() {
+        routing.showBookRegistrationVC()
     }
 
-    //==================================================
-    // MARK: - Routing
-    //==================================================
-
-    private lazy var routing: BookListRouting = {
-        let routing = BookListRoutingImpl()
+    private lazy var routing: HomeRouting = {
+        let routing = HomeRoutingImpl()
         routing.viewController = self
         return routing
     }()
 
-    //==================================================
-    // MARK: - Rx
-    //==================================================
-
     private let disposeBag: DisposeBag = .init()
-
-    //==================================================
-    // MARK: - UIViewController override
-    //==================================================
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +75,7 @@ final class BookListViewController: UIViewController {
     }
 }
 
-extension BookListViewController {
+extension HomeViewController {
     private func setupUI() {
 
         [tableView, addLoadingPageButton]
@@ -123,13 +107,13 @@ extension BookListViewController {
 
     private func bindUI() {
 
-        let input = BookListViewModel.Input(didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(), viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).asObservable())
+        let input = HomeViewModel.Input(didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(), viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).asObservable())
 
         let output = viewModel.transform(input: input)
 
         output.result.subscribe(onNext: { [weak self] result in
             self?.viewModel.books += result.result.map {
-                BookInfo(
+                BookInfomation(
                     id: $0.id,
                     name: $0.name,
                     image: $0.image,
@@ -146,7 +130,7 @@ extension BookListViewController {
 
         output.firstResult.subscribe(onNext: { [weak self] result in
             self?.viewModel.books += result.result.map {
-                BookInfo(
+                BookInfomation(
                     id: $0.id,
                     name: $0.name,
                     image: $0.image,
@@ -163,14 +147,14 @@ extension BookListViewController {
     }
 }
 
-extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.books.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // cellの生成
-         let cell: BookListTableViewCell = tableView.dequeueReusableCell(withIdentifier: BookListTableViewCell.className, for: indexPath) as! BookListTableViewCell
+         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className, for: indexPath) as! HomeTableViewCell
 
         cell.accessoryType = .disclosureIndicator
         cell.configureWithBook(book: viewModel.books[indexPath.row])
@@ -180,6 +164,6 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let book = viewModel.books[indexPath.row]
-        routing.showDetailBookVC(book: book)
+        routing.showBookDetailVC(book: book)
     }
 }

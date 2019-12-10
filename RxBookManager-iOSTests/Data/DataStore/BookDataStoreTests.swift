@@ -21,8 +21,8 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testFetch() {
-        let model = BookListModel(limit: 5, page: 1)
-        let exp = expectation(description: "fetchBookListRequest")
+        let model = HomeModel(limit: 5, page: 1)
+        let exp = expectation(description: "fetchHomeRequest")
 
         dataStore.fetchBook(with: model)
         .subscribe(onNext: { response in
@@ -38,9 +38,9 @@ class BookDataStoreTests: XCTestCase {
 
     func testRegister() {
         let model = BookModel(name: "花火", image: "image", price: 400, purchaseDate: "2019-07-31")
-        let exp = expectation(description: "registerBookRequest")
+        let exp = expectation(description: "BookRegistrationRequest")
 
-        dataStore.registerBook(with: model)
+        dataStore.BookRegistration(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -54,7 +54,7 @@ class BookDataStoreTests: XCTestCase {
 
     func testUpdate() {
         let model = BookModel(name: "花火祭り", image: "image", price: 2000, purchaseDate: "2019-08-04", id: 1508)
-        let exp = expectation(description: "detailBookRequest")
+        let exp = expectation(description: "BookDetailRequest")
 
         dataStore.updateBook(with: model)
         .subscribe(onNext: { response in
@@ -84,8 +84,8 @@ class BookDataStoreTests: XCTestCase {
         do {
             let email = scheduler.createHotObservable(emailObservable)
             let password = scheduler.createHotObservable(passwordObservable)
-            let viewModel = LoginViewModel(dependency: AccountRepositoryImpl())
-            let input = LoginViewModel.Input(didLoginButtonTapped: Observable.of(), didSignupButtonTapped: Observable.of(), emailText: email.asObservable(), passwordText: password.asObservable())
+            let viewModel = SignInViewModel(dependency: AccountRepositoryImpl())
+            let input = SignInViewModel.Input(didSignInButtonTapped: Observable.of(), didSignupButtonTapped: Observable.of(), emailText: email.asObservable(), passwordText: password.asObservable())
             let output = viewModel.transform(input: input)
             output.result
                 .subscribe(onNext: { result in

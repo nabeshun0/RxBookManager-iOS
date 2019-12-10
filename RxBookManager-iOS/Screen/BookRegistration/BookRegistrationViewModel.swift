@@ -2,7 +2,7 @@ import RxSwift
 import DataManager
 import UIKit
 
-final class RegisterBookViewModel {
+final class BookRegistrationViewModel {
 
     private let dependency: BookRepository
 
@@ -11,7 +11,7 @@ final class RegisterBookViewModel {
     }
 }
 
-extension RegisterBookViewModel: ViewModelType {
+extension BookRegistrationViewModel: ViewModelType {
 
     struct Input {
         let didSaveButtonTapped: Observable<Void>
@@ -68,7 +68,7 @@ extension RegisterBookViewModel: ViewModelType {
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<RegisterBookAPI.Response>> in
                 let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate)
-                return self.dependency.registerBook(info)
+                return self.dependency.register(info)
                 .materialize()
         }.share(replay: 1)
 

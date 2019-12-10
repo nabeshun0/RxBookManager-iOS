@@ -3,9 +3,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class LogoutViewController: UIViewController {
+final class SignOutViewController: UIViewController {
 
-    private let logoutButton: UIButton = {
+    private let SignOutButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle("ログアウト", for: .normal)
@@ -15,17 +15,17 @@ final class LogoutViewController: UIViewController {
         return button
     }()
 
-    private lazy var routing: LogoutRouting = {
-        let routing = LogoutRoutingImpl()
+    private lazy var routing: SignOutRouting = {
+        let routing = SignOutRoutingImpl()
         routing.viewController = self
         return routing
     }()
 
-    private var viewModel: LogoutViewModel
+    private var viewModel: SignOutViewModel
 
     private let disposeBag: DisposeBag = .init()
 
-    init(viewModel: LogoutViewModel) {
+    init(viewModel: SignOutViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -43,25 +43,25 @@ final class LogoutViewController: UIViewController {
     }
 
     private func setupLayout() {
-        view.addSubview(logoutButton)
+        view.addSubview(SignOutButton)
         view.backgroundColor = .white
 
         // TODO: - のちほどレイアウト用ライブラリ、もしくはExtension導入
-        logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logoutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        logoutButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        logoutButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        SignOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        SignOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        SignOutButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        SignOutButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 
     private func bindUI() {
 
-        let input = LogoutViewModel.Input(didButtonTapped: logoutButton.rx.tap.asObservable())
+        let input = SignOutViewModel.Input(didButtonTapped: SignOutButton.rx.tap.asObservable())
 
         let output = viewModel.transform(input: input)
 
         output.result
             .subscribe(onNext: { [weak self] _ in
-                self?.routing.showLogin()
+                self?.routing.showSignIn()
             }).disposed(by: disposeBag)
 
 

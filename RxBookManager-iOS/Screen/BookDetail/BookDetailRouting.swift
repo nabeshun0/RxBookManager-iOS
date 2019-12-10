@@ -1,13 +1,13 @@
 import UIKit
 
-protocol DetailBookRouting: RoutingType {
-    func showBookListVC()
+protocol BookDetailRouting: RoutingType {
+    func showHomeVC()
 }
 
-final class DetaiBookRoutingImpl: DetailBookRouting {
+final class BookDetailRoutingImpl: BookDetailRouting {
     var viewController: UIViewController?
 
-    func showBookListVC() {
+    func showHomeVC() {
         guard let view = viewController?.navigationController else { return }
         view.popViewController(animated: true)
     }

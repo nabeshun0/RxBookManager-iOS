@@ -26,6 +26,7 @@ final class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         title = "Splash"
         view.backgroundColor = .lightGray
         view.addSubview(animationView)
@@ -40,9 +41,9 @@ final class SplashViewController: UIViewController {
         animationView.play { [weak self] _ in
             self?.animationView.removeFromSuperview()
             //if 2回目の起動時はログイン {
-            //    self?.routing.showLogin()
+            //    self?.routing.showSignIn()
             //}
-            self?.routing.showWalkthrough()
+            self?.routing.showSignIn()
         }
     }
 
