@@ -4,7 +4,7 @@ import XCTest
 import RxTest
 import RxBlocking
 
-@testable import RxBookManager_iOS
+@testable import DataManager
 
 class BookDataStoreTests: XCTestCase {
 
@@ -21,10 +21,10 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testFetch() {
-        let model = HomeModel(limit: 5, page: 1)
+        let model = BookListModel(limit: 5, page: 1)
         let exp = expectation(description: "fetchHomeRequest")
 
-        dataStore.fetchBook(with: model)
+        dataStore.fetch(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -40,7 +40,7 @@ class BookDataStoreTests: XCTestCase {
         let model = BookModel(name: "花火", image: "image", price: 400, purchaseDate: "2019-07-31")
         let exp = expectation(description: "BookRegistrationRequest")
 
-        dataStore.BookRegistration(with: model)
+        dataStore.register(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -56,7 +56,7 @@ class BookDataStoreTests: XCTestCase {
         let model = BookModel(name: "花火祭り", image: "image", price: 2000, purchaseDate: "2019-08-04", id: 1508)
         let exp = expectation(description: "BookDetailRequest")
 
-        dataStore.updateBook(with: model)
+        dataStore.update(with: model)
         .subscribe(onNext: { response in
             print(response)
             exp.fulfill()
@@ -66,33 +66,5 @@ class BookDataStoreTests: XCTestCase {
         }).disposed(by: disposebag)
 
         wait(for: [exp], timeout: 5.0)
-    }
-
-    let scheduler = TestScheduler(initialClock: 1)
-
-    func testViewModel() {
-        let emailObservable = [
-            Recorded.next(1, "i.kawashima41@gmail.com")
-        ]
-
-        let passwordObservable = [
-            Recorded.next(1, "0401Tiro")
-        ]
-
-
-
-        do {
-            let email = scheduler.createHotObservable(emailObservable)
-            let password = scheduler.createHotObservable(passwordObservable)
-            let viewModel = SignInViewModel(dependency: AccountRepositoryImpl())
-            let input = SignInViewModel.Input(didSignInButtonTapped: Observable.of(), didSignupButtonTapped: Observable.of(), emailText: email.asObservable(), passwordText: password.asObservable())
-            let output = viewModel.transform(input: input)
-            output.result
-                .subscribe(onNext: { result in
-                    print(result)
-                }).disposed(by: disposebag)
-
-            scheduler.start()
-        }
     }
 }

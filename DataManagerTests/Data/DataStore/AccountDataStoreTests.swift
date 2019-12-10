@@ -2,7 +2,7 @@ import APIKit
 import RxSwift
 import XCTest
 
-@testable import RxBookManager_iOS
+@testable import DataManager
 
 class AccountDataStoreTests: XCTestCase {
 

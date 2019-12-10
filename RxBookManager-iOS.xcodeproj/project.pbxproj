@@ -48,6 +48,8 @@
 		5BA8F4CA239FDA6A00C354D2 /* BookInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4C9239FDA6A00C354D2 /* BookInfomation.swift */; };
 		5BA8F4CC239FDEC900C354D2 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4CB239FDEC900C354D2 /* ViewControllerFactory.swift */; };
 		5BA8F4CE239FE71300C354D2 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8F4CD239FE71300C354D2 /* UserEntity.swift */; };
+		5BA8F4CF23A056E200C354D2 /* AccountDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */; };
+		5BA8F4D023A056E700C354D2 /* BookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
 		5BB389582349C61D00F1C06B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A69233A53ED0093495F /* Nimble.framework */; };
@@ -95,8 +97,6 @@
 		5E1367E022C7498C006E5475 /* SignOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367DF22C7498C006E5475 /* SignOutViewModel.swift */; };
 		5E1367E222C7499D006E5475 /* SignOutRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367E122C7499D006E5475 /* SignOutRouting.swift */; };
 		5E1367EC22C7BD44006E5475 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */; };
-		5E18E4CB22D9AEC600CFF52C /* AccountDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18E4CA22D9AEC600CFF52C /* AccountDataStoreTests.swift */; };
-		5E1D964C22F0428E00CD332B /* BookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */; };
 		5E20CCD522D23E920000DB4F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CCD422D23E920000DB4F /* AppConstant.swift */; };
 		5E4EA14C2333AF2F00DDCE44 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EA14B2333AF2F00DDCE44 /* TutorialViewController.swift */; };
 		5E614D2C2331D664009AC7C6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E614D2B2331D663009AC7C6 /* Lottie.framework */; };
@@ -403,6 +403,7 @@
 		5BA8F43C239FAC1600C354D2 /* DataManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				5E18E4C622D9AE0B00CFF52C /* Data */,
 				5BA8F43D239FAC1600C354D2 /* DataManagerTests.swift */,
 				5BA8F43F239FAC1600C354D2 /* Info.plist */,
 			);
@@ -523,7 +524,6 @@
 		5E649BE022C3872800E562F1 /* RxBookManager-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				5E18E4C622D9AE0B00CFF52C /* Data */,
 				5E649BE122C3872800E562F1 /* RxBookManager_iOSTests.swift */,
 				5E649BE322C3872800E562F1 /* Info.plist */,
 			);
@@ -994,6 +994,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA8F43E239FAC1600C354D2 /* DataManagerTests.swift in Sources */,
+				5BA8F4CF23A056E200C354D2 /* AccountDataStoreTests.swift in Sources */,
+				5BA8F4D023A056E700C354D2 /* BookDataStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,8 +1049,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1D964C22F0428E00CD332B /* BookDataStoreTests.swift in Sources */,
-				5E18E4CB22D9AEC600CFF52C /* AccountDataStoreTests.swift in Sources */,
 				5E649BE222C3872800E562F1 /* RxBookManager_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1116,6 +1116,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.IichiroKawashima.DataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1149,6 +1150,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.IichiroKawashima.DataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
